@@ -7,25 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073C816427300842002FFF3C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 073C816227300842002FFF3C /* DataModel.xcdatamodeld */; };
+		07490644272D28B40049C305 /* GenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07490643272D28B40049C305 /* GenderButton.swift */; };
+		07490648272D69380049C305 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07490647272D69380049C305 /* RegisterUser.swift */; };
+		0749064A272D711D0049C305 /* RegisterationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07490649272D711D0049C305 /* RegisterationViewModel.swift */; };
 		076BC6EC2729560100914A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BC6EB2729560100914A85 /* AppDelegate.swift */; };
 		076BC6EE2729560100914A85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BC6ED2729560100914A85 /* SceneDelegate.swift */; };
 		076BC6F02729560100914A85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BC6EF2729560100914A85 /* ViewController.swift */; };
 		076BC6F32729560100914A85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076BC6F12729560100914A85 /* Main.storyboard */; };
-		076BC6F62729560100914A85 /* Boutiqaat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 076BC6F42729560100914A85 /* Boutiqaat.xcdatamodeld */; };
 		076BC6F82729560400914A85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076BC6F72729560400914A85 /* Assets.xcassets */; };
 		076BC6FB2729560400914A85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076BC6F92729560400914A85 /* LaunchScreen.storyboard */; };
+		076BC7082729571400914A85 /* RegisterUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BC7072729571400914A85 /* RegisterUserModel.swift */; };
+		076BC70A27296CB700914A85 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BC70927296CB700914A85 /* RegisterViewController.swift */; };
+		076BC70F2729701B00914A85 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BC70E2729701B00914A85 /* Pacifico-Regular.ttf */; };
+		076BC7112729707200914A85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BC7102729707200914A85 /* Constants.swift */; };
+		0789B1DC272A9938003C6230 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1DB272A9938003C6230 /* NavigationView.swift */; };
+		0789B1DE272AA5F3003C6230 /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1DD272AA5F3003C6230 /* NormalTextField.swift */; };
+		0789B1E3272AA66D003C6230 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E2272AA66D003C6230 /* Extensions.swift */; };
+		0789B1E5272AC508003C6230 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E4272AC508003C6230 /* PasswordTextField.swift */; };
+		0789B1E8272ACB83003C6230 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E7272ACB83003C6230 /* PhoneTextField.swift */; };
+		0789B1EA272ACE33003C6230 /* SelectGenderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E9272ACE33003C6230 /* SelectGenderField.swift */; };
+		07F0F79727311D65009A6700 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F79627311D65009A6700 /* LoginViewController.swift */; };
+		07F0F79A27312694009A6700 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F79927312694009A6700 /* MainTabController.swift */; };
+		07F0F79E27312AAD009A6700 /* BoutiqaatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F79D27312AAD009A6700 /* BoutiqaatViewController.swift */; };
+		07F0F7A027312AC7009A6700 /* BrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F79F27312AC7009A6700 /* BrandsViewController.swift */; };
+		07F0F7A227312AEC009A6700 /* CelebritiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A127312AEC009A6700 /* CelebritiesViewController.swift */; };
+		07F0F7A427312B0D009A6700 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A327312B0D009A6700 /* CategoriesViewController.swift */; };
+		07F0F7A627312B2B009A6700 /* MyBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A527312B2B009A6700 /* MyBagViewController.swift */; };
+		07F0F7A827313477009A6700 /* TabBraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A727313477009A6700 /* TabBraView.swift */; };
+		07F0F7AA27316199009A6700 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A927316199009A6700 /* PopUpView.swift */; };
+		D487037016B3BAC97D27BB89 /* Pods_Boutiqaat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF63745884A7D452C0B42D4 /* Pods_Boutiqaat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		073C816327300842002FFF3C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		07490643272D28B40049C305 /* GenderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderButton.swift; sourceTree = "<group>"; };
+		07490647272D69380049C305 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
+		07490649272D711D0049C305 /* RegisterationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationViewModel.swift; sourceTree = "<group>"; };
 		076BC6E82729560100914A85 /* Boutiqaat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boutiqaat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		076BC6EB2729560100914A85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076BC6ED2729560100914A85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		076BC6EF2729560100914A85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		076BC6F22729560100914A85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		076BC6F52729560100914A85 /* Boutiqaat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Boutiqaat.xcdatamodel; sourceTree = "<group>"; };
 		076BC6F72729560400914A85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		076BC6FA2729560400914A85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		076BC6FC2729560400914A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		076BC7072729571400914A85 /* RegisterUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserModel.swift; sourceTree = "<group>"; };
+		076BC70927296CB700914A85 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		076BC70E2729701B00914A85 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		076BC7102729707200914A85 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0789B1DB272A9938003C6230 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		0789B1DD272AA5F3003C6230 /* NormalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
+		0789B1E2272AA66D003C6230 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0789B1E4272AC508003C6230 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		0789B1E7272ACB83003C6230 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
+		0789B1E9272ACE33003C6230 /* SelectGenderField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderField.swift; sourceTree = "<group>"; };
+		07F0F79627311D65009A6700 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		07F0F79927312694009A6700 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		07F0F79D27312AAD009A6700 /* BoutiqaatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutiqaatViewController.swift; sourceTree = "<group>"; };
+		07F0F79F27312AC7009A6700 /* BrandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewController.swift; sourceTree = "<group>"; };
+		07F0F7A127312AEC009A6700 /* CelebritiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebritiesViewController.swift; sourceTree = "<group>"; };
+		07F0F7A327312B0D009A6700 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		07F0F7A527312B2B009A6700 /* MyBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagViewController.swift; sourceTree = "<group>"; };
+		07F0F7A727313477009A6700 /* TabBraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBraView.swift; sourceTree = "<group>"; };
+		07F0F7A927316199009A6700 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		082C33ABB0B91C7915840AEB /* Pods-Boutiqaat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boutiqaat.release.xcconfig"; path = "Target Support Files/Pods-Boutiqaat/Pods-Boutiqaat.release.xcconfig"; sourceTree = "<group>"; };
+		54C1720A1EF58A218D79F950 /* Pods-Boutiqaat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boutiqaat.debug.xcconfig"; path = "Target Support Files/Pods-Boutiqaat/Pods-Boutiqaat.debug.xcconfig"; sourceTree = "<group>"; };
+		DDF63745884A7D452C0B42D4 /* Pods_Boutiqaat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boutiqaat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D487037016B3BAC97D27BB89 /* Pods_Boutiqaat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +93,8 @@
 			children = (
 				076BC6EA2729560100914A85 /* Boutiqaat */,
 				076BC6E92729560100914A85 /* Products */,
+				4DBE44358B86281C69898A1D /* Pods */,
+				1A6CD6B0BA5B3AD447339C9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +109,135 @@
 		076BC6EA2729560100914A85 /* Boutiqaat */ = {
 			isa = PBXGroup;
 			children = (
+				0789B1E1272AA653003C6230 /* Utils */,
+				076BC70D2729700F00914A85 /* Fonts */,
+				076BC7062729565800914A85 /* APIService */,
+				076BC7052729564600914A85 /* Controller */,
+				076BC7042729563800914A85 /* ViewModel */,
+				076BC7032729561600914A85 /* View */,
+				076BC7022729560A00914A85 /* Model */,
 				076BC6EB2729560100914A85 /* AppDelegate.swift */,
 				076BC6ED2729560100914A85 /* SceneDelegate.swift */,
 				076BC6EF2729560100914A85 /* ViewController.swift */,
-				076BC6F12729560100914A85 /* Main.storyboard */,
 				076BC6F72729560400914A85 /* Assets.xcassets */,
 				076BC6F92729560400914A85 /* LaunchScreen.storyboard */,
 				076BC6FC2729560400914A85 /* Info.plist */,
-				076BC6F42729560100914A85 /* Boutiqaat.xcdatamodeld */,
+				076BC7102729707200914A85 /* Constants.swift */,
+				073C816227300842002FFF3C /* DataModel.xcdatamodeld */,
 			);
 			path = Boutiqaat;
+			sourceTree = "<group>";
+		};
+		076BC7022729560A00914A85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				076BC7072729571400914A85 /* RegisterUserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		076BC7032729561600914A85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				076BC6F12729560100914A85 /* Main.storyboard */,
+				0789B1E6272ACB5B003C6230 /* TextFieldCells */,
+				07490643272D28B40049C305 /* GenderButton.swift */,
+				0789B1E9272ACE33003C6230 /* SelectGenderField.swift */,
+				07F0F7A927316199009A6700 /* PopUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		076BC7042729563800914A85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				07490649272D711D0049C305 /* RegisterationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		076BC7052729564600914A85 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				07F0F79827312653009A6700 /* Catalog */,
+				07F0F79527311D3B009A6700 /* Authontication */,
+				0789B1DB272A9938003C6230 /* NavigationView.swift */,
+				07F0F7A727313477009A6700 /* TabBraView.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		076BC7062729565800914A85 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				07490647272D69380049C305 /* RegisterUser.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		076BC70D2729700F00914A85 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				076BC70E2729701B00914A85 /* Pacifico-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0789B1E1272AA653003C6230 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0789B1E2272AA66D003C6230 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0789B1E6272ACB5B003C6230 /* TextFieldCells */ = {
+			isa = PBXGroup;
+			children = (
+				0789B1DD272AA5F3003C6230 /* NormalTextField.swift */,
+				0789B1E4272AC508003C6230 /* PasswordTextField.swift */,
+				0789B1E7272ACB83003C6230 /* PhoneTextField.swift */,
+			);
+			path = TextFieldCells;
+			sourceTree = "<group>";
+		};
+		07F0F79527311D3B009A6700 /* Authontication */ = {
+			isa = PBXGroup;
+			children = (
+				076BC70927296CB700914A85 /* RegisterViewController.swift */,
+				07F0F79627311D65009A6700 /* LoginViewController.swift */,
+			);
+			path = Authontication;
+			sourceTree = "<group>";
+		};
+		07F0F79827312653009A6700 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				07F0F79927312694009A6700 /* MainTabController.swift */,
+				07F0F79D27312AAD009A6700 /* BoutiqaatViewController.swift */,
+				07F0F79F27312AC7009A6700 /* BrandsViewController.swift */,
+				07F0F7A127312AEC009A6700 /* CelebritiesViewController.swift */,
+				07F0F7A327312B0D009A6700 /* CategoriesViewController.swift */,
+				07F0F7A527312B2B009A6700 /* MyBagViewController.swift */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		1A6CD6B0BA5B3AD447339C9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDF63745884A7D452C0B42D4 /* Pods_Boutiqaat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DBE44358B86281C69898A1D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54C1720A1EF58A218D79F950 /* Pods-Boutiqaat.debug.xcconfig */,
+				082C33ABB0B91C7915840AEB /* Pods-Boutiqaat.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 076BC6FF2729560400914A85 /* Build configuration list for PBXNativeTarget "Boutiqaat" */;
 			buildPhases = (
+				08B3A6A552DE97BA4CE9BFD6 /* [CP] Check Pods Manifest.lock */,
 				076BC6E42729560100914A85 /* Sources */,
 				076BC6E52729560100914A85 /* Frameworks */,
 				076BC6E62729560100914A85 /* Resources */,
+				757C7F360D279FEBE07C6815 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,20 +303,84 @@
 				076BC6FB2729560400914A85 /* LaunchScreen.storyboard in Resources */,
 				076BC6F82729560400914A85 /* Assets.xcassets in Resources */,
 				076BC6F32729560100914A85 /* Main.storyboard in Resources */,
+				076BC70F2729701B00914A85 /* Pacifico-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08B3A6A552DE97BA4CE9BFD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Boutiqaat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		757C7F360D279FEBE07C6815 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Boutiqaat/Pods-Boutiqaat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Boutiqaat/Pods-Boutiqaat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Boutiqaat/Pods-Boutiqaat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		076BC6E42729560100914A85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076BC6F62729560100914A85 /* Boutiqaat.xcdatamodeld in Sources */,
+				07F0F79727311D65009A6700 /* LoginViewController.swift in Sources */,
+				0789B1DE272AA5F3003C6230 /* NormalTextField.swift in Sources */,
+				07F0F7A827313477009A6700 /* TabBraView.swift in Sources */,
+				07490648272D69380049C305 /* RegisterUser.swift in Sources */,
+				07F0F79A27312694009A6700 /* MainTabController.swift in Sources */,
+				07490644272D28B40049C305 /* GenderButton.swift in Sources */,
+				0789B1E5272AC508003C6230 /* PasswordTextField.swift in Sources */,
+				0789B1DC272A9938003C6230 /* NavigationView.swift in Sources */,
+				0789B1EA272ACE33003C6230 /* SelectGenderField.swift in Sources */,
+				0789B1E8272ACB83003C6230 /* PhoneTextField.swift in Sources */,
+				076BC7082729571400914A85 /* RegisterUserModel.swift in Sources */,
+				07F0F7A027312AC7009A6700 /* BrandsViewController.swift in Sources */,
 				076BC6F02729560100914A85 /* ViewController.swift in Sources */,
+				07F0F7A427312B0D009A6700 /* CategoriesViewController.swift in Sources */,
+				07F0F79E27312AAD009A6700 /* BoutiqaatViewController.swift in Sources */,
+				07F0F7AA27316199009A6700 /* PopUpView.swift in Sources */,
+				076BC70A27296CB700914A85 /* RegisterViewController.swift in Sources */,
+				076BC7112729707200914A85 /* Constants.swift in Sources */,
 				076BC6EC2729560100914A85 /* AppDelegate.swift in Sources */,
+				0749064A272D711D0049C305 /* RegisterationViewModel.swift in Sources */,
+				073C816427300842002FFF3C /* DataModel.xcdatamodeld in Sources */,
+				07F0F7A227312AEC009A6700 /* CelebritiesViewController.swift in Sources */,
+				0789B1E3272AA66D003C6230 /* Extensions.swift in Sources */,
 				076BC6EE2729560100914A85 /* SceneDelegate.swift in Sources */,
+				07F0F7A627312B2B009A6700 /* MyBagViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +524,7 @@
 		};
 		076BC7002729560400914A85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54C1720A1EF58A218D79F950 /* Pods-Boutiqaat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -316,6 +553,7 @@
 		};
 		076BC7012729560400914A85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 082C33ABB0B91C7915840AEB /* Pods-Boutiqaat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -366,13 +604,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		076BC6F42729560100914A85 /* Boutiqaat.xcdatamodeld */ = {
+		073C816227300842002FFF3C /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				076BC6F52729560100914A85 /* Boutiqaat.xcdatamodel */,
+				073C816327300842002FFF3C /* DataModel.xcdatamodel */,
 			);
-			currentVersion = 076BC6F52729560100914A85 /* Boutiqaat.xcdatamodel */;
-			path = Boutiqaat.xcdatamodeld;
+			currentVersion = 073C816327300842002FFF3C /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

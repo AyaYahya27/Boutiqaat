@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "621D4285-2696-4CE5-B9ED-A36736D3E589"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DAC4C8DC-925C-416F-94CC-32FD27701AC4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Boutiqaat/Controller/Authontication/RegisterViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "RegisterViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "DAC4C8DC-925C-416F-94CC-32FD27701AC4 - a1b7f4d1b6c408a9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Boutiqaat.RegisterViewController.registerationViewModel.getter : Boutiqaat.RegisterationViewModel"
+                  moduleName = "Boutiqaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayayahya/Documents/work/Boutiqaat/Boutiqaat/Controller/Authontication/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "405">
+               </Location>
+               <Location
+                  uuid = "DAC4C8DC-925C-416F-94CC-32FD27701AC4 - efcc3f022d0a8d4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Boutiqaat.RegisterViewController.registerationViewModel.setter : Boutiqaat.RegisterationViewModel"
+                  moduleName = "Boutiqaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayayahya/Documents/work/Boutiqaat/Boutiqaat/Controller/Authontication/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "299">
+               </Location>
+               <Location
+                  uuid = "DAC4C8DC-925C-416F-94CC-32FD27701AC4 - 433c233a0321d870"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Boutiqaat.RegisterViewController.registerationViewModel.modify : Boutiqaat.RegisterationViewModel"
+                  moduleName = "Boutiqaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayayahya/Documents/work/Boutiqaat/Boutiqaat/Controller/Authontication/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "DAC4C8DC-925C-416F-94CC-32FD27701AC4 - d7327164c3adfb68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Boutiqaat.RegisterViewController.registerationViewModel.modify : Boutiqaat.RegisterationViewModel with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Boutiqaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayayahya/Documents/work/Boutiqaat/Boutiqaat/Controller/Authontication/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "DAC4C8DC-925C-416F-94CC-32FD27701AC4 - f468927fedd001e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Boutiqaat.RegisterViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Boutiqaat.RegisterViewController"
+                  moduleName = "Boutiqaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayayahya/Documents/work/Boutiqaat/Boutiqaat/Controller/Authontication/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "269">
+               </Location>
+               <Location
+                  uuid = "DAC4C8DC-925C-416F-94CC-32FD27701AC4 - 46b30c403af252c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Boutiqaat.RegisterViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Boutiqaat.RegisterViewController&gt;"
+                  moduleName = "Boutiqaat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayayahya/Documents/work/Boutiqaat/Boutiqaat/Controller/Authontication/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
