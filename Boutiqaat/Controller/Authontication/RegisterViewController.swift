@@ -7,6 +7,13 @@ class RegisterViewController : NavigationView{
     
     private var registerationViewModel = RegisterationViewModel()
     private var selectedGender : GenderButton?
+    
+    
+    private let loadingSpinner : UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.color = .white
+        return spinner
+    }()
    
     
     private let emailTextField : NormalTextField = {
@@ -226,6 +233,8 @@ class RegisterViewController : NavigationView{
     
     @objc func handleRegister(){
         
+        
+        
         if !FormValidation.checkValidEmail(email : emailTextField.text!){
             openPopUp(error: "Enter a Valid Email")
             return
@@ -260,10 +269,13 @@ class RegisterViewController : NavigationView{
         registerationViewModel.phone = phoneTextField.text
         registerationViewModel.gender = selectedGender?.id
         
+        showSpinner()
+        
       
         registerationViewModel.callRegisterAPI(){msg , error in
             if error{
                 self.openPopUp(error: msg)
+                self.hideSpinner()
             }else{
                 let controller = MainTabController()
                 self.navigationController?.pushViewController(controller, animated: true)
@@ -298,7 +310,23 @@ class RegisterViewController : NavigationView{
     @objc func closePopUp(){
         popUp.view.removeFromSuperview()
     }
+    
+    func showSpinner(){
+        registerButton.addSubview(loadingSpinner)
+        loadingSpinner.startAnimating()
+        loadingSpinner.centerX(inView: registerButton)
+        loadingSpinner.centerY(inView: registerButton)
+        registerButton.setTitle("", for: .normal)
+    }
+    
+    func hideSpinner(){
+        loadingSpinner.removeFromSuperview()
+        
+        loadingSpinner.stopAnimating()
+   
+        registerButton.setTitle("REGISTER", for: .normal)
+    }
 }
 
-//MARK: - selectGenderSetup
+
 
