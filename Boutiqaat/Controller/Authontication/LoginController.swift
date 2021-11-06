@@ -101,6 +101,15 @@ class LoginController: NavigationView{
         return
     }
     
+    
+    func validateEmail(enteredEmail:String) -> Bool {
+
+        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+        return emailPredicate.evaluate(with: enteredEmail)
+
+    }
+    
     //MARK: -Actions
     
     @objc func handleClose(){
@@ -109,15 +118,21 @@ class LoginController: NavigationView{
     
     @objc func handleLoginPressed(){
         
-        if emailTextField.text == "" || passwordTextField.text == ""{
-           openPopUp(error: "Invalid data")
-            self.popUp.okButton.addTarget(self, action: #selector(self.handleDismissWarning), for: .touchUpInside)
-//            view.addSubview(self.popup.view)
+        if !FormValidation.checkValidEmail(email: emailTextField.text!){
+            openPopUp(error: "Enter a valid email")
             return
         }
-            
+      
+        if (passwordTextField.text!.count) < 6{
+            openPopUp(error: "Password Not Correct")
+            return
+        }
+        
              if let email = self.emailTextField.text, let password = self.passwordTextField.text{
                 let viewModel = LoginViewModel(username: email, password: password)
+                 let isEmailValid = validateEmail(enteredEmail: email)
+                 print(isEmailValid)
+                 
                 DispatchQueue.main.async {
                 viewModel.encodeTokenBody { loginStatus in
                     print(loginStatus)

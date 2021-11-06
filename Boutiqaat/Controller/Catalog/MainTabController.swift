@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTabController:NavigationView{
+class MainTabController:UITabBarController{
     
  
     
