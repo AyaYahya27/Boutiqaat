@@ -273,7 +273,7 @@ class RegisterViewController : NavigationView{
     
     @objc func handleShowLogin(){
         
-        let controller = LoginViewController()
+        let controller = LoginController()
         navigationController?.pushViewController(controller, animated: true)
  
     }

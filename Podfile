@@ -8,7 +8,7 @@ target 'Boutiqaat' do
   # Pods for Boutiqaat
   pod 'JGProgressHUD'
   pod 'Alamofire', '~> 5.4'
-#  pod 'KeychainSwift', '~> 19.0'
+  pod 'KeychainSwift', '~> 19.0'
   
 
 end
