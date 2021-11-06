@@ -55,18 +55,11 @@ class LoginController: NavigationView{
         return button
     }()
     
-    private let popUp: PopUpView = {
-        let popup = PopUpView()
-        
-        return popup
-    }()
-    
-    private let loginSpinner: UIActivityIndicatorView = {
-
-        let spinner = UIActivityIndicatorView(style: .large)
-        spinner.color = .white
-        return spinner
-    }()
+//    private let popUp: PopUpView = {
+//        let popup = PopUpView()
+//
+//        return popup
+//    }()
     
     
     //MARK: -LIFECYCLE
@@ -99,17 +92,14 @@ class LoginController: NavigationView{
         view.addSubview(buttonStack)
         buttonStack.centerX(inView: view)
         buttonStack.anchor(top: stack.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 30, paddingLeft: 20, paddingRight: 20)
-        
-        loginButton.addSubview(loginSpinner)
-          loginSpinner.center(inView: loginButton)
     }
     
-    func openPopUp(error : String){
-        popUp.errorLabel.text = error
-        popUp.okButton.addTarget(self, action: #selector(self.closePopUp), for: .touchUpInside)
-        view.addSubview(popUp.view)
-        return
-    }
+//    func openPopUp(error : String){
+//        popUp.errorLabel.text = error
+//        popUp.okButton.addTarget(self, action: #selector(self.closePopUp), for: .touchUpInside)
+//        view.addSubview(popUp.view)
+//        return
+//    }
     
     
     func validateEmail(enteredEmail:String) -> Bool {
@@ -118,21 +108,6 @@ class LoginController: NavigationView{
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
         return emailPredicate.evaluate(with: enteredEmail)
 
-    }
-    
-    func showSpinner(){
-        loginButton.addSubview(loginSpinner)
-        loginSpinner.startAnimating()
-        loginSpinner.center(inView: loginButton)
-        loginButton.setTitle("", for: .normal)
-    }
-    
-    func hideSpinner(){
-        loginSpinner.removeFromSuperview()
-        
-        loginSpinner.stopAnimating()
-   
-       loginButton.setTitle("Login", for: .normal)
     }
     
     //MARK: -Actions
@@ -157,7 +132,7 @@ class LoginController: NavigationView{
                 let viewModel = LoginViewModel(username: email, password: password)
                  let isEmailValid = validateEmail(enteredEmail: email)
 
-                 showSpinner()
+                 showSpinner(button: loginButton)
                 DispatchQueue.main.async {
                 viewModel.encodeTokenBody { loginStatus in
                     print(loginStatus)
@@ -165,13 +140,12 @@ class LoginController: NavigationView{
                         self.dismiss(animated: true, completion: nil)
                         let controller = MainTabController()
                         self.navigationController?.pushViewController(controller, animated: true)
-//                        self.loginSpinner.stopAnimating()
                         
                     } else{
                         
                         self.openPopUp(error: "Invalid data")
                         self.popUp.okButton.addTarget(self, action: #selector(self.handleDismissWarning), for: .touchUpInside)
-                        self.hideSpinner()
+                        self.hideSpinner(button: self.loginButton, title: "Login")
                     }
                 }
             }
@@ -200,9 +174,9 @@ class LoginController: NavigationView{
         print("pressed!!")
         popUp.view.removeFromSuperview()
     }
-    @objc func closePopUp(){
-        popUp.view.removeFromSuperview()
-    }
+//    @objc func closePopUp(){
+//        popUp.view.removeFromSuperview()
+//    }
     
 }
 

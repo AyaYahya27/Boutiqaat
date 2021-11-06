@@ -9,11 +9,11 @@ class RegisterViewController : NavigationView{
     private var selectedGender : GenderButton?
     
     
-    private let loadingSpinner : UIActivityIndicatorView = {
-        let spinner = UIActivityIndicatorView(style: .large)
-        spinner.color = .white
-        return spinner
-    }()
+//    private let loadingSpinner : UIActivityIndicatorView = {
+//        let spinner = UIActivityIndicatorView(style: .large)
+//        spinner.color = .white
+//        return spinner
+//    }()
    
     
     private let emailTextField : NormalTextField = {
@@ -122,10 +122,10 @@ class RegisterViewController : NavigationView{
         return button
     }()
     
-    private let  popUp: PopUpView = {
-        let pop = PopUpView()
-        return pop
-    }()
+//    private let  popUp: PopUpView = {
+//        let pop = PopUpView()
+//        return pop
+//    }()
     
 
     
@@ -269,13 +269,13 @@ class RegisterViewController : NavigationView{
         registerationViewModel.phone = phoneTextField.text
         registerationViewModel.gender = selectedGender?.id
         
-        showSpinner()
+        showSpinner(button: registerButton)
         
       
         registerationViewModel.callRegisterAPI(){msg , error in
             if error{
                 self.openPopUp(error: msg)
-                self.hideSpinner()
+                self.hideSpinner(button: self.registerButton, title: "Register")
             }else{
                 let controller = MainTabController()
                 self.navigationController?.pushViewController(controller, animated: true)
@@ -300,32 +300,32 @@ class RegisterViewController : NavigationView{
        
      }
     
-    func openPopUp(error : String){
-        popUp.errorLabel.text = error
-        popUp.okButton.addTarget(self, action: #selector(self.closePopUp), for: .touchUpInside)
-        view.addSubview(popUp.view)
-        return
-    }
+//    func openPopUp(error : String){
+//        popUp.errorLabel.text = error
+//        popUp.okButton.addTarget(self, action: #selector(self.closePopUp), for: .touchUpInside)
+//        view.addSubview(popUp.view)
+//        return
+//    }
     
-    @objc func closePopUp(){
-        popUp.view.removeFromSuperview()
-    }
+//    @objc func closePopUp(){
+//        popUp.view.removeFromSuperview()
+//    }
     
-    func showSpinner(){
-        registerButton.addSubview(loadingSpinner)
-        loadingSpinner.startAnimating()
-        loadingSpinner.centerX(inView: registerButton)
-        loadingSpinner.centerY(inView: registerButton)
-        registerButton.setTitle("", for: .normal)
-    }
+//    func showSpinner(){
+//        registerButton.addSubview(loadingSpinner)
+//        loadingSpinner.startAnimating()
+//        loadingSpinner.centerX(inView: registerButton)
+//        loadingSpinner.centerY(inView: registerButton)
+//        registerButton.setTitle("", for: .normal)
+//    }
     
-    func hideSpinner(){
-        loadingSpinner.removeFromSuperview()
-        
-        loadingSpinner.stopAnimating()
-   
-        registerButton.setTitle("REGISTER", for: .normal)
-    }
+//    func hideSpinner(){
+//        loadingSpinner.removeFromSuperview()
+//
+//        loadingSpinner.stopAnimating()
+//
+//        registerButton.setTitle("REGISTER", for: .normal)
+//    }
 }
 
 
