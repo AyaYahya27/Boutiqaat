@@ -27,6 +27,7 @@
 		0789B1E5272AC508003C6230 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E4272AC508003C6230 /* PasswordTextField.swift */; };
 		0789B1E8272ACB83003C6230 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E7272ACB83003C6230 /* PhoneTextField.swift */; };
 		0789B1EA272ACE33003C6230 /* SelectGenderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E9272ACE33003C6230 /* SelectGenderField.swift */; };
+		079FDA4927369B910030CAF2 /* FormValidationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FDA4827369B910030CAF2 /* FormValidationController.swift */; };
 		07F0F79A27312694009A6700 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F79927312694009A6700 /* MainTabController.swift */; };
 		07F0F79E27312AAD009A6700 /* BoutiqaatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F79D27312AAD009A6700 /* BoutiqaatViewController.swift */; };
 		07F0F7A027312AC7009A6700 /* BrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F79F27312AC7009A6700 /* BrandsViewController.swift */; };
@@ -69,6 +70,7 @@
 		0789B1E4272AC508003C6230 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		0789B1E7272ACB83003C6230 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		0789B1E9272ACE33003C6230 /* SelectGenderField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderField.swift; sourceTree = "<group>"; };
+		079FDA4827369B910030CAF2 /* FormValidationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationController.swift; sourceTree = "<group>"; };
 		07F0F79927312694009A6700 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		07F0F79D27312AAD009A6700 /* BoutiqaatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutiqaatViewController.swift; sourceTree = "<group>"; };
 		07F0F79F27312AC7009A6700 /* BrandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				0789B1DB272A9938003C6230 /* NavigationView.swift */,
 				07F0F7A727313477009A6700 /* TabBraView.swift */,
 				F777A44A27366D9900C5DE5E /* ForgotPasswordController.swift */,
+				079FDA4827369B910030CAF2 /* FormValidationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				07F0F7A827313477009A6700 /* TabBraView.swift in Sources */,
 				F777A44927366D6200C5DE5E /* AttributedButton.swift in Sources */,
 				F777A45D27367E8F00C5DE5E /* TokenData.swift in Sources */,
+				079FDA4927369B910030CAF2 /* FormValidationController.swift in Sources */,
 				07490648272D69380049C305 /* RegisterUser.swift in Sources */,
 				07F0F79A27312694009A6700 /* MainTabController.swift in Sources */,
 				07490644272D28B40049C305 /* GenderButton.swift in Sources */,
