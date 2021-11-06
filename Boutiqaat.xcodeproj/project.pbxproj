@@ -36,8 +36,6 @@
 		07F0F7A827313477009A6700 /* TabBraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A727313477009A6700 /* TabBraView.swift */; };
 		07F0F7AA27316199009A6700 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A927316199009A6700 /* PopUpView.swift */; };
 		D487037016B3BAC97D27BB89 /* Pods_Boutiqaat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF63745884A7D452C0B42D4 /* Pods_Boutiqaat.framework */; };
-		F777A42F27365D8D00C5DE5E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A42E27365D8D00C5DE5E /* CustomTextField.swift */; };
-		F777A43B27365FCF00C5DE5E /* TokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A43A27365FCF00C5DE5E /* TokenData.swift */; };
 		F777A44127366ACD00C5DE5E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44027366ACD00C5DE5E /* LoginController.swift */; };
 		F777A44327366CA100C5DE5E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44227366CA100C5DE5E /* LoginViewModel.swift */; };
 		F777A44527366CE000C5DE5E /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44427366CE000C5DE5E /* LoginService.swift */; };
@@ -80,8 +78,6 @@
 		082C33ABB0B91C7915840AEB /* Pods-Boutiqaat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boutiqaat.release.xcconfig"; path = "Target Support Files/Pods-Boutiqaat/Pods-Boutiqaat.release.xcconfig"; sourceTree = "<group>"; };
 		54C1720A1EF58A218D79F950 /* Pods-Boutiqaat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boutiqaat.debug.xcconfig"; path = "Target Support Files/Pods-Boutiqaat/Pods-Boutiqaat.debug.xcconfig"; sourceTree = "<group>"; };
 		DDF63745884A7D452C0B42D4 /* Pods_Boutiqaat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boutiqaat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F777A42E27365D8D00C5DE5E /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = ../../../../LoginBoutiqaat/LoginBoutiqaat/Views/CustomTextField.swift; sourceTree = "<group>"; };
-		F777A43A27365FCF00C5DE5E /* TokenData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenData.swift; path = ../../../LoginBoutiqaat/LoginBoutiqaat/Models/TokenData.swift; sourceTree = "<group>"; };
 		F777A44027366ACD00C5DE5E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F777A44227366CA100C5DE5E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F777A44427366CE000C5DE5E /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -145,7 +141,6 @@
 		076BC7022729560A00914A85 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F777A43A27365FCF00C5DE5E /* TokenData.swift */,
 				076BC7072729571400914A85 /* RegisterUserModel.swift */,
 			);
 			path = Model;
@@ -214,7 +209,6 @@
 		0789B1E6272ACB5B003C6230 /* TextFieldCells */ = {
 			isa = PBXGroup;
 			children = (
-				F777A42E27365D8D00C5DE5E /* CustomTextField.swift */,
 				0789B1DD272AA5F3003C6230 /* NormalTextField.swift */,
 				0789B1E4272AC508003C6230 /* PasswordTextField.swift */,
 				0789B1E7272ACB83003C6230 /* PhoneTextField.swift */,
@@ -379,10 +373,8 @@
 			files = (
 				F777A44127366ACD00C5DE5E /* LoginController.swift in Sources */,
 				F777A44B27366D9900C5DE5E /* ForgotPasswordController.swift in Sources */,
-				F777A42F27365D8D00C5DE5E /* CustomTextField.swift in Sources */,
 				0789B1DE272AA5F3003C6230 /* NormalTextField.swift in Sources */,
 				07F0F7A827313477009A6700 /* TabBraView.swift in Sources */,
-				F777A43B27365FCF00C5DE5E /* TokenData.swift in Sources */,
 				F777A44927366D6200C5DE5E /* AttributedButton.swift in Sources */,
 				07490648272D69380049C305 /* RegisterUser.swift in Sources */,
 				07F0F79A27312694009A6700 /* MainTabController.swift in Sources */,
