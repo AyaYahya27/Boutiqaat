@@ -226,24 +226,27 @@ class RegisterViewController : NavigationView{
     
     @objc func handleRegister(){
         
-        if emailTextField.text == "" {
-            openPopUp(error: "Enter an Email")
+        if !FormValidation.checkValidEmail(email : emailTextField.text!){
+            openPopUp(error: "Enter a Valid Email")
+            return
+
+        }
+        
+        if FormValidation.checkPassword(password: passwordTextField.text!) != ""{
+            let msg = FormValidation.checkPassword(password: passwordTextField.text!)
+            openPopUp(error: msg)
             return
         }
        
-        else if passwordTextField.text == "" {
-            openPopUp(error: "Enter a password")
-            return
-        }
-        else if fullnameTextField.text == "" {
+       if fullnameTextField.text == "" {
             openPopUp(error: "Enter your Name")
             return
          }
-        else if phoneTextField.text == "" {
-            openPopUp(error: "Enter your Phone")
+        if phoneTextField.text?.count != 8 {
+            openPopUp(error: "Enter a Valid phone number")
             return
         }
-       else if selectedGender?.id == "" {
+       if selectedGender?.id == "" {
            openPopUp(error: "Select Your Gender")
            return
         }
