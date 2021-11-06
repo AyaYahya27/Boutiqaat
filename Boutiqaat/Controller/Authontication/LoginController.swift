@@ -118,27 +118,21 @@ class LoginController: NavigationView{
     
     @objc func handleLoginPressed(){
         
-        if emailTextField.text == "" || passwordTextField.text == ""{
-           openPopUp(error: "Invalid data")
-            self.popUp.okButton.addTarget(self, action: #selector(self.handleDismissWarning), for: .touchUpInside)
-//            view.addSubview(self.popup.view)
+        if !FormValidation.checkValidEmail(email: emailTextField.text!){
+            openPopUp(error: "Enter a valid email")
             return
         }
       
-            
+        if (passwordTextField.text!.count) < 6{
+            openPopUp(error: "Password Not Correct")
+            return
+        }
+        
              if let email = self.emailTextField.text, let password = self.passwordTextField.text{
                 let viewModel = LoginViewModel(username: email, password: password)
                  let isEmailValid = validateEmail(enteredEmail: email)
                  print(isEmailValid)
                  
-//                 if password.count < 6 || isEmailValid == false{
-//                     openPopUp(error: "Wrong password")
-//                     return
-//                 }
-                 if isEmailValid == false{
-                     openPopUp(error: "invalid email")
-                     return
-                 }
                 DispatchQueue.main.async {
                 viewModel.encodeTokenBody { loginStatus in
                     print(loginStatus)
