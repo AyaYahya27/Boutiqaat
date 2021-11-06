@@ -10,7 +10,7 @@ import Foundation
 
 class FormValidation{
     
-    func checkValidEmail(email: String) -> Bool{
+    static func checkValidEmail(email: String) -> Bool{
         
         let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
@@ -18,7 +18,7 @@ class FormValidation{
 
     }
     
-    func checkPassword(password : String) -> String{
+    static func checkPassword(password : String) -> String{
         
         if password == "" {
             return "Enter password"
