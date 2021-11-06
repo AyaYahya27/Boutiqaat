@@ -42,6 +42,8 @@
 		F777A44727366D2600C5DE5E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44627366D2600C5DE5E /* CustomButton.swift */; };
 		F777A44927366D6200C5DE5E /* AttributedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44827366D6200C5DE5E /* AttributedButton.swift */; };
 		F777A44B27366D9900C5DE5E /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44A27366D9900C5DE5E /* ForgotPasswordController.swift */; };
+		F777A45B27367E5100C5DE5E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A45A27367E5100C5DE5E /* CustomTextField.swift */; };
+		F777A45D27367E8F00C5DE5E /* TokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A45C27367E8F00C5DE5E /* TokenData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		F777A44627366D2600C5DE5E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F777A44827366D6200C5DE5E /* AttributedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedButton.swift; sourceTree = "<group>"; };
 		F777A44A27366D9900C5DE5E /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		F777A45A27367E5100C5DE5E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		F777A45C27367E8F00C5DE5E /* TokenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				076BC7072729571400914A85 /* RegisterUserModel.swift */,
+				F777A45C27367E8F00C5DE5E /* TokenData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				0789B1DD272AA5F3003C6230 /* NormalTextField.swift */,
 				0789B1E4272AC508003C6230 /* PasswordTextField.swift */,
 				0789B1E7272ACB83003C6230 /* PhoneTextField.swift */,
+				F777A45A27367E5100C5DE5E /* CustomTextField.swift */,
 			);
 			path = TextFieldCells;
 			sourceTree = "<group>";
@@ -376,6 +382,7 @@
 				0789B1DE272AA5F3003C6230 /* NormalTextField.swift in Sources */,
 				07F0F7A827313477009A6700 /* TabBraView.swift in Sources */,
 				F777A44927366D6200C5DE5E /* AttributedButton.swift in Sources */,
+				F777A45D27367E8F00C5DE5E /* TokenData.swift in Sources */,
 				07490648272D69380049C305 /* RegisterUser.swift in Sources */,
 				07F0F79A27312694009A6700 /* MainTabController.swift in Sources */,
 				07490644272D28B40049C305 /* GenderButton.swift in Sources */,
@@ -389,6 +396,7 @@
 				076BC6F02729560100914A85 /* ViewController.swift in Sources */,
 				F777A44727366D2600C5DE5E /* CustomButton.swift in Sources */,
 				F777A44327366CA100C5DE5E /* LoginViewModel.swift in Sources */,
+				F777A45B27367E5100C5DE5E /* CustomTextField.swift in Sources */,
 				07F0F7A427312B0D009A6700 /* CategoriesViewController.swift in Sources */,
 				07F0F79E27312AAD009A6700 /* BoutiqaatViewController.swift in Sources */,
 				07F0F7AA27316199009A6700 /* PopUpView.swift in Sources */,
