@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6F3964F174D0EBFB0D64F8DBC20E1429"
-               BuildableName = "JGProgressHUD.framework"
-               BlueprintName = "JGProgressHUD"
+               BlueprintIdentifier = "07E54A78BCF82272E99319D7F7F5E8C1"
+               BuildableName = "KeychainSwift.framework"
+               BlueprintName = "KeychainSwift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
