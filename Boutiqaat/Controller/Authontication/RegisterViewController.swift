@@ -1,9 +1,3 @@
-//
-//  RegisterViewController.swift
-//  Boutiqaat
-//
-//  Created by Aya Yahya on 27/10/2021.
-//
 
 import UIKit
 
@@ -279,7 +273,7 @@ class RegisterViewController : NavigationView{
     
     @objc func handleShowLogin(){
         
-        let controller = LoginViewController()
+        let controller = LoginController()
         navigationController?.pushViewController(controller, animated: true)
  
     }
