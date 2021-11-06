@@ -55,12 +55,6 @@ class LoginController: NavigationView{
         return button
     }()
     
-//    private let popUp: PopUpView = {
-//        let popup = PopUpView()
-//
-//        return popup
-//    }()
-    
     
     //MARK: -LIFECYCLE
     
@@ -93,14 +87,6 @@ class LoginController: NavigationView{
         buttonStack.centerX(inView: view)
         buttonStack.anchor(top: stack.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 30, paddingLeft: 20, paddingRight: 20)
     }
-    
-//    func openPopUp(error : String){
-//        popUp.errorLabel.text = error
-//        popUp.okButton.addTarget(self, action: #selector(self.closePopUp), for: .touchUpInside)
-//        view.addSubview(popUp.view)
-//        return
-//    }
-    
     
     func validateEmail(enteredEmail:String) -> Bool {
 
@@ -174,9 +160,6 @@ class LoginController: NavigationView{
         print("pressed!!")
         popUp.view.removeFromSuperview()
     }
-//    @objc func closePopUp(){
-//        popUp.view.removeFromSuperview()
-//    }
     
 }
 
