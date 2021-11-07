@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class PopUpView: UIViewController {
+class PopUpView: UIViewController{
     
    static let viewWidth = UIScreen.main.bounds.width - 80
 
