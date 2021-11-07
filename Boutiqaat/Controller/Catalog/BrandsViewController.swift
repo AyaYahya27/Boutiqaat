@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BrandsViewController: UICollectionViewController{
+class BrandsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray

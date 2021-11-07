@@ -143,7 +143,7 @@ class RegisterViewController : NavigationView{
     
     // function to set the UI view
     func configureUI(){
-        
+    
         nav(color: .white, title: "Register")  // set the navigation bar
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(handleClose))
         view.backgroundColor = #colorLiteral(red: 0.9499955773, green: 0.9446783662, blue: 0.9664382339, alpha: 1)              // set the backgroundcolor
@@ -196,6 +196,8 @@ class RegisterViewController : NavigationView{
         fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         phoneTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
+    
+    
     
     @objc func textDidChange(sender : UITextField){
 
@@ -279,6 +281,7 @@ class RegisterViewController : NavigationView{
             }else{
                 let controller = MainTabController()
                 self.navigationController?.pushViewController(controller, animated: true)
+                
             }
         }
         
@@ -299,33 +302,7 @@ class RegisterViewController : NavigationView{
      self.navigationController?.pushViewController(MainTabController(), animated: true)
        
      }
-    
-//    func openPopUp(error : String){
-//        popUp.errorLabel.text = error
-//        popUp.okButton.addTarget(self, action: #selector(self.closePopUp), for: .touchUpInside)
-//        view.addSubview(popUp.view)
-//        return
-//    }
-    
-//    @objc func closePopUp(){
-//        popUp.view.removeFromSuperview()
-//    }
-    
-//    func showSpinner(){
-//        registerButton.addSubview(loadingSpinner)
-//        loadingSpinner.startAnimating()
-//        loadingSpinner.centerX(inView: registerButton)
-//        loadingSpinner.centerY(inView: registerButton)
-//        registerButton.setTitle("", for: .normal)
-//    }
-    
-//    func hideSpinner(){
-//        loadingSpinner.removeFromSuperview()
-//
-//        loadingSpinner.stopAnimating()
-//
-//        registerButton.setTitle("REGISTER", for: .normal)
-//    }
+
 }
 
 

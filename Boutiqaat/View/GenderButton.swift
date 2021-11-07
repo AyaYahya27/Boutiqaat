@@ -10,7 +10,7 @@ import UIKit
 
 class GenderButton: UIButton{
     
-    var id : String = "ghazal"
+    var id : String = "0"
     
     override init(frame: CGRect) {
         super.init(frame: frame)

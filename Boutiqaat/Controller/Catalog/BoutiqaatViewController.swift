@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BoutiqaatViewController: UICollectionViewController{
+class BoutiqaatViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .purple
