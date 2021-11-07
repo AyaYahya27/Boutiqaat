@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyBagViewController: UICollectionViewController{
+class MyBagViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue

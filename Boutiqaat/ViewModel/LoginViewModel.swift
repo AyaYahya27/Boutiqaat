@@ -50,19 +50,19 @@ class LoginViewModel{
                         self.handleLogin(token: response)
                         completion(loginStatus)
                         //MARK: -Set the email value in user defaults
-                        UserDefaults.standard.set(self.username, forKey: "email")
-                        UserDefaults.standard.set(response, forKey: "token")
-                        UserDefaults.standard.synchronize()
-//
-                        let keychain = KeychainSwift()
-                        keychain.set(self.password, forKey: "password")
-                        print(keychain.get("password"))
-                        print(UserDefaults.standard.string(forKey: "email"))
-                        print(UserDefaults.standard.string(forKey: "token"))
-                        //MARK: -Delete the email value from user defauts
-//                        UserDefaults.standard.removeObject(forKey: "email")
+//                        UserDefaults.standard.set(self.username, forKey: "email")
+//                        UserDefaults.standard.set(response, forKey: "token")
+//                        UserDefaults.standard.synchronize()
+////
+//                        let keychain = KeychainSwift()
+//                        keychain.set(self.password, forKey: "password")
+//                        print(keychain.get("password"))
 //                        print(UserDefaults.standard.string(forKey: "email"))
-//                                UserDefaults.standard.synchronize()
+//                        print(UserDefaults.standard.string(forKey: "token"))
+                        //MARK: -Delete the email value from user defauts
+                        UserDefaults.standard.removeObject(forKey: "email")
+                        print(UserDefaults.standard.string(forKey: "email"))
+                                UserDefaults.standard.synchronize()
                     } else{
                         print(response)
                         completion(loginStatus)

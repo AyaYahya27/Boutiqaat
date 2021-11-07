@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CelebritiesViewController: UICollectionViewController{
+class CelebritiesViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .cyan
