@@ -21,6 +21,7 @@
 		076BC70A27296CB700914A85 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BC70927296CB700914A85 /* RegisterViewController.swift */; };
 		076BC70F2729701B00914A85 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BC70E2729701B00914A85 /* Pacifico-Regular.ttf */; };
 		076BC7112729707200914A85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BC7102729707200914A85 /* Constants.swift */; };
+		07812F2D2737D74200B84D93 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07812F2C2737D74200B84D93 /* ProductCard.swift */; };
 		0789B1DC272A9938003C6230 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1DB272A9938003C6230 /* NavigationView.swift */; };
 		0789B1DE272AA5F3003C6230 /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1DD272AA5F3003C6230 /* NormalTextField.swift */; };
 		0789B1E3272AA66D003C6230 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E2272AA66D003C6230 /* Extensions.swift */; };
@@ -64,6 +65,7 @@
 		076BC70927296CB700914A85 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		076BC70E2729701B00914A85 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		076BC7102729707200914A85 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		07812F2C2737D74200B84D93 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		0789B1DB272A9938003C6230 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		0789B1DD272AA5F3003C6230 /* NormalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
 		0789B1E2272AA66D003C6230 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -125,69 +127,23 @@
 		076BC6EA2729560100914A85 /* Boutiqaat */ = {
 			isa = PBXGroup;
 			children = (
+				0783C6D727391D50000927A1 /* Navigation */,
+				0783C6D127391C96000927A1 /* Authorization */,
+				0783C6CB27391249000927A1 /* Catalog */,
 				0789B1E1272AA653003C6230 /* Utils */,
 				076BC70D2729700F00914A85 /* Fonts */,
 				076BC7062729565800914A85 /* APIService */,
-				076BC7052729564600914A85 /* Controller */,
-				076BC7042729563800914A85 /* ViewModel */,
-				076BC7032729561600914A85 /* View */,
-				076BC7022729560A00914A85 /* Model */,
 				076BC6EB2729560100914A85 /* AppDelegate.swift */,
 				076BC6ED2729560100914A85 /* SceneDelegate.swift */,
 				076BC6EF2729560100914A85 /* ViewController.swift */,
 				076BC6F72729560400914A85 /* Assets.xcassets */,
 				076BC6F92729560400914A85 /* LaunchScreen.storyboard */,
+				076BC6F12729560100914A85 /* Main.storyboard */,
 				076BC6FC2729560400914A85 /* Info.plist */,
 				076BC7102729707200914A85 /* Constants.swift */,
 				073C816227300842002FFF3C /* DataModel.xcdatamodeld */,
 			);
 			path = Boutiqaat;
-			sourceTree = "<group>";
-		};
-		076BC7022729560A00914A85 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				076BC7072729571400914A85 /* RegisterUserModel.swift */,
-				F777A45C27367E8F00C5DE5E /* TokenData.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		076BC7032729561600914A85 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				07812F2B2737D6B400B84D93 /* Cards */,
-				076BC6F12729560100914A85 /* Main.storyboard */,
-				0789B1E6272ACB5B003C6230 /* TextFieldCells */,
-				07490643272D28B40049C305 /* GenderButton.swift */,
-				0789B1E9272ACE33003C6230 /* SelectGenderField.swift */,
-				07F0F7A927316199009A6700 /* PopUpView.swift */,
-				F777A44627366D2600C5DE5E /* CustomButton.swift */,
-				F777A44827366D6200C5DE5E /* AttributedButton.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		076BC7042729563800914A85 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				07490649272D711D0049C305 /* RegisterationViewModel.swift */,
-				F777A44227366CA100C5DE5E /* LoginViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		076BC7052729564600914A85 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				07F0F79827312653009A6700 /* Catalog */,
-				07F0F79527311D3B009A6700 /* Authontication */,
-				0789B1DB272A9938003C6230 /* NavigationView.swift */,
-				07F0F7A727313477009A6700 /* TabBraView.swift */,
-				F777A44A27366D9900C5DE5E /* ForgotPasswordController.swift */,
-				079FDA4827369B910030CAF2 /* FormValidationController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		076BC7062729565800914A85 /* APIService */ = {
@@ -210,8 +166,149 @@
 		07812F2B2737D6B400B84D93 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				07812F2C2737D74200B84D93 /* ProductCard.swift */,
 			);
 			path = Cards;
+			sourceTree = "<group>";
+		};
+		0783C6CB27391249000927A1 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				0783C6D027391C75000927A1 /* utils */,
+				0783C6CF27391C69000927A1 /* Conroller */,
+				0783C6CE27391C53000927A1 /* ViewModel */,
+				0783C6CD27391267000927A1 /* View */,
+				0783C6CC27391255000927A1 /* Model */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		0783C6CC27391255000927A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0783C6CD27391267000927A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07812F2B2737D6B400B84D93 /* Cards */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0783C6CE27391C53000927A1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0783C6CF27391C69000927A1 /* Conroller */ = {
+			isa = PBXGroup;
+			children = (
+				07F0F79927312694009A6700 /* MainTabController.swift */,
+				07F0F79D27312AAD009A6700 /* BoutiqaatViewController.swift */,
+				07F0F79F27312AC7009A6700 /* BrandsViewController.swift */,
+				07F0F7A127312AEC009A6700 /* CelebritiesViewController.swift */,
+				07F0F7A327312B0D009A6700 /* CategoriesViewController.swift */,
+				07F0F7A527312B2B009A6700 /* MyBagViewController.swift */,
+			);
+			path = Conroller;
+			sourceTree = "<group>";
+		};
+		0783C6D027391C75000927A1 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		0783C6D127391C96000927A1 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				0783C6D927391D9A000927A1 /* Constants */,
+				0783C6D627391CDA000927A1 /* Utils */,
+				0783C6D527391CBF000927A1 /* View */,
+				0783C6D427391CB4000927A1 /* ViewModel */,
+				0783C6D327391CAB000927A1 /* Controller */,
+				0783C6D227391CA2000927A1 /* Model */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		0783C6D227391CA2000927A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				076BC7072729571400914A85 /* RegisterUserModel.swift */,
+				F777A45C27367E8F00C5DE5E /* TokenData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0783C6D327391CAB000927A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F777A44A27366D9900C5DE5E /* ForgotPasswordController.swift */,
+				076BC70927296CB700914A85 /* RegisterViewController.swift */,
+				F777A44027366ACD00C5DE5E /* LoginController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0783C6D427391CB4000927A1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				07490649272D711D0049C305 /* RegisterationViewModel.swift */,
+				F777A44227366CA100C5DE5E /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0783C6D527391CBF000927A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0789B1E9272ACE33003C6230 /* SelectGenderField.swift */,
+				07490643272D28B40049C305 /* GenderButton.swift */,
+				F777A44627366D2600C5DE5E /* CustomButton.swift */,
+				F777A44827366D6200C5DE5E /* AttributedButton.swift */,
+				07F0F7A927316199009A6700 /* PopUpView.swift */,
+				0789B1E6272ACB5B003C6230 /* TextFieldCells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0783C6D627391CDA000927A1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				079FDA4827369B910030CAF2 /* FormValidationController.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0783C6D727391D50000927A1 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				0783C6D827391D5B000927A1 /* Controller */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		0783C6D827391D5B000927A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0789B1DB272A9938003C6230 /* NavigationView.swift */,
+				07F0F7A727313477009A6700 /* TabBraView.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0783C6D927391D9A000927A1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		0789B1E1272AA653003C6230 /* Utils */ = {
@@ -231,28 +328,6 @@
 				F777A45A27367E5100C5DE5E /* CustomTextField.swift */,
 			);
 			path = TextFieldCells;
-			sourceTree = "<group>";
-		};
-		07F0F79527311D3B009A6700 /* Authontication */ = {
-			isa = PBXGroup;
-			children = (
-				076BC70927296CB700914A85 /* RegisterViewController.swift */,
-				F777A44027366ACD00C5DE5E /* LoginController.swift */,
-			);
-			path = Authontication;
-			sourceTree = "<group>";
-		};
-		07F0F79827312653009A6700 /* Catalog */ = {
-			isa = PBXGroup;
-			children = (
-				07F0F79927312694009A6700 /* MainTabController.swift */,
-				07F0F79D27312AAD009A6700 /* BoutiqaatViewController.swift */,
-				07F0F79F27312AC7009A6700 /* BrandsViewController.swift */,
-				07F0F7A127312AEC009A6700 /* CelebritiesViewController.swift */,
-				07F0F7A327312B0D009A6700 /* CategoriesViewController.swift */,
-				07F0F7A527312B2B009A6700 /* MyBagViewController.swift */,
-			);
-			path = Catalog;
 			sourceTree = "<group>";
 		};
 		1A6CD6B0BA5B3AD447339C9B /* Frameworks */ = {
@@ -407,6 +482,7 @@
 				07F0F7A027312AC7009A6700 /* BrandsViewController.swift in Sources */,
 				076BC6F02729560100914A85 /* ViewController.swift in Sources */,
 				F777A44727366D2600C5DE5E /* CustomButton.swift in Sources */,
+				07812F2D2737D74200B84D93 /* ProductCard.swift in Sources */,
 				F777A44327366CA100C5DE5E /* LoginViewModel.swift in Sources */,
 				F777A45B27367E5100C5DE5E /* CustomTextField.swift in Sources */,
 				07F0F7A427312B0D009A6700 /* CategoriesViewController.swift in Sources */,

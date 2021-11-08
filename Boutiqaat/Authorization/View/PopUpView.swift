@@ -82,8 +82,6 @@ class PopUpView: UIViewController{
         errorLabel.centerX(inView: warningBox)
         errorLabel.anchor(top: warningImage.bottomAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 10 , width: PopUpView.viewWidth - 20 , height: 50)
         
-        
-        
         warningBox.addSubview(okButton)
                okButton.centerX(inView: warningBox)
         okButton.anchor(bottom: warningBox.bottomAnchor , paddingBottom: 10)

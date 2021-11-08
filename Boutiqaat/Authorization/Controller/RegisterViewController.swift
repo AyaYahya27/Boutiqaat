@@ -9,12 +9,6 @@ class RegisterViewController : NavigationView{
     private var selectedGender : GenderButton?
     
     
-//    private let loadingSpinner : UIActivityIndicatorView = {
-//        let spinner = UIActivityIndicatorView(style: .large)
-//        spinner.color = .white
-//        return spinner
-//    }()
-   
     
     private let emailTextField : NormalTextField = {
 
@@ -121,12 +115,7 @@ class RegisterViewController : NavigationView{
         button.addTarget(self, action: #selector(handleShowLogin), for: .touchUpInside)
         return button
     }()
-    
-//    private let  popUp: PopUpView = {
-//        let pop = PopUpView()
-//        return pop
-//    }()
-    
+
 
     
     

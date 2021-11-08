@@ -12,8 +12,6 @@ class TabBarView : UIViewController{
     func tab(color : UIColor , title: String){
         let appearance = UITabBarAppearance()
         appearance.backgroundColor = color
-       
-        
     }
     
    
