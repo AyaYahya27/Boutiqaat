@@ -8,9 +8,13 @@
 
 import UIKit
 
-class CategoriesViewController: UIViewController{
+class CategoriesViewController:  NavigationViewController{
+    
+//    let nav = NavigationViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
+        nav(color: .green, title: "sdfghjkl")
+        
         view.backgroundColor = .brown
     }
 }

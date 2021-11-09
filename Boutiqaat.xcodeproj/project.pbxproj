@@ -22,7 +22,9 @@
 		076BC70F2729701B00914A85 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BC70E2729701B00914A85 /* Pacifico-Regular.ttf */; };
 		076BC7112729707200914A85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BC7102729707200914A85 /* Constants.swift */; };
 		07812F2D2737D74200B84D93 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07812F2C2737D74200B84D93 /* ProductCard.swift */; };
-		0789B1DC272A9938003C6230 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1DB272A9938003C6230 /* NavigationView.swift */; };
+		078825E0273A89B5001F6DD0 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078825DF273A89B5001F6DD0 /* Spinner.swift */; };
+		078825E2273A8B8B001F6DD0 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078825E1273A8B8B001F6DD0 /* PopUp.swift */; };
+		0789B1DC272A9938003C6230 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1DB272A9938003C6230 /* NavigationViewController.swift */; };
 		0789B1DE272AA5F3003C6230 /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1DD272AA5F3003C6230 /* NormalTextField.swift */; };
 		0789B1E3272AA66D003C6230 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E2272AA66D003C6230 /* Extensions.swift */; };
 		0789B1E5272AC508003C6230 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E4272AC508003C6230 /* PasswordTextField.swift */; };
@@ -35,7 +37,7 @@
 		07F0F7A227312AEC009A6700 /* CelebritiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A127312AEC009A6700 /* CelebritiesViewController.swift */; };
 		07F0F7A427312B0D009A6700 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A327312B0D009A6700 /* CategoriesViewController.swift */; };
 		07F0F7A627312B2B009A6700 /* MyBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A527312B2B009A6700 /* MyBagViewController.swift */; };
-		07F0F7A827313477009A6700 /* TabBraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A727313477009A6700 /* TabBraView.swift */; };
+		07F0F7A827313477009A6700 /* TabBraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A727313477009A6700 /* TabBraViewController.swift */; };
 		07F0F7AA27316199009A6700 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A927316199009A6700 /* PopUpView.swift */; };
 		D487037016B3BAC97D27BB89 /* Pods_Boutiqaat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF63745884A7D452C0B42D4 /* Pods_Boutiqaat.framework */; };
 		F777A44127366ACD00C5DE5E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44027366ACD00C5DE5E /* LoginController.swift */; };
@@ -66,7 +68,9 @@
 		076BC70E2729701B00914A85 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		076BC7102729707200914A85 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		07812F2C2737D74200B84D93 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
-		0789B1DB272A9938003C6230 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		078825DF273A89B5001F6DD0 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		078825E1273A8B8B001F6DD0 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
+		0789B1DB272A9938003C6230 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		0789B1DD272AA5F3003C6230 /* NormalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
 		0789B1E2272AA66D003C6230 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0789B1E4272AC508003C6230 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
@@ -79,7 +83,7 @@
 		07F0F7A127312AEC009A6700 /* CelebritiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebritiesViewController.swift; sourceTree = "<group>"; };
 		07F0F7A327312B0D009A6700 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		07F0F7A527312B2B009A6700 /* MyBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagViewController.swift; sourceTree = "<group>"; };
-		07F0F7A727313477009A6700 /* TabBraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBraView.swift; sourceTree = "<group>"; };
+		07F0F7A727313477009A6700 /* TabBraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBraViewController.swift; sourceTree = "<group>"; };
 		07F0F7A927316199009A6700 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		082C33ABB0B91C7915840AEB /* Pods-Boutiqaat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boutiqaat.release.xcconfig"; path = "Target Support Files/Pods-Boutiqaat/Pods-Boutiqaat.release.xcconfig"; sourceTree = "<group>"; };
 		54C1720A1EF58A218D79F950 /* Pods-Boutiqaat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boutiqaat.debug.xcconfig"; path = "Target Support Files/Pods-Boutiqaat/Pods-Boutiqaat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 			isa = PBXGroup;
 			children = (
 				079FDA4827369B910030CAF2 /* FormValidationController.swift */,
+				078825DF273A89B5001F6DD0 /* Spinner.swift */,
+				078825E1273A8B8B001F6DD0 /* PopUp.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -298,8 +304,8 @@
 		0783C6D827391D5B000927A1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0789B1DB272A9938003C6230 /* NavigationView.swift */,
-				07F0F7A727313477009A6700 /* TabBraView.swift */,
+				0789B1DB272A9938003C6230 /* NavigationViewController.swift */,
+				07F0F7A727313477009A6700 /* TabBraViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -466,16 +472,17 @@
 				F777A44127366ACD00C5DE5E /* LoginController.swift in Sources */,
 				F777A44B27366D9900C5DE5E /* ForgotPasswordController.swift in Sources */,
 				0789B1DE272AA5F3003C6230 /* NormalTextField.swift in Sources */,
-				07F0F7A827313477009A6700 /* TabBraView.swift in Sources */,
+				07F0F7A827313477009A6700 /* TabBraViewController.swift in Sources */,
 				F777A44927366D6200C5DE5E /* AttributedButton.swift in Sources */,
 				F777A45D27367E8F00C5DE5E /* TokenData.swift in Sources */,
 				079FDA4927369B910030CAF2 /* FormValidationController.swift in Sources */,
 				07490648272D69380049C305 /* RegisterUser.swift in Sources */,
 				07F0F79A27312694009A6700 /* MainTabController.swift in Sources */,
 				07490644272D28B40049C305 /* GenderButton.swift in Sources */,
+				078825E2273A8B8B001F6DD0 /* PopUp.swift in Sources */,
 				F777A44527366CE000C5DE5E /* LoginService.swift in Sources */,
 				0789B1E5272AC508003C6230 /* PasswordTextField.swift in Sources */,
-				0789B1DC272A9938003C6230 /* NavigationView.swift in Sources */,
+				0789B1DC272A9938003C6230 /* NavigationViewController.swift in Sources */,
 				0789B1EA272ACE33003C6230 /* SelectGenderField.swift in Sources */,
 				0789B1E8272ACB83003C6230 /* PhoneTextField.swift in Sources */,
 				076BC7082729571400914A85 /* RegisterUserModel.swift in Sources */,
@@ -487,6 +494,7 @@
 				F777A45B27367E5100C5DE5E /* CustomTextField.swift in Sources */,
 				07F0F7A427312B0D009A6700 /* CategoriesViewController.swift in Sources */,
 				07F0F79E27312AAD009A6700 /* BoutiqaatViewController.swift in Sources */,
+				078825E0273A89B5001F6DD0 /* Spinner.swift in Sources */,
 				07F0F7AA27316199009A6700 /* PopUpView.swift in Sources */,
 				076BC70A27296CB700914A85 /* RegisterViewController.swift in Sources */,
 				076BC7112729707200914A85 /* Constants.swift in Sources */,

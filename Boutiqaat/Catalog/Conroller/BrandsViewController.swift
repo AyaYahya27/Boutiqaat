@@ -7,10 +7,13 @@
 
 import UIKit
 
-class BrandsViewController: UIViewController{
+class BrandsViewController:  NavigationViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray
+        nav(color: .green, title: "BRANDAS")
+        
+        view.backgroundColor = .brown
     }
 }
 

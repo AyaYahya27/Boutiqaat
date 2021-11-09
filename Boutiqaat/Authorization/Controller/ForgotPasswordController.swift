@@ -9,7 +9,7 @@ import Foundation
 
 
 import UIKit
-class ForgotPasswordController: NavigationView{
+class ForgotPasswordController: NavigationViewController{
 
     //MARK: -Properties
 

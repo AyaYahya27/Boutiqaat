@@ -13,8 +13,8 @@ class ProductCard : UIView {
     private var productName = ""
     private var productDescription = ""
     private var productPrice : Float = 0.0
-    private let width = CGFloat(180)
-    private let height = CGFloat(250)
+    var imageWidth  = CGFloat(50)
+
  
     
     init(image : UIImage, name: String , description: String , price: Float){
@@ -24,24 +24,28 @@ class ProductCard : UIView {
         productName = name
         productDescription = description
         productPrice = price
+//        imageWidth = width
         self.backgroundColor = .white
-        self.setWidth(width)
-        self.setHeight(height)
+      
+
         
         configureView()
         
     }
     
+    
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+  
     
     
     func configureView(){
        let image = productImageView(image: productImage)
         addSubview(image)
-        print(self.frame.width)
-        image.anchor(top: self.topAnchor, width: width, height: width)
+        image.anchor(top: self.topAnchor,  height: imageWidth)
     }
     
     func productImageView(image : UIImage) -> UIImageView{
@@ -54,4 +58,8 @@ class ProductCard : UIView {
         
     }
     
+    func setWidth(width : CGFloat){
+        imageWidth = width
+        
+    }
 }

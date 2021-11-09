@@ -7,10 +7,13 @@
 
 import UIKit
 
-class CelebritiesViewController: UIViewController{
+class CelebritiesViewController:  NavigationViewController{
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+       nav(color: .green, title: "sdjkl")
+        
+        view.backgroundColor = .brown
     }
 }
 

@@ -4,15 +4,14 @@
 //
 //  Created by Aya Yahya on 02/11/2021.
 //
-
+//
 import UIKit
 
-class TabBarView : UIViewController{
- 
+class TabBarViewController: UITabBarController{
+
     func tab(color : UIColor , title: String){
-        let appearance = UITabBarAppearance()
+       let appearance = UITabBarAppearance()
         appearance.backgroundColor = color
     }
-    
-   
+      
 }

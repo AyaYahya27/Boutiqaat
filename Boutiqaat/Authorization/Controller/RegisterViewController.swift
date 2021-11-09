@@ -1,12 +1,14 @@
 
 import UIKit
 
-class RegisterViewController : NavigationView{
+class RegisterViewController : NavigationViewController{
     
     
     
     private var registerationViewModel = RegisterationViewModel()
     private var selectedGender : GenderButton?
+    private var spinner = Spinner()
+    private var popup = PopUp()
     
     
     
@@ -227,27 +229,27 @@ class RegisterViewController : NavigationView{
         
         
         if !FormValidation.checkValidEmail(email : emailTextField.text!){
-            openPopUp(error: "Enter a Valid Email")
+            popup.openPopUp(error: "Enter a Valid Email", view: view)
             return
 
         }
         
         if FormValidation.checkPassword(password: passwordTextField.text!) != ""{
             let msg = FormValidation.checkPassword(password: passwordTextField.text!)
-            openPopUp(error: msg)
+            popup.openPopUp(error: msg, view: view)
             return
         }
        
        if fullnameTextField.text == "" {
-            openPopUp(error: "Enter your Name")
+           popup.openPopUp(error: "Enter your Name", view: view)
             return
          }
         if phoneTextField.text?.count != 8 {
-            openPopUp(error: "Enter a Valid phone number")
+            popup.openPopUp(error: "Enter a Valid phone number", view: view)
             return
         }
        if selectedGender?.id == "" {
-           openPopUp(error: "Select Your Gender")
+           popup.openPopUp(error: "Select Your Gender", view: view)
            return
         }
     
@@ -260,13 +262,13 @@ class RegisterViewController : NavigationView{
         registerationViewModel.phone = phoneTextField.text
         registerationViewModel.gender = selectedGender?.id
         
-        showSpinner(button: registerButton)
+        spinner.showSpinner(button: registerButton)
         
       
         registerationViewModel.callRegisterAPI(){msg , error in
             if error{
-                self.openPopUp(error: msg)
-                self.hideSpinner(button: self.registerButton, title: "Register")
+                self.popup.openPopUp(error: msg, view: self.view)
+                self.spinner.hideSpinner(button: self.registerButton, title: "Register")
             }else{
                 let controller = MainTabController()
                 self.navigationController?.pushViewController(controller, animated: true)

@@ -1,11 +1,3 @@
-//
-//  LoginController.swift
-//  Boutiqaat
-//
-//  Created by Ghazal Adnan on 06/11/2021.
-//
-
-import Foundation
 
 //
 //  ViewController.swift
@@ -17,9 +9,13 @@ import Foundation
 import UIKit
 import Alamofire
 
-class LoginController: NavigationView{
+class LoginController: NavigationViewController{
     
     //MARK: -PROPERTIES
+    
+    
+    private var spinner = Spinner()
+    private var popup = PopUp()
     
   
     
@@ -105,20 +101,19 @@ class LoginController: NavigationView{
     @objc func handleLoginPressed(){
         
         if !FormValidation.checkValidEmail(email: emailTextField.text!){
-            openPopUp(error: "Enter a valid email")
+            popup.openPopUp(error: "Enter a valid email", view: view)
             return
         }
       
         if (passwordTextField.text!.count) < 6{
-            openPopUp(error: "Password Not Correct")
+            popup.openPopUp(error: "Password Not Correct", view: view)
             return
         }
         
              if let email = self.emailTextField.text, let password = self.passwordTextField.text{
                 let viewModel = LoginViewModel(username: email, password: password)
-                 let isEmailValid = validateEmail(enteredEmail: email)
 
-                 showSpinner(button: loginButton)
+                 spinner.showSpinner(button: loginButton)
                 DispatchQueue.main.async {
                 viewModel.encodeTokenBody { loginStatus in
                     print(loginStatus)
@@ -129,9 +124,8 @@ class LoginController: NavigationView{
                         
                     } else{
                         
-                        self.openPopUp(error: "Invalid data")
-                        self.popUp.okButton.addTarget(self, action: #selector(self.handleDismissWarning), for: .touchUpInside)
-                        self.hideSpinner(button: self.loginButton, title: "Login")
+                        self.popup.openPopUp(error: "Invalid data", view: self.view)
+                        self.spinner.hideSpinner(button: self.loginButton, title: "Login")
                     }
                 }
             }
@@ -151,14 +145,13 @@ class LoginController: NavigationView{
     
     @objc func handleCreateAccount(){
                 print("Ceate account pressed")
-        let controller = RegisterViewController()
         navigationController?.popViewController(animated: true)
     }
     
     
     @objc func handleDismissWarning(){
         print("pressed!!")
-        popUp.view.removeFromSuperview()
+
     }
     
 }

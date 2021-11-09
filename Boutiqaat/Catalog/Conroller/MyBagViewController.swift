@@ -7,9 +7,12 @@
 
 import UIKit
 
-class MyBagViewController: UIViewController{
+class MyBagViewController:  NavigationViewController{
+//    let nav = NavigationViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        nav(color: .green, title: "sdfghjkl")
+        
+        view.backgroundColor = .brown
     }
 }
