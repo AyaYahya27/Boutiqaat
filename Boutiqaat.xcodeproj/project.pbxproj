@@ -48,6 +48,7 @@
 		F777A44B27366D9900C5DE5E /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44A27366D9900C5DE5E /* ForgotPasswordController.swift */; };
 		F777A45B27367E5100C5DE5E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A45A27367E5100C5DE5E /* CustomTextField.swift */; };
 		F777A45D27367E8F00C5DE5E /* TokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A45C27367E8F00C5DE5E /* TokenData.swift */; };
+		F7ADF0CA273A934C00215B7E /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADF0C9273A934C00215B7E /* SideMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		F777A44A27366D9900C5DE5E /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		F777A45A27367E5100C5DE5E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F777A45C27367E8F00C5DE5E /* TokenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenData.swift; sourceTree = "<group>"; };
+		F7ADF0C9273A934C00215B7E /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,20 +180,13 @@
 		0783C6CB27391249000927A1 /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
-				0783C6D027391C75000927A1 /* utils */,
+				F7ADF0CE273A93FA00215B7E /* Model */,
+				F7ADF0CD273A93E200215B7E /* ViewModel */,
+				F7ADF0CC273A93D300215B7E /* Utils */,
 				0783C6CF27391C69000927A1 /* Conroller */,
-				0783C6CE27391C53000927A1 /* ViewModel */,
 				0783C6CD27391267000927A1 /* View */,
-				0783C6CC27391255000927A1 /* Model */,
 			);
 			path = Catalog;
-			sourceTree = "<group>";
-		};
-		0783C6CC27391255000927A1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		0783C6CD27391267000927A1 /* View */ = {
@@ -200,13 +195,6 @@
 				07812F2B2737D6B400B84D93 /* Cards */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		0783C6CE27391C53000927A1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0783C6CF27391C69000927A1 /* Conroller */ = {
@@ -218,21 +206,15 @@
 				07F0F7A127312AEC009A6700 /* CelebritiesViewController.swift */,
 				07F0F7A327312B0D009A6700 /* CategoriesViewController.swift */,
 				07F0F7A527312B2B009A6700 /* MyBagViewController.swift */,
+				F7ADF0C9273A934C00215B7E /* SideMenuController.swift */,
 			);
 			path = Conroller;
-			sourceTree = "<group>";
-		};
-		0783C6D027391C75000927A1 /* utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = utils;
 			sourceTree = "<group>";
 		};
 		0783C6D127391C96000927A1 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				0783C6D927391D9A000927A1 /* Constants */,
+				F7ADF0CB273A93A100215B7E /* Constants */,
 				0783C6D627391CDA000927A1 /* Utils */,
 				0783C6D527391CBF000927A1 /* View */,
 				0783C6D427391CB4000927A1 /* ViewModel */,
@@ -310,13 +292,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		0783C6D927391D9A000927A1 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
 		0789B1E1272AA653003C6230 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +326,34 @@
 				082C33ABB0B91C7915840AEB /* Pods-Boutiqaat.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F7ADF0CB273A93A100215B7E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F7ADF0CC273A93D300215B7E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F7ADF0CD273A93E200215B7E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F7ADF0CE273A93FA00215B7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -497,6 +500,7 @@
 				078825E0273A89B5001F6DD0 /* Spinner.swift in Sources */,
 				07F0F7AA27316199009A6700 /* PopUpView.swift in Sources */,
 				076BC70A27296CB700914A85 /* RegisterViewController.swift in Sources */,
+				F7ADF0CA273A934C00215B7E /* SideMenuController.swift in Sources */,
 				076BC7112729707200914A85 /* Constants.swift in Sources */,
 				076BC6EC2729560100914A85 /* AppDelegate.swift in Sources */,
 				0749064A272D711D0049C305 /* RegisterationViewModel.swift in Sources */,
