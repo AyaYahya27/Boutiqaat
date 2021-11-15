@@ -123,6 +123,11 @@ extension BoutiqaatViewController{
         return cell
     }
     
+    
+    
+    
+//    ///////////////////////////////
+    
     static func carousalSectionLayout() -> NSCollectionLayoutSection{
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
 //        item.contentInsets.trailing = 16
