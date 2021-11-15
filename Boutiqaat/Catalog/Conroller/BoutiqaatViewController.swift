@@ -6,8 +6,47 @@
 //
 
 import UIKit
+import SnapKit
 
 class BoutiqaatViewController: NavigationViewController{
+    
+    //MARK: -Properties
+
+    private let womenButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemPink
+        button.setTitle("Women", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .white
+        button.setHeight(45)
+        button.setWidth(UIScreen.main.bounds.size.width/2)
+        button.addTarget(self, action: #selector(handleWomenPage), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private let menButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Men", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .white
+        button.setHeight(45)
+        button.setWidth(UIScreen.main.bounds.size.width/2)
+        button.addTarget(self, action: #selector(handleWomenPage), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    
+    let buttonIndicator: UIView = {
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.backgroundColor = UIColor.black
+    return v
+    }()
+    
+    
     
     let numberOfSections = 3
     
@@ -33,6 +72,7 @@ class BoutiqaatViewController: NavigationViewController{
         
         super.viewDidLoad()
         configureView()
+        setTimer()
 
     }
     
@@ -42,6 +82,24 @@ class BoutiqaatViewController: NavigationViewController{
         nav(color: .white, title: "Boutiqaat")
         collectionView.backgroundColor = .white
         collectionView.contentInset.top = 22
+        
+        
+        view.addSubview(womenButton)
+        womenButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        womenButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        
+        view.addSubview(menButton)
+        menButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: womenButton.rightAnchor)
+        
+        view.addSubview(buttonIndicator)
+        buttonIndicator.snp.makeConstraints { (make) in
+        make.top.equalTo(womenButton.snp.bottom)
+            make.height.equalTo(4.5)
+            make.width.equalTo(UIScreen.main.bounds.size.width/2)
+        make.centerX.equalTo(womenButton.snp.centerX)
+        }
+        
+        
         registerCollectionViewCells()
         collectionView.register(Header.self, forSupplementaryViewOfKind: BoutiqaatViewController.categoryHeaderId, withReuseIdentifier: headerId)
     }
@@ -53,6 +111,52 @@ class BoutiqaatViewController: NavigationViewController{
         collectionView.register(ProductCard.self, forCellWithReuseIdentifier: ProductCard.id)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
     }
+    
+    
+    //MARK: -Actions
+    
+    @objc func handleWomenPage(sender: UIButton){
+        if (sender == womenButton){
+            print("women pressed")
+
+            buttonIndicator.snp.remakeConstraints { (make) in
+            make.top.equalTo(sender.snp.bottom)
+                make.height.equalTo(4.5)
+                make.width.equalTo(UIScreen.main.bounds.size.width/2)
+            make.centerX.equalTo(sender.snp.centerX)
+            }
+            
+        }else {
+          print("men pressed")
+            
+            buttonIndicator.snp.remakeConstraints { (make) in
+            make.top.equalTo(sender.snp.bottom)
+                make.height.equalTo(4.5)
+                make.width.equalTo(UIScreen.main.bounds.size.width/2)
+            make.centerX.equalTo(sender.snp.centerX)
+            }
+        }
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func setTimer() {
+         let _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(autoScroll), userInfo: nil, repeats: true)
+    }
+    var x = 1
+    @objc func autoScroll() {
+        if self.x < 3 {
+          let indexPath = IndexPath(item: x, section: 0)
+          self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+          self.x = self.x + 1
+        }else{
+          self.x = 0
+          self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+        }
+        
+    }
+    
     
 }
 

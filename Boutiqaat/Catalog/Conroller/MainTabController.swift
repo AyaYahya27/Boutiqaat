@@ -6,17 +6,30 @@
 //
 
 import UIKit
+import SideMenu
 
+class MainTabController: TabBarViewController, MenuControllerDelegate{
+        
+    
 
-class MainTabController: TabBarViewController{
-    
-//   private let sideMenu: SideM
-    
+    private var sideMenu: SideMenuNavigationController?
     
     //MARK: -Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let menu = SideMenuController(with: ["Boutiqaat",
+                                                "Celebrities",
+                                                "Brands",
+                                                "Shop by Category",
+                                                "TV",
+                                                "Account",
+                                                "Contact Us",
+                                                "My Orders"])
+               menu.delegate = self
+               sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
         configureViewControllers()
     }
     
@@ -46,7 +59,9 @@ class MainTabController: TabBarViewController{
     func templateNavigationController(name: String, rootViewController: NavigationViewController)-> UINavigationController{
       
 
-        rootViewController.navigationItem.leftBarButtonItem  = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(doit))
+//        rootViewController.navigationItem.leftBarButtonItem  = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(doit))
+        
+        rootViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(handleShowMenu))
         let nav = UINavigationController(rootViewController: rootViewController)
      
         nav.tabBarItem.title = name
@@ -57,11 +72,37 @@ class MainTabController: TabBarViewController{
     }
     
     
-    @objc func doit(){
-        self.navigationController?.pushViewController(MainTabController(), animated: true)
+//    @objc func doit(){
+//        self.navigationController?.pushViewController(MainTabController(), animated: true)
+//    }
+    
+    @objc func handleShowMenu(){
+          present(sideMenu!, animated: true, completion: nil)
+      }
+    
+    func didSelectMenuItem(named: String) {
+       
+                sideMenu?.dismiss(animated: true, completion: nil)
+                
+                switch named{
+                case "Boutiqaat":
+                   print("boutiqaat")
+                    self.tabBarController?.selectedIndex = 0
+
+                    
+                case "Celebrities":
+                    self.tabBarController?.selectedIndex = 1
+                    print("pp")
+                    
+                case "Brands":
+                    self.tabBarController?.selectedIndex = 2
+                
+                default:
+                    print("Nothing to show")
+                }
+
     }
-    
-    
+
     
     
 }
