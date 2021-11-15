@@ -11,7 +11,7 @@ protocol MenuControllerDelegate{
     func didSelectMenuItem(named: String)
 }
 
-class MenuController: UITableViewController{
+class SideMenuController: UITableViewController{
     
     //MARK: -Properties
     
@@ -22,6 +22,7 @@ class MenuController: UITableViewController{
     
     init(with menuItems: [String]){
         self.menuItems = menuItems
+
         super.init(nibName: nil, bundle: nil)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 //        tableView.layer.backgroundColor = UIColor.clear.cgColor

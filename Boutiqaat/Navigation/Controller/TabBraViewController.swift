@@ -9,9 +9,12 @@ import UIKit
 
 class TabBarViewController: UITabBarController{
 
-    func tab(color : UIColor , title: String){
+    func tab(color : UIColor , tintColor: UIColor){
        let appearance = UITabBarAppearance()
         appearance.backgroundColor = color
+        tabBar.tintColor = tintColor
+        tabBar.standardAppearance = appearance
+        tabBar.backgroundColor = .black
     }
       
 }

@@ -7,9 +7,7 @@
 
 import UIKit
 
-class NavigationViewController : UITableViewController{
- 
-    
+class NavigationViewController : UICollectionViewController{
     
     func nav(color : UIColor , title: String){
         let appearance = UINavigationBarAppearance()
@@ -21,9 +19,5 @@ class NavigationViewController : UITableViewController{
         navigationItem.scrollEdgeAppearance = appearance
         navigationItem.title = title
       navigationItem.setHidesBackButton(true, animated: true)
-        
     }
-    
-   
-   
 }

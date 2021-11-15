@@ -6,16 +6,17 @@
 //
 
 import UIKit
-import DropDown
 
-class MainTabController: UITabBarController{
+
+class MainTabController: TabBarViewController{
+    
+//   private let sideMenu: SideM
     
     
     //MARK: -Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureViewControllers()
     }
     
@@ -24,19 +25,20 @@ class MainTabController: UITabBarController{
     
     func configureViewControllers(){
         
-        tabBar.backgroundColor = .black
-        tabBar.tintColor = #colorLiteral(red: 0.6842647791, green: 0.575599134, blue: 0.2034798861, alpha: 1)
-
+        tab(color : .black , tintColor: #colorLiteral(red: 0.6842647791, green: 0.575599134, blue: 0.2034798861, alpha: 1))
+        
         let boutiqaat = templateNavigationController(name: "Boutiqaat",  rootViewController: BoutiqaatViewController())
         let brands = templateNavigationController(name: "Brands",  rootViewController: BrandsViewController())
         let celebrities = templateNavigationController(name: "Celebrities", rootViewController: CelebritiesViewController())
-        
+
         let categories = templateNavigationController(name: "Categories", rootViewController: CategoriesViewController())
-        
+
         let myBag = templateNavigationController(name: "My Bag", rootViewController: MyBagViewController())
         
         
         viewControllers = [boutiqaat, brands, celebrities, categories, myBag]
+        
+        
         
         
     }
@@ -56,7 +58,7 @@ class MainTabController: UITabBarController{
     
     
     @objc func doit(){
-        
+        self.navigationController?.pushViewController(MainTabController(), animated: true)
     }
     
     
