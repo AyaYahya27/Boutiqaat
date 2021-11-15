@@ -48,7 +48,7 @@ class BoutiqaatViewController: NavigationViewController{
     
     
     
-    let numberOfSections = 3
+    let numberOfSections = 4
     
     private let cellId = "cellId"
     static let categoryHeaderId = "categoryHeaderId"
@@ -72,7 +72,7 @@ class BoutiqaatViewController: NavigationViewController{
         
         super.viewDidLoad()
         configureView()
-        setTimer()
+//        setTimer()
 
     }
     
@@ -102,6 +102,7 @@ class BoutiqaatViewController: NavigationViewController{
         
         registerCollectionViewCells()
         collectionView.register(Header.self, forSupplementaryViewOfKind: BoutiqaatViewController.categoryHeaderId, withReuseIdentifier: headerId)
+       
     }
     
     
@@ -110,6 +111,7 @@ class BoutiqaatViewController: NavigationViewController{
         collectionView.register(CelebrityCarousalCell.self, forCellWithReuseIdentifier: CelebrityCarousalCell.id)
         collectionView.register(ProductCard.self, forCellWithReuseIdentifier: ProductCard.id)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: CarouselCell.id)
     }
     
     
@@ -141,21 +143,23 @@ class BoutiqaatViewController: NavigationViewController{
         })
     }
     
-    func setTimer() {
-         let _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(autoScroll), userInfo: nil, repeats: true)
-    }
-    var x = 1
-    @objc func autoScroll() {
-        if self.x < 3 {
-          let indexPath = IndexPath(item: x, section: 0)
-          self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-          self.x = self.x + 1
-        }else{
-          self.x = 0
-          self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
-        }
-        
-    }
+//    func setTimer() {
+//         let _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(autoScroll), userInfo: nil, repeats: true)
+//    
+//    }
+//    var x = 1
+//    @objc func autoScroll() {
+//        
+//        if self.x < 3 {
+//          let indexPath = IndexPath(item: x, section: 0)
+//          self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+//          self.x = self.x + 1
+//        }else{
+//          self.x = 0
+//          self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+//        }
+//        
+//    }
     
     
 }
@@ -186,7 +190,7 @@ extension BoutiqaatViewController{
         case 0 : return cellOfCarousal(indexPath: indexPath)
         case 1 : return cellOfCelebrity(indexPath: indexPath)
         case 2 : return cellOfProuduct(indexPath: indexPath)
-        default : return cellOfProuduct(indexPath: indexPath)
+        default : return cellOfCarousal(indexPath: indexPath)
         }
       
     }
@@ -204,7 +208,7 @@ extension BoutiqaatViewController{
             case 0 : return carousalSectionLayout()
             case 1 :  return celebritiesSectionLayout()
             case 2 : return productSectionLayout()
-            default : return productSectionLayout()
+            default : return carousalSectionLayout()
             }
            
         }
@@ -222,8 +226,8 @@ extension BoutiqaatViewController{
     }
     
     func cellOfCarousal(indexPath: IndexPath) -> UICollectionViewCell{
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .blue
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
+//        cell.backgroundColor = .blue
         return cell
     }
     
@@ -234,7 +238,7 @@ extension BoutiqaatViewController{
     
     static func carousalSectionLayout() -> NSCollectionLayoutSection{
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-//        item.contentInsets.trailing = 16
+        item.contentInsets.trailing = 2
         item.contentInsets.bottom = 16
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(230)), subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
@@ -263,7 +267,7 @@ extension BoutiqaatViewController{
        item.contentInsets.trailing = 16
        item.contentInsets.bottom = 16
 
-       let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension:  .absolute(300)), subitems: [item])
+       let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension:  .absolute(400)), subitems: [item])
 
       
        let section =  NSCollectionLayoutSection(group: group)

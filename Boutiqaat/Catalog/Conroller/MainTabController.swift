@@ -10,8 +10,11 @@ import SideMenu
 
 class MainTabController: TabBarViewController, MenuControllerDelegate{
         
+    //MARK: -Properties
+    let favoriteButton = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(didTapFavorite))
     
-
+     let searchButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(didTapSearch))
+    
     private var sideMenu: SideMenuNavigationController?
     
     //MARK: -Lifecycle
@@ -57,11 +60,10 @@ class MainTabController: TabBarViewController, MenuControllerDelegate{
     }
     
     func templateNavigationController(name: String, rootViewController: NavigationViewController)-> UINavigationController{
-      
 
-//        rootViewController.navigationItem.leftBarButtonItem  = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(doit))
-        
         rootViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(handleShowMenu))
+        
+        rootViewController.navigationItem.rightBarButtonItems = [searchButton, favoriteButton]
         let nav = UINavigationController(rootViewController: rootViewController)
      
         nav.tabBarItem.title = name
@@ -71,10 +73,6 @@ class MainTabController: TabBarViewController, MenuControllerDelegate{
         
     }
     
-    
-//    @objc func doit(){
-//        self.navigationController?.pushViewController(MainTabController(), animated: true)
-//    }
     
     @objc func handleShowMenu(){
           present(sideMenu!, animated: true, completion: nil)
@@ -87,22 +85,29 @@ class MainTabController: TabBarViewController, MenuControllerDelegate{
                 switch named{
                 case "Boutiqaat":
                    print("boutiqaat")
-                    self.tabBarController?.selectedIndex = 0
 
+                    self.selectedIndex = 0
                     
                 case "Celebrities":
-                    self.tabBarController?.selectedIndex = 1
+
+                    self.selectedIndex = 1
                     print("pp")
                     
                 case "Brands":
-                    self.tabBarController?.selectedIndex = 2
+
+                    self.selectedIndex = 2
                 
                 default:
                     print("Nothing to show")
                 }
-
     }
 
+    @objc func didTapFavorite(){
+        print("favorite")
+    }
     
+    @objc func didTapSearch(){
+        print("search")
+    }
     
 }

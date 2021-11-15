@@ -12,19 +12,55 @@ class CelebrityCard: UICollectionViewCell {
     
     static let id = "CelebrityCard"
     
-    private var image : UIImageView = {
+    private var celebrityImage : UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         let image = UIImage(systemName: "heart")
-        let img = UIImageView(image: image)
-        return img
+        imageView.image = image
+        imageView.backgroundColor = .white
+        //        let img = UIImageView(image: image)
+//        imageView.setDimensions(height: 100, width: 110)
+        
+        return imageView
     }()
+    
+    private var celebrityName: UILabel = {
+           
+           let label = UILabel()
+           label.font = UIFont(name:RegisterConstants.navTitleFont, size: 14)
+           label.contentMode = .scaleAspectFill
+           label.clipsToBounds = true
+        label.text = "Noor Elghandoor Boutiqee"
+           return label
+       }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.backgroundColor = .blue
+        self.backgroundColor = .systemPink
+//        addSubview(image)
+//        image.center(inView: self)
+        configureCard(width: self.bounds.size.width)
     }
+    func configureCard(width: Double){
+//            backgroundColor = .white
+            
+            addSubview(celebrityImage)
+
+        celebrityImage.centerX(inView: self)
+        celebrityImage.anchor(top: self.topAnchor, paddingTop: 110)
+//            celebrityImage.anchor(top: topAnchor)
+        celebrityImage.setDimensions(height:150 ,width: 115)
+          
+            addSubview(celebrityName)
+        celebrityName.anchor(top: celebrityImage.bottomAnchor, left: self.leftAnchor , paddingTop: 5, paddingLeft: 5)
+            celebrityName.setDimensions(height: 20, width: 115)
+            
+        }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
 }
+
