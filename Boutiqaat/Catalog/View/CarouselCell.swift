@@ -29,6 +29,7 @@ class CarouselCell: UICollectionViewCell{
         self.backgroundColor = .systemCyan
         collectionView.dataSource = self
         collectionView.delegate = self
+        
         contentView.addSubview(collectionView)
         collectionView.backgroundColor = .white
         collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
@@ -62,7 +63,7 @@ class CarouselCell: UICollectionViewCell{
     
 }
 
-extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width , height: collectionView.frame.width / 2)
@@ -73,6 +74,11 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCard.id, for: indexPath) as! CarouselCard
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("ghazal")
+        
     }
     
     
