@@ -9,11 +9,8 @@ target 'Boutiqaat' do
   
   pod 'JGProgressHUD'
   pod 'Alamofire', '~> 5.4'
-
   pod 'KeychainSwift', '~> 19.0'
-
   pod 'SideMenu'
-
   pod 'SnapKit', '~> 5.0.0'
 
 end

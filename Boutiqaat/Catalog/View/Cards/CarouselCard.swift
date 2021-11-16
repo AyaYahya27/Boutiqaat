@@ -18,8 +18,8 @@ class CarouselCard: UICollectionViewCell{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.addSubview(image)
-        image.anchor(top: self.topAnchor,left: self.leftAnchor, width: UIScreen.main.bounds.width,  height: 220)
+//        contentView.addSubview(image)
+//        image.anchor(top: self.topAnchor, width: UIScreen.main.bounds.width,  height: 220)
         self.backgroundColor = .cyan
     }
     

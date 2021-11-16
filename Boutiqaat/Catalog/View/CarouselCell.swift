@@ -15,27 +15,31 @@ class CarouselCell: UICollectionViewCell{
      
     let collectionView : UICollectionView = {
          let layout = UICollectionViewFlowLayout()
+         layout.minimumLineSpacing = 0.0
+         layout.minimumInteritemSpacing = 0.0
          layout.scrollDirection = .horizontal
          let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width / 3)
-         cv.translatesAutoresizingMaskIntoConstraints = false
-          cv.showsHorizontalScrollIndicator = false
-         cv.register(CarouselCard.self, forCellWithReuseIdentifier: CarouselCard.id)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.showsHorizontalScrollIndicator = false
+        cv.register(CarouselCard.self, forCellWithReuseIdentifier: CarouselCard.id)
+         cv.isPagingEnabled = true
          return cv
      }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .systemCyan
+        self.backgroundColor = .green
         collectionView.dataSource = self
         collectionView.delegate = self
         
         contentView.addSubview(collectionView)
-        collectionView.backgroundColor = .white
+
+        collectionView.backgroundColor = .red
+//        collectionView.
         collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         collectionView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1).isActive = true
         
        var cardIndex = 0
@@ -67,22 +71,20 @@ class CarouselCell: UICollectionViewCell{
     
 }
 
-extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate{
+extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width , height: collectionView.frame.width / 2)
+        return CGSize(width: UIScreen.main.bounds.width  , height: collectionView.frame.width / 2)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCard.id, for: indexPath) as! CarouselCard
+        cell.frame.size.width = UIScreen.main.bounds.width
         return cell
     }
  
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("ghazal")
-        
-    }
+    
 
 }

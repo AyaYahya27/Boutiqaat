@@ -215,7 +215,7 @@ extension BoutiqaatViewController{
     
     static func carousalSectionLayout() -> NSCollectionLayoutSection{
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-        item.contentInsets.trailing = 2
+        item.contentInsets.trailing = 0
         item.contentInsets.bottom = 16
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(230)), subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
