@@ -15,10 +15,11 @@ class CarouselCell: UICollectionViewCell{
      
     let collectionView : UICollectionView = {
          let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+         layout.scrollDirection = .horizontal
          let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width / 3)
          cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.showsHorizontalScrollIndicator = false
+          cv.showsHorizontalScrollIndicator = false
          cv.register(CarouselCard.self, forCellWithReuseIdentifier: CarouselCard.id)
          return cv
      }()
@@ -29,6 +30,7 @@ class CarouselCell: UICollectionViewCell{
         self.backgroundColor = .systemCyan
         collectionView.dataSource = self
         collectionView.delegate = self
+        
         contentView.addSubview(collectionView)
         collectionView.backgroundColor = .white
         collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
@@ -39,7 +41,7 @@ class CarouselCell: UICollectionViewCell{
        var cardIndex = 0
         
          Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-             
+
              if cardIndex < 3{
                  let indexPath = IndexPath(item: cardIndex, section: 0)
                  self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
@@ -49,11 +51,14 @@ class CarouselCell: UICollectionViewCell{
                  cardIndex = 0
                  let indexPath = IndexPath(item: cardIndex, section: 0)
                  self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-              
+
              }
-             
+
         }
+       
     }
+    
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -75,5 +80,6 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
         return cell
     }
     
+
     
 }
