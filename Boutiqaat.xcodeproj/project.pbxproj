@@ -51,6 +51,8 @@
 		F777A44B27366D9900C5DE5E /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44A27366D9900C5DE5E /* ForgotPasswordController.swift */; };
 		F777A45B27367E5100C5DE5E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A45A27367E5100C5DE5E /* CustomTextField.swift */; };
 		F777A45D27367E8F00C5DE5E /* TokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A45C27367E8F00C5DE5E /* TokenData.swift */; };
+		F7AC338B274289D700496AA4 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC338A274289D700496AA4 /* CarouselCell.swift */; };
+		F7AC338D27428F3600496AA4 /* CarouselCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC338C27428F3600496AA4 /* CarouselCard.swift */; };
 		F7ADF0CA273A934C00215B7E /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADF0C9273A934C00215B7E /* SideMenuController.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,8 @@
 		F777A44A27366D9900C5DE5E /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		F777A45A27367E5100C5DE5E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F777A45C27367E8F00C5DE5E /* TokenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenData.swift; sourceTree = "<group>"; };
+		F7AC338A274289D700496AA4 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		F7AC338C27428F3600496AA4 /* CarouselCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCard.swift; sourceTree = "<group>"; };
 		F7ADF0C9273A934C00215B7E /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +184,7 @@
 			children = (
 				07812F2C2737D74200B84D93 /* ProductCard.swift */,
 				07C42704274238750073B7CB /* CelebrityCard.swift */,
+				F7AC338C27428F3600496AA4 /* CarouselCard.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -187,9 +192,9 @@
 		0783C6CB27391249000927A1 /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
-				F7ADF0CE273A93FA00215B7E /* Model */,
-				F7ADF0CD273A93E200215B7E /* ViewModel */,
-				F7ADF0CC273A93D300215B7E /* Utils */,
+				F7AC339127429CEC00496AA4 /* ViewModel */,
+				F7AC339027429CCD00496AA4 /* Model */,
+				F7AC338E27429CB000496AA4 /* Utils */,
 				0783C6CF27391C69000927A1 /* Conroller */,
 				0783C6CD27391267000927A1 /* View */,
 			);
@@ -199,6 +204,7 @@
 		0783C6CD27391267000927A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F7AC338A274289D700496AA4 /* CarouselCell.swift */,
 				07C6323A27412AFD00895144 /* CelebrityCarousalCell.swift */,
 				07C4270627423CFB0073B7CB /* SectionHeader.swift */,
 				07812F2B2737D6B400B84D93 /* Cards */,
@@ -223,7 +229,7 @@
 		0783C6D127391C96000927A1 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				F7ADF0CB273A93A100215B7E /* Constants */,
+				F7AC338627427E4300496AA4 /* Constants */,
 				0783C6D627391CDA000927A1 /* Utils */,
 				0783C6D527391CBF000927A1 /* View */,
 				0783C6D427391CB4000927A1 /* ViewModel */,
@@ -337,32 +343,32 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F7ADF0CB273A93A100215B7E /* Constants */ = {
+		F7AC338627427E4300496AA4 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		F7ADF0CC273A93D300215B7E /* Utils */ = {
+		F7AC338E27429CB000496AA4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		F7ADF0CD273A93E200215B7E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		F7ADF0CE273A93FA00215B7E /* Model */ = {
+		F7AC339027429CCD00496AA4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F7AC339127429CEC00496AA4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,9 +502,11 @@
 				07C4270727423CFB0073B7CB /* SectionHeader.swift in Sources */,
 				F777A44527366CE000C5DE5E /* LoginService.swift in Sources */,
 				0789B1E5272AC508003C6230 /* PasswordTextField.swift in Sources */,
+				F7AC338B274289D700496AA4 /* CarouselCell.swift in Sources */,
 				0789B1DC272A9938003C6230 /* NavigationViewController.swift in Sources */,
 				0789B1EA272ACE33003C6230 /* SelectGenderField.swift in Sources */,
 				07C42705274238750073B7CB /* CelebrityCard.swift in Sources */,
+				F7AC338D27428F3600496AA4 /* CarouselCard.swift in Sources */,
 				0789B1E8272ACB83003C6230 /* PhoneTextField.swift in Sources */,
 				076BC7082729571400914A85 /* RegisterUserModel.swift in Sources */,
 				07F0F7A027312AC7009A6700 /* BrandsViewController.swift in Sources */,

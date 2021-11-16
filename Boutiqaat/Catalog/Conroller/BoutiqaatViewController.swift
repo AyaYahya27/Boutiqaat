@@ -72,7 +72,6 @@ class BoutiqaatViewController: NavigationViewController{
         
         super.viewDidLoad()
         configureView()
-//        setTimer()
 
     }
     
@@ -142,25 +141,7 @@ class BoutiqaatViewController: NavigationViewController{
             self.view.layoutIfNeeded()
         })
     }
-    
-//    func setTimer() {
-//         let _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(autoScroll), userInfo: nil, repeats: true)
-//    
-//    }
-//    var x = 1
-//    @objc func autoScroll() {
-//        
-//        if self.x < 3 {
-//          let indexPath = IndexPath(item: x, section: 0)
-//          self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-//          self.x = self.x + 1
-//        }else{
-//          self.x = 0
-//          self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
-//        }
-//        
-//    }
-    
+        
     
 }
 
@@ -227,14 +208,10 @@ extension BoutiqaatViewController{
     
     func cellOfCarousal(indexPath: IndexPath) -> UICollectionViewCell{
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
-//        cell.backgroundColor = .blue
+
         return cell
     }
     
-    
-    
-    
-//    ///////////////////////////////
     
     static func carousalSectionLayout() -> NSCollectionLayoutSection{
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))

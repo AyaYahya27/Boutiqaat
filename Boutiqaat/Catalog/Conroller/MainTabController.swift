@@ -32,12 +32,19 @@ class MainTabController: TabBarViewController, MenuControllerDelegate{
                                                 "My Orders"])
                menu.delegate = self
                sideMenu = SideMenuNavigationController(rootViewController: menu)
-        sideMenu?.leftSide = true
-        configureViewControllers()
+       configureMenu()
     }
     
  
     //MARK: -Helpers
+    
+    func configureMenu(){
+        sideMenu?.leftSide = true
+        sideMenu?.presentationStyle = SideMenuPresentationStyle.menuSlideIn
+        sideMenu?.presentationStyle.presentingEndAlpha = 0.5
+        sideMenu?.menuWidth = min(view.frame.width, view.frame.height) * 0.75
+        configureViewControllers()
+    }
     
     func configureViewControllers(){
         
