@@ -15,13 +15,11 @@ class CarouselCell: UICollectionViewCell{
      
     let collectionView : UICollectionView = {
          let layout = UICollectionViewFlowLayout()
-//         layout.scrollDirection = .centeredHorizontally
-           
+        layout.scrollDirection = .horizontal
          let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
          cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
-    
-        cv.register(CarouselCard.self, forCellWithReuseIdentifier: CarouselCard.id)
+         cv.register(CarouselCard.self, forCellWithReuseIdentifier: CarouselCard.id)
          return cv
      }()
     
@@ -32,10 +30,29 @@ class CarouselCell: UICollectionViewCell{
         collectionView.dataSource = self
         collectionView.delegate = self
         contentView.addSubview(collectionView)
+        collectionView.backgroundColor = .white
         collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         collectionView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1).isActive = true
+        
+       var cardIndex = 0
+        
+         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+             
+             if cardIndex < 3{
+                 let indexPath = IndexPath(item: cardIndex, section: 0)
+                 self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+                 cardIndex += 1
+             }
+             else {
+                 cardIndex = 0
+                 let indexPath = IndexPath(item: cardIndex, section: 0)
+                 self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+              
+             }
+             
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -48,7 +65,7 @@ class CarouselCell: UICollectionViewCell{
 extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 400)
+        return CGSize(width: collectionView.frame.width , height: collectionView.frame.width / 2)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20    }
