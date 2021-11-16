@@ -8,11 +8,19 @@
 import UIKit
 
 class CarouselCard: UICollectionViewCell{
-    static let id = "carousel"
+    static let id = "CarouselCard"
+    
+    private var image : UIImageView = {
+        let image = UIImage(systemName: "heart")
+        let img = UIImageView(image: image)
+        return img
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .systemCyan
+        contentView.addSubview(image)
+        image.anchor(top: self.topAnchor,left: self.leftAnchor, width: UIScreen.main.bounds.width,  height: 220)
+        self.backgroundColor = .cyan
     }
     
     required init?(coder: NSCoder) {
