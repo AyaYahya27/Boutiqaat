@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import DynamicCodable
 
 struct BoutiqaatResponseModel: Codable{
    let data : BoutiqaatDataModel
@@ -17,7 +18,7 @@ struct BoutiqaatDataModel: Codable{
     let pageCount : Int
     let totalBlock : Int
     let layout : String
-    let payload : [BoutiqaatSections]
+    let payload : [BoutiqaatPicksDataModel]
 }
 
 struct BoutiqaatSections: Codable{
@@ -25,7 +26,7 @@ struct BoutiqaatSections: Codable{
     let name : String
     let rowCount : Int
     let recordCount : Int
-    let banners : [ProductBannerModel]
+    let banners : [BoutiqaatPicksDataModel]
 }
 
 struct SectionBanners{
@@ -38,10 +39,28 @@ struct SectionBanners{
 }
 
 struct BoutiqaatPicksDataModel: Codable{
-    let name : String
-    let rowCount : Int
-    let recordCount : Int
-    let banners : [ProductBannerModel]
+//    let name : String
+//    let rowCount : Int
+//    let recordCount : Int
+//    let banners : [ProductBannerModel]
+    let banners: [Any]
+    
+    enum CodingKeys: String, CodingKey {
+           case banners
+           
+       }
+    
+    
+    init(from decoder: Decoder) throws {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            banners = try values.decode([Any].self, forKey: .banners)
+        }
+    
+    func encode(to encoder: Encoder) throws {
+           var container = encoder.container(keyedBy: CodingKeys.self)
+           try container.encode(banners, forKey: .banners)
+           
+       }
     
 }
 
