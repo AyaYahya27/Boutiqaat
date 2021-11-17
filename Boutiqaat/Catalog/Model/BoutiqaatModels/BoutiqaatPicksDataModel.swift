@@ -14,7 +14,6 @@ struct BoutiqaatResponseModel: Codable{
 
 struct BoutiqaatDataModel: Codable{
   
-    
     let pageCount : Int
     let totalBlock : Int
     let layout : String
@@ -22,11 +21,20 @@ struct BoutiqaatDataModel: Codable{
 }
 
 struct BoutiqaatSections: Codable{
-    
+ 
     let name : String
     let rowCount : Int
     let recordCount : Int
-//    let banners : []
+    let banners : [ProductBannerModel]
+}
+
+struct SectionBanners{
+    let key: String
+    let id: String
+    let label: String
+    let position: Int
+    let imageUrl: String
+   
 }
 
 struct BoutiqaatPicksDataModel: Codable{
@@ -39,16 +47,23 @@ struct BoutiqaatPicksDataModel: Codable{
 
 
 struct ProductBannerModel: Codable{
+    
+    let key : String
     let id : String
     let label : String
     let imageUrl : String
-    let brandName : String
-    let mrp : String
-    let specialPrice : String
-    let currrencyCode : String
-    let discountPercent : String
-    let qtyAvailable :  String
-    let isSaleable : String
-    let qtyAllowed : String
-    let exclusive : String
+    let brandName : String?
+    let mrp : String?
+    let specialPrice : String?
+    let currrencyCode : String?
+    let discountPercent : String?
+    let qtyAvailable :  String?
+    let isSaleable : String?
+    let qtyAllowed : String?
+    let exclusive : String?
+    
+    
+
+  
+   
 }
