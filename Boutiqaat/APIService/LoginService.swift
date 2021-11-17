@@ -24,7 +24,7 @@ struct TokenBody: Codable{
             AF.request(url, method: .post, parameters: params, encoding: URLEncoding.queryString)
                 .responseJSON { response in
                     switch (response.response?.statusCode) {
-                        
+                                          
                     case 200:
                         do{
                             if let generatedToken = try JSONDecoder().decode(TokenData.self, from: response.data!).token{

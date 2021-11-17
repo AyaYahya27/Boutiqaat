@@ -31,6 +31,9 @@
 		0789B1E8272ACB83003C6230 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E7272ACB83003C6230 /* PhoneTextField.swift */; };
 		0789B1EA272ACE33003C6230 /* SelectGenderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E9272ACE33003C6230 /* SelectGenderField.swift */; };
 		079FDA4927369B910030CAF2 /* FormValidationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FDA4827369B910030CAF2 /* FormValidationController.swift */; };
+		07C2BE162743CD58003E4CB2 /* BoutiqaatPicksDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C2BE152743CD58003E4CB2 /* BoutiqaatPicksDataModel.swift */; };
+		07C2BE192743DACF003E4CB2 /* BoutiqaatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C2BE182743DACF003E4CB2 /* BoutiqaatViewModel.swift */; };
+		07C2BE1B2743DAFB003E4CB2 /* GetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C2BE1A2743DAFB003E4CB2 /* GetRequest.swift */; };
 		07C42705274238750073B7CB /* CelebrityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C42704274238750073B7CB /* CelebrityCard.swift */; };
 		07C4270727423CFB0073B7CB /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4270627423CFB0073B7CB /* SectionHeader.swift */; };
 		07C6323B27412AFD00895144 /* CelebrityCarousalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6323A27412AFD00895144 /* CelebrityCarousalCell.swift */; };
@@ -83,6 +86,9 @@
 		0789B1E7272ACB83003C6230 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		0789B1E9272ACE33003C6230 /* SelectGenderField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderField.swift; sourceTree = "<group>"; };
 		079FDA4827369B910030CAF2 /* FormValidationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationController.swift; sourceTree = "<group>"; };
+		07C2BE152743CD58003E4CB2 /* BoutiqaatPicksDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutiqaatPicksDataModel.swift; sourceTree = "<group>"; };
+		07C2BE182743DACF003E4CB2 /* BoutiqaatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutiqaatViewModel.swift; sourceTree = "<group>"; };
+		07C2BE1A2743DAFB003E4CB2 /* GetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequest.swift; sourceTree = "<group>"; };
 		07C42704274238750073B7CB /* CelebrityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityCard.swift; sourceTree = "<group>"; };
 		07C4270627423CFB0073B7CB /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		07C6323A27412AFD00895144 /* CelebrityCarousalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityCarousalCell.swift; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 			children = (
 				07490647272D69380049C305 /* RegisterUser.swift */,
 				F777A44427366CE000C5DE5E /* LoginService.swift */,
+				07C2BE1A2743DAFB003E4CB2 /* GetRequest.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -192,8 +199,8 @@
 		0783C6CB27391249000927A1 /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
-				F7AC339127429CEC00496AA4 /* ViewModel */,
-				F7AC339027429CCD00496AA4 /* Model */,
+				07C2BE172743DAB8003E4CB2 /* ViewModel */,
+				07C2BE132743C9E6003E4CB2 /* Model */,
 				F7AC338E27429CB000496AA4 /* Utils */,
 				0783C6CF27391C69000927A1 /* Conroller */,
 				0783C6CD27391267000927A1 /* View */,
@@ -326,6 +333,30 @@
 			path = TextFieldCells;
 			sourceTree = "<group>";
 		};
+		07C2BE132743C9E6003E4CB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07C2BE142743C9EE003E4CB2 /* BoutiqaatModels */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		07C2BE142743C9EE003E4CB2 /* BoutiqaatModels */ = {
+			isa = PBXGroup;
+			children = (
+				07C2BE152743CD58003E4CB2 /* BoutiqaatPicksDataModel.swift */,
+			);
+			path = BoutiqaatModels;
+			sourceTree = "<group>";
+		};
+		07C2BE172743DAB8003E4CB2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				07C2BE182743DACF003E4CB2 /* BoutiqaatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		1A6CD6B0BA5B3AD447339C9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,20 +386,6 @@
 			children = (
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		F7AC339027429CCD00496AA4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F7AC339127429CEC00496AA4 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,6 +517,7 @@
 				07C6323B27412AFD00895144 /* CelebrityCarousalCell.swift in Sources */,
 				078825E2273A8B8B001F6DD0 /* PopUp.swift in Sources */,
 				07C4270727423CFB0073B7CB /* SectionHeader.swift in Sources */,
+				07C2BE192743DACF003E4CB2 /* BoutiqaatViewModel.swift in Sources */,
 				F777A44527366CE000C5DE5E /* LoginService.swift in Sources */,
 				0789B1E5272AC508003C6230 /* PasswordTextField.swift in Sources */,
 				F7AC338B274289D700496AA4 /* CarouselCell.swift in Sources */,
@@ -511,12 +529,14 @@
 				076BC7082729571400914A85 /* RegisterUserModel.swift in Sources */,
 				07F0F7A027312AC7009A6700 /* BrandsViewController.swift in Sources */,
 				076BC6F02729560100914A85 /* ViewController.swift in Sources */,
+				07C2BE162743CD58003E4CB2 /* BoutiqaatPicksDataModel.swift in Sources */,
 				F777A44727366D2600C5DE5E /* CustomButton.swift in Sources */,
 				07812F2D2737D74200B84D93 /* ProductCard.swift in Sources */,
 				F777A44327366CA100C5DE5E /* LoginViewModel.swift in Sources */,
 				F777A45B27367E5100C5DE5E /* CustomTextField.swift in Sources */,
 				07F0F7A427312B0D009A6700 /* CategoriesViewController.swift in Sources */,
 				07F0F79E27312AAD009A6700 /* BoutiqaatViewController.swift in Sources */,
+				07C2BE1B2743DAFB003E4CB2 /* GetRequest.swift in Sources */,
 				078825E0273A89B5001F6DD0 /* Spinner.swift in Sources */,
 				07F0F7AA27316199009A6700 /* PopUpView.swift in Sources */,
 				076BC70A27296CB700914A85 /* RegisterViewController.swift in Sources */,

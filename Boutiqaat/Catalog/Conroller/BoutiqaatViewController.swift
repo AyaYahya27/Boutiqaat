@@ -11,6 +11,8 @@ import SnapKit
 class BoutiqaatViewController: NavigationViewController{
     
     //MARK: -Properties
+    
+    private var boutiqaatViewModel = BoutiqaatViewModel()
 
     private let womenButton: UIButton = {
         let button = UIButton()
@@ -71,6 +73,7 @@ class BoutiqaatViewController: NavigationViewController{
         
         
         super.viewDidLoad()
+        boutiqaatViewModel.callApi()
         configureView()
 
     }

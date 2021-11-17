@@ -15,17 +15,17 @@ struct RegisterUser {
    
     static func register (withCredentials credentials : Dictionary<String, Any> , withHeaders: HTTPHeaders, url: String ,  completion: @escaping(_ msg :String, _ error : Bool) -> Void) {
         
-       DispatchQueue.main.async {
-            
-            let headers : HTTPHeaders = withHeaders
-            let params : Parameters =  credentials
-          
-            let request =  AF.request(url , method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers )
+        DispatchQueue.main.async {
+                   
+                   let headers : HTTPHeaders = withHeaders
+                   let params : Parameters =  credentials
+                 
+                   let request =  AF.request(url , method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers )
 
-            request.responseJSON{ response  in
+                   request.responseJSON{ response  in
 
-                switch response.result{
-                case .success(let value ):
+                       switch response.result{
+                       case .success(let value ):
                     let JSON = value as! NSDictionary
                     if  response.response?.statusCode == 200    {
                         let status = JSON["login_status"]
