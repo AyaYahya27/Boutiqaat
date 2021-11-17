@@ -7,6 +7,28 @@
 
 import Foundation
 
+struct BoutiqaatResponseModel: Codable{
+   let data : BoutiqaatDataModel
+    let defaultBlockCount : Int
+}
+
+struct BoutiqaatDataModel: Codable{
+  
+    
+    let pageCount : Int
+    let totalBlock : Int
+    let layout : String
+    let payload : [BoutiqaatSections]
+}
+
+struct BoutiqaatSections: Codable{
+    
+    let name : String
+    let rowCount : Int
+    let recordCount : Int
+//    let banners : []
+}
+
 struct BoutiqaatPicksDataModel: Codable{
     let name : String
     let rowCount : Int

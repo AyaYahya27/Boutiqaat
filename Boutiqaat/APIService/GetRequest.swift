@@ -10,22 +10,18 @@ import Alamofire
 
 class GetRequest{
     
-    static func getRequest(withHeaders: HTTPHeaders, withParameters: Dictionary<String, Any>, url: URL ,  completion: @escaping( _ response : NSDictionary? ,_ errorMsg: String?, _  error : Bool) -> Void){
+    static func getRequestWithoutParameters(withHeaders: HTTPHeaders,  url: URL ,  completion: @escaping( _ response : Any? ,_ errorMsg: String?, _  error : Bool) -> Void){
         
         DispatchQueue.main.async {
             
-            let request =  AF.request(url , method: .get, parameters: withParameters, encoding: JSONEncoding.default, headers: withHeaders )
+            let request =  AF.request(url , method: .get,  encoding: JSONEncoding.default, headers: withHeaders )
             
             request.responseJSON{ response  in
-                
-                print("response \n" )
-                print(response)
-                
+//                print(response)
                 switch response.result{
                 case .success(let value ):
                     if  response.response?.statusCode == 200    {
-                        let JSON = value as! NSDictionary
-                        completion(JSON, nil,  false)
+                        completion(response.data, nil,  false)
                     }
                 case .failure(let error):
                     completion(nil, error.localizedDescription,  true)
@@ -39,24 +35,3 @@ class GetRequest{
     }
 }
 
-//
-//
-//switch response.result{
-//case .success(let value ):
-//let JSON = value as! NSDictionary
-//if  response.response?.statusCode == 200    {
-// let status = JSON["login_status"]
-//
-// if status as! String == "error"{
-//     completion(JSON["message"] as! String , true)
-// }else{
-//     completion ("success" , false)
-// }
-//}else{
-// completion(JSON["message"] as! String , true)
-//}
-//
-//case .failure(let error):
-//print(error)
-//completion(error.localizedDescription, true)
-//
