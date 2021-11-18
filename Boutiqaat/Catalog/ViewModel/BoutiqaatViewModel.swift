@@ -10,8 +10,11 @@ import Alamofire
 
 class BoutiqaatViewModel{
     
-    func callApi(){
-
+   
+    var apiResponse = [ProductBannerModel]()
+    var test : Int = 0
+   
+    func callApi(completion: @escaping(Int) -> Void)  {
         let headers : HTTPHeaders = [:]
         let url = URL(string: "https://magnumopus.boutiqaat.com/magnumopus/v1/landingpage/layout/home-women/app/1-kw/en?page=1")!
         
@@ -21,11 +24,12 @@ class BoutiqaatViewModel{
                 print(errorMsg!)
             }else {
                 let decoder = JSONDecoder()
-
                 do {
                     let data =  try
                     decoder.decode( BoutiqaatResponseModel.self, from: response as! Data )
-                print(data)
+                    self.test = 6
+                    completion(self.test)
+                  
                 }catch {
                     print(error)
                 }
@@ -34,6 +38,17 @@ class BoutiqaatViewModel{
 
         }
         
+    }
+    
+    func doit(array : BoutiqaatSections){
+        let decoder = JSONDecoder()
+        do {
+           let jsonData = try JSONEncoder().encode(array)
+           let aa = try decoder.decode( ProductBanners.self, from: jsonData )
+            print(aa.banners[0])
+        } catch {
+            print(error)
+        }
     }
     
     

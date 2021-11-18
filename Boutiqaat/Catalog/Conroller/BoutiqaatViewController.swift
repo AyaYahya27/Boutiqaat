@@ -67,15 +67,22 @@ class BoutiqaatViewController: NavigationViewController{
     required init?(coder: NSCoder) {
        fatalError("init(coder:) has not been implemented")
     }
-    
+   
 
     override func viewDidLoad() {
         
         
         super.viewDidLoad()
-        boutiqaatViewModel.callApi()
+        boutiqaatViewModel.callApi { tst in
+//            print(tst)
+//            self.collectionView.reloadSections([0,1])
+            self.collectionView.reloadData()
+//            self.configureView()
+        }
+        
+       
         configureView()
-
+      
     }
     
     
@@ -85,14 +92,14 @@ class BoutiqaatViewController: NavigationViewController{
         collectionView.backgroundColor = .white
         collectionView.contentInset.top = 22
         
-        
+
         view.addSubview(womenButton)
         womenButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         womenButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        
+
         view.addSubview(menButton)
         menButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: womenButton.rightAnchor)
-        
+
         view.addSubview(buttonIndicator)
         buttonIndicator.snp.makeConstraints { (make) in
         make.top.equalTo(womenButton.snp.bottom)
@@ -221,9 +228,10 @@ extension BoutiqaatViewController{
         item.contentInsets.trailing = 0
         item.contentInsets.bottom = 16
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(230)), subitems: [item])
+       
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .paging
-        
+       
         return section
     }
 }

@@ -19,7 +19,6 @@ class GetRequest{
 
             
             request.responseJSON{ response  in
-//                print(response)
                 switch response.result{
                 case .success(let value ):
                     if  response.response?.statusCode == 200    {
@@ -31,7 +30,7 @@ class GetRequest{
                     completion(nil, error.localizedDescription,  true)
                 }
                 
-            }
+           }
 
             
         }
