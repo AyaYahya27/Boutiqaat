@@ -16,7 +16,7 @@ class BoutiqaatViewController: NavigationViewController{
     
 
     //MARK: -Properties
-    let numberOfSections = 1
+    let numberOfSections = 2
     private var boutiqaatViewModel = BoutiqaatViewModel()
     
     
@@ -75,8 +75,9 @@ class BoutiqaatViewController: NavigationViewController{
 
          
           boutiqaatViewModel.callApi { payload in
-              
+
               self.collectionView.reloadData()
+
           }
           configureView()
   
@@ -208,15 +209,22 @@ extension BoutiqaatViewController{
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch section {
-                case 0 :  return numberOfCarousalSections()
-                case 1 :  return numberOfCelebrityCards()
-        //        case 2 :  return numberOfProuductCards()
-                default: return 20
-                }
+
+              case 0 :  return numberOfCarousalSections()
+              case 1 :  return numberOfCelebrityCards()
+      //        case 2 :  return numberOfProuductCards()
+            default: return 0
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        cellOfCarousal(indexPath: indexPath)
+       
+        switch indexPath.section {
+               case 0 : return cellOfCarousal(indexPath: indexPath)
+              case 1 : return cellOfCelebrity(indexPath: indexPath)
+       //        case 2 : return cellOfProuduct(indexPath: indexPath)
+                default : return cellOfCarousal(indexPath: indexPath)
+               }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -226,93 +234,53 @@ extension BoutiqaatViewController{
     static func createLayout() -> UICollectionViewCompositionalLayout{
     
             let layout =  UICollectionViewCompositionalLayout { sectionNumber, env in
-                return carousalSectionLayout()
+                switch sectionNumber {
+                         case 0 : return carousalSectionLayout()
+                          case 1 :  return celebritiesSectionLayout()
+              //            case 2 : return productSectionLayout()
+                         default : return carousalSectionLayout()
+                          }
+              
     
             }
     
             return layout
         }
-    
-  
 }
-//
-//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        switch section {
-//        case 0 :  return numberOfCarousalSections()
-//        case 1 :  return numberOfCelebrityCards()
-//        case 2 :  return numberOfProuductCards()
-//        default: return 20
-//        }
-//
-//    }
-//
+
 //    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 //        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
 //        header.backgroundColor = .darkGray
 //        return header
 //    }
-//
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//        switch indexPath.section {
-//        case 0 : return cellOfCarousal(indexPath: indexPath)
-//        case 1 : return cellOfCelebrity(indexPath: indexPath)
-//        case 2 : return cellOfProuduct(indexPath: indexPath)
-//        default : return cellOfCarousal(indexPath: indexPath)
-//        }
-//
-//    }
-//
-//
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        numberOfSections
-//    }
-//
-//    static func createLayout() -> UICollectionViewCompositionalLayout{
-//
-//        let layout =  UICollectionViewCompositionalLayout { sectionNumber, env in
-//
-//            switch sectionNumber {
-//            case 0 : return carousalSectionLayout()
-//            case 1 :  return celebritiesSectionLayout()
-//            case 2 : return productSectionLayout()
-//            default : return carousalSectionLayout()
-//            }
-//
-//        }
-//
-//        return layout
-//    }
-//
-//}
-//
+
 // MARK: - Carousal Layout configuration
 
 
 extension BoutiqaatViewController{
     func numberOfCarousalSections () -> Int{
         if !boutiqaatViewModel.payload.isEmpty{
-            
-            return 1}
-        
-        return 0
+            return 1
+        }
+        else{
+            return 0
+        }
+    }
+
+     func cellOfCarousal(indexPath: IndexPath) -> UICollectionViewCell{
    
-       }
-    func cellOfCarousal(indexPath: IndexPath) -> UICollectionViewCell{
-   
-               let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
         
         if !boutiqaatViewModel.payload.isEmpty{
-            
+  
         cell.carousalPayload = boutiqaatViewModel.payload[0]
-        print(boutiqaatViewModel.payload.count)
 
         }
-               return cell
-   
+            return cell
+
        }
     
-    static func carousalSectionLayout() -> NSCollectionLayoutSection{
+     static func carousalSectionLayout() -> NSCollectionLayoutSection{
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
         
            item.contentInsets.bottom = 16
@@ -321,21 +289,48 @@ extension BoutiqaatViewController{
            let section = NSCollectionLayoutSection(group: group)
            return section
        }
-    
-    //MARK: -CELEBRITY SECTION CONFIG
-    func  numberOfCelebrityCards () -> Int{
-            return 2
-        }
+
 }
 
 
-//// MARK: - Celebrity section layout configuration
-//
-//extension BoutiqaatViewController{
-//    func  numberOfCelebrityCards () -> Int{
-//        return 2
-//    }
-//
+// MARK: - Celebrity section layout configuration
+
+extension BoutiqaatViewController{
+    func  numberOfCelebrityCards () -> Int{
+        
+        if !boutiqaatViewModel.payload.isEmpty{
+            return 2
+        }
+        else{
+            return 0
+        }
+    }
+    
+    
+        func cellOfCelebrity(indexPath: IndexPath) -> UICollectionViewCell{
+            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCarousalCell.id, for: indexPath) as! CelebrityCarousalCell
+            if  !self.boutiqaatViewModel.payload.isEmpty {
+                cell.celebrityPayload = boutiqaatViewModel.payload[1]
+            }
+            return cell
+    
+        }
+    
+    static func celebritiesSectionLayout() -> NSCollectionLayoutSection{
+          let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5)))
+   
+          item.contentInsets.bottom = 16
+   
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension:  .absolute(UIScreen.main.bounds.width)), subitems: [item])
+  
+          let section =  NSCollectionLayoutSection(group: group)
+   ////        section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: categoryHeaderId, alignment: .topLeading)]
+          return section
+   //
+       }
+}
+
+
 //    func cellOfCelebrity(indexPath: IndexPath) -> UICollectionViewCell{
 //        if  !self.boutiqaatViewModel.payload.isEmpty {
 //            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCarousalCell.id, for: indexPath) as! CelebrityCarousalCell

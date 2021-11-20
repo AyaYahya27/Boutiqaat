@@ -11,7 +11,6 @@ class CarouselCard: UICollectionViewCell{
     static let id = "CarouselCard"
   
     var imageView : UIImageView = {
-//        let image = UIImage(systemName: "heart")
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -31,5 +30,5 @@ class CarouselCard: UICollectionViewCell{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-  
+    
 }

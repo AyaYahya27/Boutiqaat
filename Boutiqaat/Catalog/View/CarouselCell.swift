@@ -12,6 +12,7 @@ class CarouselCell: UICollectionViewCell{
     static let id = "CarouselCell"
     var carousalPayload : BoutiqaatSection? = nil
     private  var image = UIImage()
+    private var cardNumber = 0
 
     let collectionView : UICollectionView = {
          let layout = UICollectionViewFlowLayout()
@@ -39,8 +40,9 @@ class CarouselCell: UICollectionViewCell{
         collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         collectionView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1).isActive = true
-
-      setTimer()
+            
+        
+       setTimer()
 
     }
     
@@ -48,9 +50,11 @@ class CarouselCell: UICollectionViewCell{
     {
         var cardIndex = 0
 
-          Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+          Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
 
-              if cardIndex < (self.carousalPayload?.banners.count)!{
+
+              if cardIndex < self.cardNumber {
+ 
                   let indexPath = IndexPath(item: cardIndex, section: 0)
                   self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
                   cardIndex += 1
@@ -69,13 +73,14 @@ class CarouselCell: UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
 
+
     func load(url: URL) {
             DispatchQueue.global().async { [weak self] in
                 if let data = try? Data(contentsOf: url) {
                     if let image = UIImage(data: data) {
                         
                             self?.image = image
-//                            self?.collectionView.reloadData()
+
                         
                     }
                 }
@@ -92,7 +97,8 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       
         if  carousalPayload != nil {
-            print(carousalPayload?.banners.count)
+
+            cardNumber = (carousalPayload?.banners.count)!
             return (carousalPayload?.banners.count)!
         }else{
             return 0
@@ -104,8 +110,10 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCard.id, for: indexPath) as! CarouselCard
         
         if  carousalPayload != nil {
-            load(url: URL(string: (carousalPayload?.banners[indexPath.row].imageUrl)!)!)
+            
+            load(url: URL(string: (self.carousalPayload?.banners[indexPath.row].imageUrl)!)!)
             cell.imageView.image = image
+
         }
         return cell
     }
