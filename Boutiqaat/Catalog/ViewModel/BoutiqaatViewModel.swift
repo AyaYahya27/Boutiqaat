@@ -10,9 +10,9 @@ import Alamofire
 
 class BoutiqaatViewModel{
     
-    var payload = [BoutiqaatSections]()
+    var payload = [BoutiqaatSection]()
  
-    func callApi(completion: @escaping([BoutiqaatSections]) -> Void)  {
+    func callApi(completion: @escaping([BoutiqaatSection]) -> Void)  {
         let headers : HTTPHeaders = [:]
         let url = URL(string: "https://magnumopus.boutiqaat.com/magnumopus/v1/landingpage/layout/home-women/app/1-kw/en?page=1")!
         

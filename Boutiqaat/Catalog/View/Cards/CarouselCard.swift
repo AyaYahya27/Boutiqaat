@@ -11,26 +11,25 @@ class CarouselCard: UICollectionViewCell{
     static let id = "CarouselCard"
   
     var imageView : UIImageView = {
-        let image = UIImage(systemName: "heart")
-        let img = UIImageView(image: image)
-        return img
+//        let image = UIImage(systemName: "heart")
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = .white
+        imageView.setDimensions(height: UIScreen.main.bounds.width / 2 ,width: UIScreen.main.bounds.width)
+        return imageView
     }()
-    
-    func viewImage (image : UIImage){
-        imageView.image = image
-        self.contentView.reloadInputViews()
-    }
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        contentView.addSubview(image)
-//        image.anchor(top: self.topAnchor, width: UIScreen.main.bounds.width,  height: 220)
-        self.backgroundColor = .cyan
+       contentView.addSubview(imageView)
+       
+       imageView.anchor(top: self.topAnchor)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
   
 }

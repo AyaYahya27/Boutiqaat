@@ -20,11 +20,11 @@ struct BoutiqaatDataModel: Codable{
     let pageCount : Int
     let totalBlock : Int
     let layout : String
-    let payload : [BoutiqaatSections]
+    let payload : [BoutiqaatSection]
  
 }
 
-struct BoutiqaatSections: Codable{
+struct BoutiqaatSection: Codable{
     let type : String
     let name : String
     let rowCount : Int
