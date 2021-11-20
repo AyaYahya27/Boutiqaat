@@ -74,17 +74,8 @@ class BoutiqaatViewController: NavigationViewController{
         
         super.viewDidLoad()
         boutiqaatViewModel.callApi { payload in
-            self.collectionView.reloadSections([0,1, 2])
-//            self.collectionView.reloadData()
-//            print("/////////////////////////////")
-//
-//            print( self.boutiqaatViewModel.payload[0].banners[0])
-//            print("/////////////////////////////")
-//            self.registerCollectionViewCells()
-
+            self.collectionView.reloadData()
         }
-        
-       
         configureView()
       
     }
@@ -218,9 +209,6 @@ extension BoutiqaatViewController{
     
     func numberOfCarousalSections () -> Int{
         if  !self.boutiqaatViewModel.payload.isEmpty {
-//            print("/////////////")
-//            print(self.boutiqaatViewModel.payload[0].banners.count)
-//            print("/////////////")
             return self.boutiqaatViewModel.payload[0].banners.count
         }
         else{
@@ -264,9 +252,6 @@ extension BoutiqaatViewController{
 extension BoutiqaatViewController{
     func  numberOfCelebrityCards () -> Int{
         if  !self.boutiqaatViewModel.payload.isEmpty {
-//            print("/////////////")
-//            print(self.boutiqaatViewModel.payload[1].banners.count)
-//            print("/////////////")
             return self.boutiqaatViewModel.payload[1].banners.count
         }
         else{
@@ -312,9 +297,6 @@ extension BoutiqaatViewController{
 extension BoutiqaatViewController{
     func  numberOfProuductCards () -> Int{
         if  !self.boutiqaatViewModel.payload.isEmpty {
-            print("/////////////")
-            print(self.boutiqaatViewModel.payload[2].banners.count)
-            print("/////////////")
             return self.boutiqaatViewModel.payload[2].banners.count
         }
         else{
@@ -326,12 +308,8 @@ extension BoutiqaatViewController{
         if  !self.boutiqaatViewModel.payload.isEmpty {
             let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCard.id, for: indexPath) as! ProductCard
             cell.backgroundColor = .gray
-            cell.productName = self.boutiqaatViewModel.payload[2].banners[indexPath.row].label
-            print("/////////////////////////////")
-
-            print( self.boutiqaatViewModel.payload[2].banners[indexPath.row].label)
-            print("/////////////////////////////")
-//            print(self.boutiqaatViewModel.payload[2].banners[indexPath.row].label)
+            cell.descriptionLabel.text =  self.boutiqaatViewModel.payload[2].banners[indexPath.row].label
+          
             return cell
           
         }

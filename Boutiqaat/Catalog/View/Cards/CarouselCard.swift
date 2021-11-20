@@ -16,6 +16,11 @@ class CarouselCard: UICollectionViewCell{
         return img
     }()
     
+    func viewImage (image : UIImage){
+        imageView.image = image
+        self.contentView.reloadInputViews()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
 //        contentView.addSubview(image)

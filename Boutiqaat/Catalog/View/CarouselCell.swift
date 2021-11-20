@@ -74,6 +74,8 @@ class CarouselCell: UICollectionViewCell{
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async {
                             self?.image = image
+                            self?.collectionView.reloadData()
+                            
                         }
                     }
                 }

@@ -48,7 +48,7 @@ class ProductCard :UICollectionViewCell{
     }()
     
     
-    private var descriptionLabel : UILabel = {
+     var descriptionLabel : UILabel = {
         let label = UILabel()
         let font = UIFont(descriptor: UIFontDescriptor(name: RegisterConstants.navTitleFont, size: 13), size: 13)
         label.attributedText = NSAttributedString(string: "description" , attributes:  [.foregroundColor: UIColor(white: 0, alpha: 0.5), .font :font , .backgroundColor: CGColor(red: 1, green: 1, blue: 1, alpha: 1)])
