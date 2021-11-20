@@ -218,9 +218,7 @@ extension BoutiqaatViewController{
     
     func numberOfCarousalSections () -> Int{
         if  !self.boutiqaatViewModel.payload.isEmpty {
-//            print("/////////////")
-//            print(self.boutiqaatViewModel.payload[0].banners.count)
-//            print("/////////////")
+             
             return self.boutiqaatViewModel.payload[0].banners.count
         }
         else{
@@ -235,6 +233,7 @@ extension BoutiqaatViewController{
 
             let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
             cell.load(url: URL(string: self.boutiqaatViewModel.payload[0].banners[indexPath.row].imageUrl)!)
+            
             return cell
         }
         else{
@@ -326,7 +325,9 @@ extension BoutiqaatViewController{
         if  !self.boutiqaatViewModel.payload.isEmpty {
             let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCard.id, for: indexPath) as! ProductCard
             cell.backgroundColor = .gray
-            cell.productName = self.boutiqaatViewModel.payload[2].banners[indexPath.row].label
+//            cell.productName = self.boutiqaatViewModel.payload[2].banners[indexPath.row].label
+            cell.nameLabel.text = self.boutiqaatViewModel.payload[2].banners[indexPath.row].label
+            
             print("/////////////////////////////")
 
             print( self.boutiqaatViewModel.payload[2].banners[indexPath.row].label)

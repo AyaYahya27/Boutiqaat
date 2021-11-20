@@ -40,7 +40,7 @@ class ProductCard :UICollectionViewCell{
         return label
     }()
     
-    private var nameLabel : UILabel = {
+     var nameLabel : UILabel = {
         let label = UILabel()
         let font = UIFont(descriptor: UIFontDescriptor(name: RegisterConstants.navTitleFont, size: 15), size: 15)
         label.attributedText = NSAttributedString(string: "product Name" , attributes:  [.foregroundColor: UIColor(white: 0, alpha: 1), .font :font , .backgroundColor: CGColor(red: 1, green: 1, blue: 1, alpha: 1)])
@@ -116,7 +116,8 @@ class ProductCard :UICollectionViewCell{
     
         nameLabel.text = productName
         addSubview(nameLabel)
-        nameLabel.anchor(top: image.bottomAnchor, left: self.leftAnchor ,paddingTop: 8, paddingLeft: 10)
+//        nameLabel.anchor(top: image.bottomAnchor, left: self.leftAnchor ,paddingTop: 8, paddingLeft: 10)
+        nameLabel.center(inView: self)
     
         descriptionLabel.text = productDescription
         addSubview(descriptionLabel)

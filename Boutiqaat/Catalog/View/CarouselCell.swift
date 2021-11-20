@@ -10,6 +10,7 @@ import UIKit
 class CarouselCell: UICollectionViewCell{
     
     static let id = "CarouselCell"
+    private var boutiqaatViewModel = BoutiqaatViewModel()
 
     private  var image = UIImage(systemName: "heart")
      
@@ -19,9 +20,9 @@ class CarouselCell: UICollectionViewCell{
          layout.minimumInteritemSpacing = 0.0
          layout.scrollDirection = .horizontal
          let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.showsHorizontalScrollIndicator = false
-        cv.register(CarouselCard.self, forCellWithReuseIdentifier: CarouselCard.id)
+         cv.translatesAutoresizingMaskIntoConstraints = false
+         cv.showsHorizontalScrollIndicator = false
+         cv.register(CarouselCard.self, forCellWithReuseIdentifier: CarouselCard.id)
          cv.isPagingEnabled = true
          return cv
      }()
@@ -62,6 +63,10 @@ class CarouselCell: UICollectionViewCell{
        
     }
     
+   func reload(){
+       self.collectionView.reloadData()
+    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -90,13 +95,25 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
         return CGSize(width: UIScreen.main.bounds.width  , height: collectionView.frame.width / 2)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20    }
+        
+        if !boutiqaatViewModel.payload.isEmpty{
+            print("carousel cell")
+            return boutiqaatViewModel.payload[0].banners.count
+        }else{
+            return 20
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCard.id, for: indexPath) as! CarouselCard
 //        cell.frame.size.width = UIScreen.main.bounds.width
-        cell.imageView.image =  image
+//        let image = load(url: URL(string: boutiqaatViewModel.payload[0].banners[indexPath.row].imageUrl)!)
+        if !boutiqaatViewModel.payload.isEmpty{
+            cell.load(url: URL(string: boutiqaatViewModel.payload[0].banners[indexPath.row].imageUrl)!)
+//            print (cell.imageView)
+        }
+      
         return cell
     }
  
