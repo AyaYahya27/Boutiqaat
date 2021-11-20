@@ -19,6 +19,43 @@ class BoutiqaatViewController: NavigationViewController{
     let numberOfSections = 1
     private var boutiqaatViewModel = BoutiqaatViewModel()
     
+    
+    private let womenButton: UIButton = {
+            let button = UIButton()
+            button.backgroundColor = .systemPink
+            button.setTitle("Women", for: .normal)
+            button.setTitleColor(.black, for: .normal)
+            button.backgroundColor = .white
+            button.setHeight(45)
+            button.setWidth(UIScreen.main.bounds.size.width/2)
+            button.addTarget(self, action: #selector(handleWomenPage), for: .touchUpInside)
+    
+            return button
+        }()
+        
+    private let menButton: UIButton = {
+            let button = UIButton()
+            button.backgroundColor = .systemBlue
+            button.setTitle("Men", for: .normal)
+            button.setTitleColor(.black, for: .normal)
+            button.backgroundColor = .white
+            button.setHeight(45)
+            button.setWidth(UIScreen.main.bounds.size.width/2)
+            button.addTarget(self, action: #selector(handleWomenPage), for: .touchUpInside)
+    
+            return button
+        }()
+    
+    
+        let buttonIndicator: UIView = {
+            let v = UIView()
+            v.translatesAutoresizingMaskIntoConstraints = false
+            v.backgroundColor = UIColor.black
+        return v
+        }()
+    
+    
+    
     init(){
   
           let layout = BoutiqaatViewController.createLayout()
@@ -51,7 +88,20 @@ class BoutiqaatViewController: NavigationViewController{
             nav(color: .white, title: "Boutiqaat")
             collectionView.backgroundColor = .white
             collectionView.contentInset.top = 22
-    
+            view.addSubview(womenButton)
+             womenButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+             womenButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+     
+             view.addSubview(menButton)
+             menButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: womenButton.rightAnchor)
+     
+             view.addSubview(buttonIndicator)
+             buttonIndicator.snp.makeConstraints { (make) in
+             make.top.equalTo(womenButton.snp.bottom)
+                 make.height.equalTo(4.5)
+                 make.width.equalTo(UIScreen.main.bounds.size.width/2)
+             make.centerX.equalTo(womenButton.snp.centerX)
+             }
     
             registerCollectionViewCells()
     
@@ -61,50 +111,48 @@ class BoutiqaatViewController: NavigationViewController{
         func registerCollectionViewCells(){
 
             collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: CarouselCell.id)
+            collectionView.register(CelebrityCarousalCell.self, forCellWithReuseIdentifier: CelebrityCarousalCell.id)
         }
 
     
     
-}
+    
+    
+    //MARK: Actions
+    
+        @objc func handleWomenPage(sender: UIButton){
+            if (sender == womenButton){
+                print("women pressed")
+    
+                buttonIndicator.snp.remakeConstraints { (make) in
+                make.top.equalTo(sender.snp.bottom)
+                    make.height.equalTo(4.5)
+                    make.width.equalTo(UIScreen.main.bounds.size.width/2)
+                make.centerX.equalTo(sender.snp.centerX)
+                }
+    
+            }else {
+              print("men pressed")
+    
+                buttonIndicator.snp.remakeConstraints { (make) in
+                make.top.equalTo(sender.snp.bottom)
+                    make.height.equalTo(4.5)
+                    make.width.equalTo(UIScreen.main.bounds.size.width/2)
+                make.centerX.equalTo(sender.snp.centerX)
+                }
+            }
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+    
+    
+    }
+    
+
 
 //    private var boutiqaatViewModel = BoutiqaatViewModel()
-//
-//    private let womenButton: UIButton = {
-//        let button = UIButton()
-//        button.backgroundColor = .systemPink
-//        button.setTitle("Women", for: .normal)
-//        button.setTitleColor(.black, for: .normal)
-//        button.backgroundColor = .white
-//        button.setHeight(45)
-//        button.setWidth(UIScreen.main.bounds.size.width/2)
-//        button.addTarget(self, action: #selector(handleWomenPage), for: .touchUpInside)
-//
-//        return button
-//    }()
-//
-//    private let menButton: UIButton = {
-//        let button = UIButton()
-//        button.backgroundColor = .systemBlue
-//        button.setTitle("Men", for: .normal)
-//        button.setTitleColor(.black, for: .normal)
-//        button.backgroundColor = .white
-//        button.setHeight(45)
-//        button.setWidth(UIScreen.main.bounds.size.width/2)
-//        button.addTarget(self, action: #selector(handleWomenPage), for: .touchUpInside)
-//
-//        return button
-//    }()
-//
-//
-//    let buttonIndicator: UIView = {
-//        let v = UIView()
-//        v.translatesAutoresizingMaskIntoConstraints = false
-//        v.backgroundColor = UIColor.black
-//    return v
-//    }()
-//
-//
-//
+
 //    let numberOfSections = 4
 //
 //    private let cellId = "cellId"
@@ -141,24 +189,6 @@ class BoutiqaatViewController: NavigationViewController{
 //        nav(color: .white, title: "Boutiqaat")
 //        collectionView.backgroundColor = .white
 //        collectionView.contentInset.top = 22
-//
-//
-//        view.addSubview(womenButton)
-//        womenButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-//        womenButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//
-//        view.addSubview(menButton)
-//        menButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: womenButton.rightAnchor)
-//
-//        view.addSubview(buttonIndicator)
-//        buttonIndicator.snp.makeConstraints { (make) in
-//        make.top.equalTo(womenButton.snp.bottom)
-//            make.height.equalTo(4.5)
-//            make.width.equalTo(UIScreen.main.bounds.size.width/2)
-//        make.centerX.equalTo(womenButton.snp.centerX)
-//        }
-//
-//
 //        registerCollectionViewCells()
 //        collectionView.register(Header.self, forSupplementaryViewOfKind: BoutiqaatViewController.categoryHeaderId, withReuseIdentifier: headerId)
 //
@@ -172,44 +202,17 @@ class BoutiqaatViewController: NavigationViewController{
 //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
 //        collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: CarouselCell.id)
 //    }
-//
-//
-//    //MARK: -Actions
-//
-//    @objc func handleWomenPage(sender: UIButton){
-//        if (sender == womenButton){
-//            print("women pressed")
-//
-//            buttonIndicator.snp.remakeConstraints { (make) in
-//            make.top.equalTo(sender.snp.bottom)
-//                make.height.equalTo(4.5)
-//                make.width.equalTo(UIScreen.main.bounds.size.width/2)
-//            make.centerX.equalTo(sender.snp.centerX)
-//            }
-//
-//        }else {
-//          print("men pressed")
-//
-//            buttonIndicator.snp.remakeConstraints { (make) in
-//            make.top.equalTo(sender.snp.bottom)
-//                make.height.equalTo(4.5)
-//                make.width.equalTo(UIScreen.main.bounds.size.width/2)
-//            make.centerX.equalTo(sender.snp.centerX)
-//            }
-//        }
-//        UIView.animate(withDuration: 0.5, animations: {
-//            self.view.layoutIfNeeded()
-//        })
-//    }
-//
-//
-//}
-//
-//
+
 // MARK: - UICollection View Layout configuration
 extension BoutiqaatViewController{
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         numberOfCarousalSections()
+        
+        switch section {
+                case 0 :  return numberOfCarousalSections()
+                case 1 :  return numberOfCelebrityCards()
+        //        case 2 :  return numberOfProuductCards()
+                default: return 20
+                }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -303,7 +306,7 @@ extension BoutiqaatViewController{
             
         cell.carousalPayload = boutiqaatViewModel.payload[0]
         print(boutiqaatViewModel.payload.count)
-            return cell
+
         }
                return cell
    
@@ -318,44 +321,14 @@ extension BoutiqaatViewController{
            let section = NSCollectionLayoutSection(group: group)
            return section
        }
+    
+    //MARK: -CELEBRITY SECTION CONFIG
+    func  numberOfCelebrityCards () -> Int{
+            return 2
+        }
 }
-//
-//    func numberOfCarousalSections () -> Int{
-//       return 1
-//
-//    }
-//
-//    func cellOfCarousal(indexPath: IndexPath) -> UICollectionViewCell{
-//
-//        if  !self.boutiqaatViewModel.payload.isEmpty {
-//
-//            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
-//            cell.load(url: URL(string: self.boutiqaatViewModel.payload[0].banners[indexPath.row].imageUrl)!)
-//
-//            return cell
-//        }
-//        else{
-//            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
-//
-//            return cell
-//        }
-//
-//    }
-//
-//
-//    static func carousalSectionLayout() -> NSCollectionLayoutSection{
-//        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-//        item.contentInsets.trailing = 0
-//        item.contentInsets.bottom = 16
-//        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(230)), subitems: [item])
-//
-//        let section = NSCollectionLayoutSection(group: group)
-//        section.orthogonalScrollingBehavior = .paging
-//
-//        return section
-//    }
-//}
-//
+
+
 //// MARK: - Celebrity section layout configuration
 //
 //extension BoutiqaatViewController{
