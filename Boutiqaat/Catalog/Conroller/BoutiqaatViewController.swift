@@ -73,11 +73,15 @@ class BoutiqaatViewController: NavigationViewController{
         
         
         super.viewDidLoad()
-        boutiqaatViewModel.callApi { tst in
-//            print(tst)
-//            self.collectionView.reloadSections([0,1])
-            self.collectionView.reloadData()
-//            self.configureView()
+        boutiqaatViewModel.callApi { payload in
+            self.collectionView.reloadSections([0,1, 2])
+//            self.collectionView.reloadData()
+//            print("/////////////////////////////")
+//
+//            print( self.boutiqaatViewModel.payload[0].banners[0])
+//            print("/////////////////////////////")
+//            self.registerCollectionViewCells()
+
         }
         
        
@@ -87,7 +91,7 @@ class BoutiqaatViewController: NavigationViewController{
     
     
     func configureView(){
-        
+//       print( boutiqaatViewModel.payload[0].banners[0])
         nav(color: .white, title: "Boutiqaat")
         collectionView.backgroundColor = .white
         collectionView.contentInset.top = 22
@@ -213,13 +217,32 @@ extension BoutiqaatViewController{
 extension BoutiqaatViewController{
     
     func numberOfCarousalSections () -> Int{
-        return 5
+        if  !self.boutiqaatViewModel.payload.isEmpty {
+//            print("/////////////")
+//            print(self.boutiqaatViewModel.payload[0].banners.count)
+//            print("/////////////")
+            return self.boutiqaatViewModel.payload[0].banners.count
+        }
+        else{
+            return 5
+        }
+       
     }
     
     func cellOfCarousal(indexPath: IndexPath) -> UICollectionViewCell{
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
+        
+        if  !self.boutiqaatViewModel.payload.isEmpty {
 
-        return cell
+            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
+            cell.load(url: URL(string: self.boutiqaatViewModel.payload[0].banners[indexPath.row].imageUrl)!)
+            return cell
+        }
+        else{
+            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
+
+            return cell
+        }
+        
     }
     
     
@@ -240,13 +263,30 @@ extension BoutiqaatViewController{
 
 extension BoutiqaatViewController{
     func  numberOfCelebrityCards () -> Int{
-        return 2
+        if  !self.boutiqaatViewModel.payload.isEmpty {
+//            print("/////////////")
+//            print(self.boutiqaatViewModel.payload[1].banners.count)
+//            print("/////////////")
+            return self.boutiqaatViewModel.payload[1].banners.count
+        }
+        else{
+            return 5
+        }
     }
     
     func cellOfCelebrity(indexPath: IndexPath) -> UICollectionViewCell{
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCarousalCell.id, for: indexPath) as! CelebrityCarousalCell
-//        cell.backgroundColor = .cyan
-        return cell
+        if  !self.boutiqaatViewModel.payload.isEmpty {
+            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCarousalCell.id, for: indexPath) as! CelebrityCarousalCell
+  
+            return cell
+          
+        }
+        else{
+            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCarousalCell.id, for: indexPath) as! CelebrityCarousalCell
+    //        cell.backgroundColor = .cyan
+            return cell
+        }
+        
     }
     
    static func celebritiesSectionLayout() -> NSCollectionLayoutSection{
@@ -271,13 +311,38 @@ extension BoutiqaatViewController{
 
 extension BoutiqaatViewController{
     func  numberOfProuductCards () -> Int{
-        return 20
+        if  !self.boutiqaatViewModel.payload.isEmpty {
+            print("/////////////")
+            print(self.boutiqaatViewModel.payload[2].banners.count)
+            print("/////////////")
+            return self.boutiqaatViewModel.payload[2].banners.count
+        }
+        else{
+            return 5
+        }
     }
     
     func cellOfProuduct(indexPath: IndexPath) -> UICollectionViewCell{
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCard.id, for: indexPath)
-        cell.backgroundColor = .gray
-        return cell
+        if  !self.boutiqaatViewModel.payload.isEmpty {
+            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCard.id, for: indexPath) as! ProductCard
+            cell.backgroundColor = .gray
+            cell.productName = self.boutiqaatViewModel.payload[2].banners[indexPath.row].label
+            print("/////////////////////////////")
+
+            print( self.boutiqaatViewModel.payload[2].banners[indexPath.row].label)
+            print("/////////////////////////////")
+//            print(self.boutiqaatViewModel.payload[2].banners[indexPath.row].label)
+            return cell
+          
+        }
+        else{
+            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCard.id, for: indexPath) as!
+            ProductCard
+            cell.backgroundColor = .gray
+           
+            return cell
+        }
+       
     }
     
    static func productSectionLayout() -> NSCollectionLayoutSection{

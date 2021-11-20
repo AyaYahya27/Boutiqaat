@@ -12,8 +12,8 @@ class ProductCard :UICollectionViewCell{
     
     static let id = "CollectionTableViewCell"
     
-    private var productImage = UIImage()
-    private var productName = ""
+    var productImage = UIImage()
+     var productName = ""
     private var productDescription = ""
     private var productPrice : String = ""
     private var currency = ""

@@ -9,8 +9,8 @@ import UIKit
 
 class CarouselCard: UICollectionViewCell{
     static let id = "CarouselCard"
-    
-    private var image : UIImageView = {
+  
+    var imageView : UIImageView = {
         let image = UIImage(systemName: "heart")
         let img = UIImageView(image: image)
         return img
@@ -26,4 +26,6 @@ class CarouselCard: UICollectionViewCell{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+  
 }

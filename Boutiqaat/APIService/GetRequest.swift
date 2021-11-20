@@ -20,7 +20,7 @@ class GetRequest{
             
             request.responseJSON{ response  in
                 switch response.result{
-                case .success(let value ):
+                case .success(_ ):
                     if  response.response?.statusCode == 200    {
 
                         completion(response.data, nil,  false)

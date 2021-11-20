@@ -11,7 +11,7 @@ class CarouselCell: UICollectionViewCell{
     
     static let id = "CarouselCell"
 
-     
+    private  var image = UIImage(systemName: "heart")
      
     let collectionView : UICollectionView = {
          let layout = UICollectionViewFlowLayout()
@@ -68,6 +68,19 @@ class CarouselCell: UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
     
+    func load(url: URL) {
+            DispatchQueue.global().async { [weak self] in
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self?.image = image
+                        }
+                    }
+                }
+            }
+        }
+
+    
     
 }
 
@@ -80,8 +93,10 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
         return 20    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCard.id, for: indexPath) as! CarouselCard
-        cell.frame.size.width = UIScreen.main.bounds.width
+//        cell.frame.size.width = UIScreen.main.bounds.width
+        cell.imageView.image =  image
         return cell
     }
  
