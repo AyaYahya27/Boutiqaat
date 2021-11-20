@@ -50,7 +50,7 @@ class CarouselCell: UICollectionViewCell{
     {
         var cardIndex = 0
 
-          Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+          Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
 
 
               if cardIndex < self.cardNumber {
@@ -80,7 +80,7 @@ class CarouselCell: UICollectionViewCell{
                     if let image = UIImage(data: data) {
                         
                             self?.image = image
-//                            self?.collectionView.reloadData()
+
                         
                     }
                 }
@@ -113,11 +113,7 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
             
             load(url: URL(string: (self.carousalPayload?.banners[indexPath.row].imageUrl)!)!)
             cell.imageView.image = image
-//                collectionView.reloadData()
-            
-//            cell.load(url: URL(string: (carousalPayload?.banners[indexPath.row].imageUrl)!)!)
-//            load(url: URL(string: (carousalPayload?.banners[indexPath.row].imageUrl)!)!)
-//            cell.imageView.image = image
+
         }
         return cell
     }
