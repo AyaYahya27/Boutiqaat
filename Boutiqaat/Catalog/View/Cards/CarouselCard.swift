@@ -31,17 +31,4 @@ class CarouselCard: UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
     
-    func load(url: URL) {
-            DispatchQueue.main.async { [weak self] in
-                if let data = try? Data(contentsOf: url) {
-                    if let image = UIImage(data: data) {
-                            self?.imageView.image = image
-//                            self?.collectionView.reloadData()
-                       
-                   
-                    }
-                }
-            }
-        }
-  
 }

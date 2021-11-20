@@ -38,8 +38,9 @@ class BoutiqaatViewController: NavigationViewController{
 
          
           boutiqaatViewModel.callApi { payload in
+
               self.collectionView.reloadData()
-              
+
           }
           configureView()
   
@@ -286,6 +287,7 @@ extension BoutiqaatViewController{
 
 extension BoutiqaatViewController{
     func numberOfCarousalSections () -> Int{
+
         
         if !boutiqaatViewModel.payload.isEmpty{
             return 1
@@ -293,20 +295,22 @@ extension BoutiqaatViewController{
         else{
             return 0
         }
-   
-       }
-    func cellOfCarousal(indexPath: IndexPath) -> UICollectionViewCell{
+    }
+
+    static func cellOfCarousal(indexPath: IndexPath) -> UICollectionViewCell{
    
                let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
         
         if !boutiqaatViewModel.payload.isEmpty{
-            cell.carousalPayload = boutiqaatViewModel.payload[0]
+  
+        cell.carousalPayload = boutiqaatViewModel.payload[0]
+        
         }
-               return cell
-   
+            return cell
+
        }
     
-    static func carousalSectionLayout() -> NSCollectionLayoutSection{
+     static func carousalSectionLayout() -> NSCollectionLayoutSection{
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
         
            item.contentInsets.bottom = 16
@@ -315,7 +319,8 @@ extension BoutiqaatViewController{
            let section = NSCollectionLayoutSection(group: group)
            return section
        }
-}
+    }
+
 //
 //    func numberOfCarousalSections () -> Int{
 //       return 1
