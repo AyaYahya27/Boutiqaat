@@ -19,9 +19,6 @@ class CelebrityCard: UICollectionViewCell {
         let image = UIImage(systemName: "heart")
         imageView.image = image
         imageView.backgroundColor = .white
-        //        let img = UIImageView(image: image)
-//        imageView.setDimensions(height: 100, width: 110)
-        
         return imageView
     }()
     

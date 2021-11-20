@@ -37,9 +37,10 @@ class BoutiqaatViewController: NavigationViewController{
           super.viewDidLoad()
 
          
-//          boutiqaatViewModel.callApi { payload in
-//              self.collectionView.reloadData()
-//          }
+          boutiqaatViewModel.callApi { payload in
+              self.collectionView.reloadData()
+              
+          }
           configureView()
   
       }
@@ -228,8 +229,6 @@ extension BoutiqaatViewController{
     
             return layout
         }
-    
-  
 }
 //
 //    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -287,12 +286,22 @@ extension BoutiqaatViewController{
 
 extension BoutiqaatViewController{
     func numberOfCarousalSections () -> Int{
-          return 1
+        
+        if !boutiqaatViewModel.payload.isEmpty{
+            return 1
+        }
+        else{
+            return 0
+        }
    
        }
     func cellOfCarousal(indexPath: IndexPath) -> UICollectionViewCell{
    
                let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.id, for: indexPath) as! CarouselCell
+        
+        if !boutiqaatViewModel.payload.isEmpty{
+            cell.carousalPayload = boutiqaatViewModel.payload[0]
+        }
                return cell
    
        }
