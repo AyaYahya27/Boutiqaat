@@ -27,7 +27,7 @@ class CelebrityCarousalCell: UICollectionViewCell {
     }()
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .green
+        self.backgroundColor = .white
         contentView.addSubview(collectionView)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -43,16 +43,12 @@ class CelebrityCarousalCell: UICollectionViewCell {
     }
     
     func load(url: URL) {
-            DispatchQueue.global().async { [weak self] in
-                if let data = try? Data(contentsOf: url) {
-                    if let image = UIImage(data: data) {
-                        
-                            self?.image = image
 
-                        
-                    }
-                }
-            }
+           if let data = try? Data(contentsOf: url)
+           {
+             let image: UIImage = UIImage(data: data)!
+               self.image = image
+           }
         }
 
 
@@ -74,12 +70,14 @@ extension CelebrityCarousalCell: UICollectionViewDelegateFlowLayout, UICollectio
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCard.id, for: indexPath) as!    CelebrityCard
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCard.id, for: indexPath) as! CelebrityCard
         
         if  celebrityPayload != nil {
-            
+        
             load(url: URL(string: (self.celebrityPayload?.banners[indexPath.row].imageUrl)!)!)
             cell.celebrityImage.image = image
+            cell.celebrityName.text = celebrityPayload?.banners[indexPath.row].label
+            
 
         }
         return cell

@@ -24,33 +24,30 @@ class CelebrityCard: UICollectionViewCell {
         return imageView
     }()
 
-//    private var celebrityName: UILabel = {
+     var celebrityName: UILabel = {
 
-//           let label = UILabel()
-//           label.font = UIFont(name:RegisterConstants.navTitleFont, size: 14)
-//           label.contentMode = .scaleAspectFill
-//           label.clipsToBounds = true
-//        label.text = "Noor Elghandoor Boutiqee"
-//           return label
-//       }()
+           let label = UILabel()
+           label.font = UIFont(name:RegisterConstants.navTitleFont, size: 14)
+           label.contentMode = .scaleAspectFill
+           label.clipsToBounds = true
+        label.text = "Noor Elghandoor Boutiqee"
+        label.setDimensions(height: 20, width: 115)
+           return label
+       }()
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-//        self.backgroundColor = .systemPink
-//        contentView.addSubview(celebrityImage)
-//        celebrityImage.anchor(top: self.topAnchor)
-//        celebrityImage.center(inView: self)
+
        configureCard(width: self.bounds.size.width)
    }
     func configureCard(width: Double){
-        backgroundColor = .red
+        backgroundColor = .white
         contentView.addSubview(celebrityImage)
         celebrityImage.anchor(top: self.topAnchor)
 
-//            addSubview(celebrityName)
-//        celebrityName.anchor(top: celebrityImage.bottomAnchor, left: self.leftAnchor , paddingTop: 5, paddingLeft: 5)
-//            celebrityName.setDimensions(height: 20, width: 115)
-
+            addSubview(celebrityName)
+        celebrityName.anchor(top: celebrityImage.bottomAnchor, left: self.leftAnchor , paddingTop: 5, paddingLeft: 5)
+        
         }
 
     required init?(coder: NSCoder) {

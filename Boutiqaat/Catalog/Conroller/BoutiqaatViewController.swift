@@ -263,9 +263,9 @@ extension BoutiqaatViewController{
         }
     
     static func celebritiesSectionLayout() -> NSCollectionLayoutSection{
-          let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5)))
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5)))
    
-          item.contentInsets.bottom = 16
+//          item.contentInsets.bottom = 10
    
         let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension:  .absolute(UIScreen.main.bounds.width)), subitems: [item])
   
