@@ -155,30 +155,5 @@ class ProductCard :UICollectionViewCell{
 }
 
 
-
-//
-//
-//
-//
-//
-//
-//
-    
-//    func configureView(width : CGFloat, name : String , image: String , price : String , description : String , currency : String ){
-//
-//
-//
-//        descriptionLabel.text = productDescription
-////        addSubview(descriptionLabel)
-////        descriptionLabel.anchor(top: nameLabel.bottomAnchor, left: self.leftAnchor, right: self.rightAnchor ,paddingTop: 8, paddingLeft: 10)
-//
-//
-//
-//
-//
-//    }
-//
-
-
    
 
