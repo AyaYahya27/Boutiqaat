@@ -12,10 +12,16 @@ class BoutiqaatViewModel{
     
     var payload = [BoutiqaatSection]()
  
-    func callApi(completion: @escaping([BoutiqaatSection]) -> Void)  {
+    func callApi(sender: String, completion: @escaping([BoutiqaatSection]) -> Void)  {
         let headers : HTTPHeaders = [:]
-        let url = URL(string: "https://magnumopus.boutiqaat.com/magnumopus/v1/landingpage/layout/home-women/app/1-kw/en?page=1")!
-        
+        var url : URL
+        if sender == CatalogConstants.women
+        {
+            url = URL(string: CatalogConstants.url + CatalogConstants.womenUrl)!
+        }
+        else {
+            url = URL(string: CatalogConstants.url + CatalogConstants.menUrl)!
+        }
         GetRequest.getRequestWithoutParameters(withHeaders: headers,  url: url) { response, errorMsg, error in
             
             if error {
@@ -37,52 +43,5 @@ class BoutiqaatViewModel{
        
         
     }
-    
-//    func parseProducts(payload : BoutiqaatSections){
-//        let decoder = JSONDecoder()
-//        do {
-//            let jsonData = try JSONEncoder().encode(payload)
-//            let aa = try decoder.decode( ProductBanners.self, from: jsonData )
-//            print(aa.banners[0])
-//        } catch {
-//            print(error)
-//        }
-//    }
-//    
-//    func parseBanner(payload : BoutiqaatSections){
-//        let decoder = JSONDecoder()
-//        do {
-//            let jsonData = try JSONEncoder().encode(payload)
-//            let aa = try decoder.decode( NormalBanners.self, from: jsonData )
-//            print(aa.banners[0])
-//        } catch {
-//            print(error)
-//        }
-//    }
-//    
-//    
-//    
-//}
-//
+  
 }
-
-
-
-//                    for banner in data.data.payload{
-//
-//                        switch banner.type{
-//                        case "slider": let sliderBanners = self.parseBanner(payload: banner)
-//                        case "celebrity": let celebrityBanners = self.parseBanner(payload: banner)
-//                        case "product": let productBanneres = self.parseProducts(payload: banner)
-//
-//                        case "product": let productBanneres = self.parseProducts(payload: banner)
-//
-//                        default:
-//                            let productBanneres = self.parseProducts(payload: banner)
-//                        }
-//
-//                    }
-//                    self.test = 6
-//
-//                    completion(self.test)
-                    

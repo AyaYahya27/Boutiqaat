@@ -18,6 +18,6 @@ class NavigationViewController : UICollectionViewController{
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
         navigationItem.title = title
-      navigationItem.setHidesBackButton(true, animated: true)
+        navigationItem.setHidesBackButton(true, animated: true)
     }
 }

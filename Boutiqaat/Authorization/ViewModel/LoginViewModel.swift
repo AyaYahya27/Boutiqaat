@@ -61,7 +61,6 @@ class LoginViewModel{
 //                        print(UserDefaults.standard.string(forKey: "token"))
                         //MARK: -Delete the email value from user defauts
                         UserDefaults.standard.removeObject(forKey: "email")
-                        print(UserDefaults.standard.string(forKey: "email"))
                                 UserDefaults.standard.synchronize()
                     } else{
                         print(response)

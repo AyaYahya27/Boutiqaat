@@ -11,7 +11,7 @@ class BrandsViewController:  NavigationViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nav(color: .green, title: "BRANDAS")
+        nav(color: .white, title: "BRANDAS")
         
         view.backgroundColor = .brown
     }

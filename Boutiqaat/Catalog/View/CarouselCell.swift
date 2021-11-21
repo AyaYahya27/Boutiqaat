@@ -15,77 +15,75 @@ class CarouselCell: UICollectionViewCell{
     var carousalPayload : BoutiqaatSection? = nil
     private  var image = UIImage()
     private var cardNumber = 0
-
-
+    
+    
     let collectionView : UICollectionView = {
-         let layout = UICollectionViewFlowLayout()
-         layout.minimumLineSpacing = 0.0
-         layout.minimumInteritemSpacing = 0.0
-         layout.scrollDirection = .horizontal
-         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-         cv.translatesAutoresizingMaskIntoConstraints = false
-         cv.backgroundColor = .darkGray
-         cv.showsHorizontalScrollIndicator = false
-         cv.register(CarouselCard.self, forCellWithReuseIdentifier: CarouselCard.id)
-         cv.isPagingEnabled = true
-         return cv
-     }()
-
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0.0
+        layout.minimumInteritemSpacing = 0.0
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.backgroundColor = .darkGray
+        cv.showsHorizontalScrollIndicator = false
+        cv.register(CarouselCard.self, forCellWithReuseIdentifier: CarouselCard.id)
+        cv.isPagingEnabled = true
+        return cv
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .red
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .blue
         contentView.addSubview(collectionView)
         collectionView.backgroundColor = .white
         collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         collectionView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1).isActive = true
-            
         
-       setTimer()
-
+        
+        setTimer()
+        
     }
     
     func setTimer()
     {
         var cardIndex = 0
-
-          Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
-
-
-              if cardIndex < self.cardNumber {
- 
-                  let indexPath = IndexPath(item: cardIndex, section: 0)
-                  self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-                  cardIndex += 1
-              }
-              else {
-                  cardIndex = 0
-                  let indexPath = IndexPath(item: cardIndex, section: 0)
-                  self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-
-              }
-
-         }
+        
+        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
+            
+            
+            if cardIndex < self.cardNumber {
+                
+                let indexPath = IndexPath(item: cardIndex, section: 0)
+                self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+                cardIndex += 1
+            }
+            else {
+                cardIndex = 0
+                let indexPath = IndexPath(item: cardIndex, section: 0)
+                self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+                
+            }
+            
+        }
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-
+    
+    
     func load(url: URL) {
-//         
+        //         
         if let data = try? Data(contentsOf: url)
         {
-          let image: UIImage = UIImage(data: data)!
+            let image: UIImage = UIImage(data: data)!
             self.image = image
         }
-        }
-
+    }
+    
 }
 
 extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
@@ -94,9 +92,9 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
         return CGSize(width: UIScreen.main.bounds.width  , height: collectionView.frame.width / 2)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      
+        
         if  carousalPayload != nil {
-
+            
             cardNumber = (carousalPayload?.banners.count)!
             return (carousalPayload?.banners.count )! 
         }else{
@@ -112,11 +110,11 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
             
             load(url: URL(string: (self.carousalPayload?.banners[indexPath.row].imageUrl)!)!)
             cell.imageView.image = image
-
+            
         }
         return cell
     }
- 
     
-
+    
+    
 }
