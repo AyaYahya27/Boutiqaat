@@ -13,6 +13,8 @@ class CelebrityCarousalCell: UICollectionViewCell {
    static let id = "CelebrityCarousalCell"
     var celebrityPayload : BoutiqaatSection? = nil
     private  var image = UIImage()
+    var startIndex = 0
+
 
 
 
@@ -61,7 +63,6 @@ extension CelebrityCarousalCell: UICollectionViewDelegateFlowLayout, UICollectio
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if celebrityPayload != nil{
-            
             return (celebrityPayload?.banners.count)! / 2
         }
         else{
@@ -73,16 +74,11 @@ extension CelebrityCarousalCell: UICollectionViewDelegateFlowLayout, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCard.id, for: indexPath) as! CelebrityCard
         
-       
-        
         if  celebrityPayload != nil {
-           
-                load(url: URL(string: (self.celebrityPayload?.banners[indexPath.row].imageUrl)!)!)
-                cell.celebrityImage.image = image
-                cell.celebrityName.text = celebrityPayload?.banners[indexPath.row].label
-           
-            
-            
+       
+            load(url: URL(string: (self.celebrityPayload?.banners[indexPath.row + startIndex].imageUrl)!)!)
+            cell.celebrityImage.image = image
+            cell.celebrityName.text = celebrityPayload?.banners[indexPath.row + startIndex].label
 
         }
         return cell

@@ -129,7 +129,7 @@ class ProductCard :UICollectionViewCell{
         
         priceLabel.text = productPrice + " " + currency
         addSubview(priceLabel)
-        priceLabel.anchor(  left: self.leftAnchor, bottom: buttonStack.topAnchor, paddingLeft: 10)
+        priceLabel.anchor(  left: self.leftAnchor, bottom: buttonStack.topAnchor, paddingLeft: 10, paddingBottom: 8)
        
     }
     
@@ -153,7 +153,4 @@ class ProductCard :UICollectionViewCell{
     
     
 }
-
-
-   
 
