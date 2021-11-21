@@ -16,7 +16,7 @@ class BoutiqaatViewController: NavigationViewController{
     
 
     //MARK: -Properties
-    let numberOfSections = 2
+    let numberOfSections = 3
     private var boutiqaatViewModel = BoutiqaatViewModel()
     
     
@@ -113,6 +113,7 @@ class BoutiqaatViewController: NavigationViewController{
 
             collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: CarouselCell.id)
             collectionView.register(CelebrityCarousalCell.self, forCellWithReuseIdentifier: CelebrityCarousalCell.id)
+            collectionView.register(ProductCard.self, forCellWithReuseIdentifier: ProductCard.id)
         }
 
     
@@ -149,61 +150,6 @@ class BoutiqaatViewController: NavigationViewController{
     
     
     }
-    
-
-
-//    private var boutiqaatViewModel = BoutiqaatViewModel()
-
-//    let numberOfSections = 4
-//
-//    private let cellId = "cellId"
-//    static let categoryHeaderId = "categoryHeaderId"
-//    let headerId = "headerId"
-//
-//
-//    init(){
-//
-//        let layout = BoutiqaatViewController.createLayout()
-//        super.init(collectionViewLayout: layout)
-//
-//    }
-//
-//    required init?(coder: NSCoder) {
-//       fatalError("init(coder:) has not been implemented")
-//    }
-//
-//
-//    override func viewDidLoad() {
-//
-//
-//        super.viewDidLoad()
-//        boutiqaatViewModel.callApi { payload in
-//            self.collectionView.reloadData()
-//        }
-//        configureView()
-//
-//    }
-//
-//
-//    func configureView(){
-////       print( boutiqaatViewModel.payload[0].banners[0])
-//        nav(color: .white, title: "Boutiqaat")
-//        collectionView.backgroundColor = .white
-//        collectionView.contentInset.top = 22
-//        registerCollectionViewCells()
-//        collectionView.register(Header.self, forSupplementaryViewOfKind: BoutiqaatViewController.categoryHeaderId, withReuseIdentifier: headerId)
-//
-//    }
-//
-//
-//    func registerCollectionViewCells(){
-//
-//        collectionView.register(CelebrityCarousalCell.self, forCellWithReuseIdentifier: CelebrityCarousalCell.id)
-//        collectionView.register(ProductCard.self, forCellWithReuseIdentifier: ProductCard.id)
-//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-//        collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: CarouselCell.id)
-//    }
-
 // MARK: - UICollection View Layout configuration
 extension BoutiqaatViewController{
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -212,7 +158,7 @@ extension BoutiqaatViewController{
 
               case 0 :  return numberOfCarousalSections()
               case 1 :  return numberOfCelebrityCards()
-      //        case 2 :  return numberOfProuductCards()
+             case 2 :  return numberOfProuductCards()
             default: return 0
         }
     }
@@ -222,7 +168,7 @@ extension BoutiqaatViewController{
         switch indexPath.section {
                case 0 : return cellOfCarousal(indexPath: indexPath)
               case 1 : return cellOfCelebrity(indexPath: indexPath)
-       //        case 2 : return cellOfProuduct(indexPath: indexPath)
+              case 2 : return cellOfProuduct(indexPath: indexPath)
                 default : return cellOfCarousal(indexPath: indexPath)
                }
     }
@@ -237,7 +183,7 @@ extension BoutiqaatViewController{
                 switch sectionNumber {
                          case 0 : return carousalSectionLayout()
                           case 1 :  return celebritiesSectionLayout()
-              //            case 2 : return productSectionLayout()
+                          case 2 : return productSectionLayout()
                          default : return carousalSectionLayout()
                           }
               
@@ -326,55 +272,54 @@ extension BoutiqaatViewController{
           let section =  NSCollectionLayoutSection(group: group)
    ////        section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: categoryHeaderId, alignment: .topLeading)]
           return section
-   //
        }
 }
 
 
-//    func cellOfCelebrity(indexPath: IndexPath) -> UICollectionViewCell{
-//        if  !self.boutiqaatViewModel.payload.isEmpty {
-//            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCarousalCell.id, for: indexPath) as! CelebrityCarousalCell
-//
-//            return cell
-//
-//        }
-//        else{
-//            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCarousalCell.id, for: indexPath) as! CelebrityCarousalCell
-//    //        cell.backgroundColor = .cyan
-//            return cell
-//        }
-//
-//    }
-//
-//   static func celebritiesSectionLayout() -> NSCollectionLayoutSection{
-//       let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5)))
-//
-//       item.contentInsets.trailing = 16
-//       item.contentInsets.bottom = 16
-//
-//       let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension:  .absolute(400)), subitems: [item])
-//
-//
-//       let section =  NSCollectionLayoutSection(group: group)
-////       section.orthogonalScrollingBehavior = .continuous
-//
-////        section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: categoryHeaderId, alignment: .topLeading)]
-//       return section
-//
-//    }
-//}
-//
-//// MARK: - Prouduct cards carousal Layout configuration
-//
-//extension BoutiqaatViewController{
-//    func  numberOfProuductCards () -> Int{
-//        if  !self.boutiqaatViewModel.payload.isEmpty {
-//            return self.boutiqaatViewModel.payload[2].banners.count
-//        }
-//        else{
-//            return 5
-//        }
-//    }
+// MARK: - Prouduct cards carousal Layout configuration
+
+extension BoutiqaatViewController{
+    func  numberOfProuductCards () -> Int{
+           if  !self.boutiqaatViewModel.payload.isEmpty {
+               return self.boutiqaatViewModel.payload[2].banners.count
+           }
+           else{
+               return 0
+           }
+       }
+    
+    func cellOfProuduct(indexPath: IndexPath) -> UICollectionViewCell{
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCard.id, for: indexPath) as! ProductCard
+        if  !self.boutiqaatViewModel.payload.isEmpty {
+            let product = self.boutiqaatViewModel.payload[2].banners[indexPath.row]
+            cell.load(url: URL(string: product.imageUrl)!)
+            cell.nameLabel.text = product.brandName!
+            cell.descriptionLabel.text = product.label
+            cell.priceLabel.text = product.mrp! + " " + product.currencyCode!
+        }
+        
+        return cell
+    }
+    
+    static func productSectionLayout() -> NSCollectionLayoutSection{
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1)))
+    
+            item.contentInsets.trailing = 16
+            item.contentInsets.bottom = 16
+    
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension:  .absolute(360)), subitems: [item])
+
+    
+    
+           group.contentInsets.leading = 8
+           let section =  NSCollectionLayoutSection(group: group)
+          section.orthogonalScrollingBehavior = .continuous
+   
+    ////        section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: categoryHeaderId, alignment: .topLeading)]
+            return section
+    
+        }
+}
 //
 //    func cellOfProuduct(indexPath: IndexPath) -> UICollectionViewCell{
 //        if  !self.boutiqaatViewModel.payload.isEmpty {

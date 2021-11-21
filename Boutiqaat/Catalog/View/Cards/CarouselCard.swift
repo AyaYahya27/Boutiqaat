@@ -22,9 +22,9 @@ class CarouselCard: UICollectionViewCell{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       contentView.addSubview(imageView)
+        contentView.addSubview(imageView)
        
-       imageView.anchor(top: self.topAnchor)
+        imageView.anchor(top: self.topAnchor)
     }
     
     required init?(coder: NSCoder) {
