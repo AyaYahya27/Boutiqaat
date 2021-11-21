@@ -18,7 +18,8 @@ class BoutiqaatViewController: NavigationViewController{
     //MARK: -Properties
     let numberOfSections = 3
     private var boutiqaatViewModel = BoutiqaatViewModel()
-    
+    let categoryHeaderId = "header"
+//    let headerId = "id"
     
     private let womenButton: UIButton = {
             let button = UIButton()
@@ -114,6 +115,7 @@ class BoutiqaatViewController: NavigationViewController{
             collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: CarouselCell.id)
             collectionView.register(CelebrityCarousalCell.self, forCellWithReuseIdentifier: CelebrityCarousalCell.id)
             collectionView.register(ProductCard.self, forCellWithReuseIdentifier: ProductCard.id)
+            collectionView.register(Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Header.headerId)
         }
 
     
@@ -194,11 +196,7 @@ extension BoutiqaatViewController{
         }
 }
 
-//    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-//        header.backgroundColor = .darkGray
-//        return header
-//    }
+  
 
 // MARK: - Carousal Layout configuration
 
@@ -266,14 +264,35 @@ extension BoutiqaatViewController{
     static func celebritiesSectionLayout() -> NSCollectionLayoutSection{
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5)))
    
-//          item.contentInsets.bottom = 10
-   
         let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension:  .absolute(UIScreen.main.bounds.width)), subitems: [item])
   
           let section =  NSCollectionLayoutSection(group: group)
-   ////        section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: categoryHeaderId, alignment: .topLeading)]
+        
+        
+    
+        section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind:UICollectionView.elementKindSectionHeader, alignment: .topLeading)]
+
           return section
        }
+
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Header.headerId, for: indexPath) as! Header
+        
+        
+        if indexPath.section == 1{
+
+            header.titleLabel(title: "CELEBRIIES", width: 95)
+            
+
+        }
+        else if indexPath.section == 2{
+
+            header.titleLabel(title: "BOUTIQAAT PICKS", width:  150)
+           return header
+        }
+
+        return header
+    }
 }
 
 
@@ -310,14 +329,16 @@ extension BoutiqaatViewController{
     
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension:  .absolute(360)), subitems: [item])
 
-    
-    
            group.contentInsets.leading = 8
            let section =  NSCollectionLayoutSection(group: group)
           section.orthogonalScrollingBehavior = .continuous
-   
-    ////        section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: categoryHeaderId, alignment: .topLeading)]
+    
+        section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind:UICollectionView.elementKindSectionHeader, alignment: .topLeading)]
+//        Header.label.text = "BOUTIQAAT PICKS"
+        
             return section
     
         }
+    
+ 
 }
