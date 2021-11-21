@@ -129,7 +129,7 @@ class ProductCard :UICollectionViewCell{
         
         priceLabel.text = productPrice + " " + currency
         addSubview(priceLabel)
-        priceLabel.anchor(  left: self.leftAnchor, bottom: buttonStack.topAnchor, paddingLeft: 10)
+        priceLabel.anchor(  left: self.leftAnchor, bottom: buttonStack.topAnchor, paddingLeft: 10, paddingBottom: 8)
        
     }
     
@@ -154,31 +154,4 @@ class ProductCard :UICollectionViewCell{
     
 }
 
-
-
-//
-//
-//
-//
-//
-//
-//
-    
-//    func configureView(width : CGFloat, name : String , image: String , price : String , description : String , currency : String ){
-//
-//
-//
-//        descriptionLabel.text = productDescription
-////        addSubview(descriptionLabel)
-////        descriptionLabel.anchor(top: nameLabel.bottomAnchor, left: self.leftAnchor, right: self.rightAnchor ,paddingTop: 8, paddingLeft: 10)
-//
-//
-//
-//
-//
-//    }
-//
-
-
-   
 

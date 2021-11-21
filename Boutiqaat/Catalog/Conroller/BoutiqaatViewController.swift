@@ -256,6 +256,7 @@ extension BoutiqaatViewController{
         func cellOfCelebrity(indexPath: IndexPath) -> UICollectionViewCell{
             let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCarousalCell.id, for: indexPath) as! CelebrityCarousalCell
             if  !self.boutiqaatViewModel.payload.isEmpty {
+                cell.startIndex = indexPath.row * (boutiqaatViewModel.payload[1].banners.count / 2)
                 cell.celebrityPayload = boutiqaatViewModel.payload[1]
             }
             return cell

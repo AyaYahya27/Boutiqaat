@@ -9,10 +9,13 @@ import UIKit
 
 class CarouselCell: UICollectionViewCell{
     
+    
+    
     static let id = "CarouselCell"
     var carousalPayload : BoutiqaatSection? = nil
     private  var image = UIImage()
     private var cardNumber = 0
+
 
     let collectionView : UICollectionView = {
          let layout = UICollectionViewFlowLayout()
@@ -95,7 +98,7 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
         if  carousalPayload != nil {
 
             cardNumber = (carousalPayload?.banners.count)!
-            return (carousalPayload?.banners.count)!
+            return (carousalPayload?.banners.count )! 
         }else{
             return 0
         }
