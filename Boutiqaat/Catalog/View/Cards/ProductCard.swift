@@ -9,7 +9,7 @@ import UIKit
 
 class ProductCard :UICollectionViewCell{
     
-    
+    let imageLoad = ImageLoad()
     static let id = "CollectionTableViewCell"
     
     let width = (UIScreen.main.bounds.width/2)-20
@@ -76,8 +76,8 @@ class ProductCard :UICollectionViewCell{
         imageView.clipsToBounds = true
         imageView.backgroundColor = .white
         imageView.layer.cornerRadius = 10
-        let image = UIImage(systemName: "heart")
-        imageView.image =  image
+        let image = UIImage()
+        imageView.image = image
         imageView.layer.maskedCorners = [ .layerMaxXMinYCorner, .layerMinXMinYCorner]
  
         return imageView
@@ -109,11 +109,7 @@ class ProductCard :UICollectionViewCell{
         
         addSubview(productImage)
         productImage.anchor(top: self.topAnchor,left: self.leftAnchor,right: self.rightAnchor,  height: UIScreen.main.bounds.width/2.5)
-        
-        
-        
-        
-        
+
         addSubview(nameLabel)
         nameLabel.anchor(top: productImage.bottomAnchor, left: self.leftAnchor ,paddingTop: 8, paddingLeft: 10)
         
@@ -133,23 +129,24 @@ class ProductCard :UICollectionViewCell{
        
     }
     
+   
     
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func load(url: URL) {
-        
-        if let data = try? Data(contentsOf: url) {
-            if let image = UIImage(data: data) {
-                
-                self.productImage.image = image
-                
-            }
-            
-        }
-    }
+//    func load(url: URL) {
+//        
+//        if let data = try? Data(contentsOf: url) {
+//            if let image = UIImage(data: data) {
+//                
+//                self.productImage.image = image
+//                
+//            }
+//            
+//        }
+//    }
     
     
 }

@@ -79,6 +79,8 @@ extension CelebrityCarousalCell: UICollectionViewDelegateFlowLayout, UICollectio
             cell.celebrityName.text = celebrityPayload?.banners[indexPath.row + startIndex].label
             
         }
+        cell.layer.shouldRasterize = true
+        cell.layer.rasterizationScale = UIScreen.main.scale
         return cell
     }
     

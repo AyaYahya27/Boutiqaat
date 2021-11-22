@@ -10,7 +10,7 @@ import UIKit
 class CarouselCell: UICollectionViewCell{
     
     
-    
+    let imageLoad = ImageLoad()
     static let id = "CarouselCell"
     var carousalPayload : BoutiqaatSection? = nil
     private  var image = UIImage()
@@ -76,7 +76,6 @@ class CarouselCell: UICollectionViewCell{
     
     
     func load(url: URL) {
-        //         
         if let data = try? Data(contentsOf: url)
         {
             let image: UIImage = UIImage(data: data)!
@@ -107,9 +106,10 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCard.id, for: indexPath) as! CarouselCard
         
         if  carousalPayload != nil {
-            
             load(url: URL(string: (self.carousalPayload?.banners[indexPath.row].imageUrl)!)!)
             cell.imageView.image = image
+            cell.layer.shouldRasterize = true
+            cell.layer.rasterizationScale = UIScreen.main.scale
             
         }
         return cell

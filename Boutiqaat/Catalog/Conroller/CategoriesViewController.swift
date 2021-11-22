@@ -11,6 +11,8 @@ import UIKit
 class CategoriesViewController:  NavigationViewController{
     
     let categoryViewModel = CategoryViewModel()
+    let imageLoad = ImageLoad()
+    var image = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +22,13 @@ class CategoriesViewController:  NavigationViewController{
         
         
         configureView()
-        categoryViewModel.callApi {
-            self.collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.categoryViewModel.callApi {
+                self.collectionView.reloadData()
+            }
         }
+        
+        
         
     }
     
@@ -47,6 +53,14 @@ class CategoriesViewController:  NavigationViewController{
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func load(url: URL) {
+        if let data = try? Data(contentsOf: url)
+        {
+            let image: UIImage = UIImage(data: data)!
+            self.image = image
+        }
     }
 }
 
@@ -75,9 +89,10 @@ extension CategoriesViewController: UICollectionViewDelegateFlowLayout{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.id, for: indexPath) as! CategoryCell
         
         if  categoryViewModel.payload.count != 0{
-            
-            cell.load(url: URL(string: categoryViewModel.payload[indexPath.row].category_image_rectangle)!)
-            
+            load(url: URL(string: categoryViewModel.payload[indexPath.row].category_image_rectangle)!)
+            cell.imageView.image = image
+            cell.layer.shouldRasterize = true
+            cell.layer.rasterizationScale = UIScreen.main.scale
         }
         
         return cell

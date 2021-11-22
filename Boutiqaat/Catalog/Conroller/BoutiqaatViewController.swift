@@ -16,10 +16,12 @@ class BoutiqaatViewController: NavigationViewController{
     
     
     //MARK: -Properties
+    private  var image = UIImage()
     let numberOfSections = 3
     private var boutiqaatViewModel = BoutiqaatViewModel()
     private var selectedGender = CatalogConstants.women
     static var showHeaders = false
+    
     
     let categoryHeaderId = "header"
     
@@ -75,14 +77,16 @@ class BoutiqaatViewController: NavigationViewController{
         
         super.viewDidLoad()
         
-        
-        boutiqaatViewModel.callApi(sender : selectedGender){ payload in
-            self.collectionView.reloadData()
-            BoutiqaatViewController.showHeaders = true
-            self.collectionView.reloadSections([1,2])
-            
-            
+        DispatchQueue.main.async {
+            self.boutiqaatViewModel.callApi(sender : self.selectedGender){ payload in
+                self.collectionView.reloadData()
+                BoutiqaatViewController.showHeaders = true
+                self.collectionView.reloadSections([1,2])
+                
+                
+            }
         }
+     
         configureView()
         
     }
@@ -161,7 +165,14 @@ class BoutiqaatViewController: NavigationViewController{
     }
     
     
-    
+    func load(url: URL) {
+        
+        if let data = try? Data(contentsOf: url)
+        {
+            let image: UIImage = UIImage(data: data)!
+            self.image = image
+        }
+    }
     
     
 }
@@ -262,6 +273,8 @@ extension BoutiqaatViewController{
         return section
     }
     
+    
+    
 }
 
 
@@ -285,6 +298,7 @@ extension BoutiqaatViewController{
             cell.collectionView.reloadData()
             cell.celebrityPayload = boutiqaatViewModel.payload[1]
         }
+       
         return cell
         
     }
@@ -322,13 +336,21 @@ extension BoutiqaatViewController{
     
     func cellOfProuduct(indexPath: IndexPath) -> UICollectionViewCell{
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCard.id, for: indexPath) as! ProductCard
+        
+        
         if  !self.boutiqaatViewModel.payload.isEmpty {
             let product = self.boutiqaatViewModel.payload[2].banners[indexPath.row]
-            cell.load(url: URL(string: product.imageUrl)!)
+           
+          
             cell.nameLabel.text = product.brandName!
             cell.descriptionLabel.text = product.label
             cell.priceLabel.text = product.mrp! + " " + product.currencyCode!
+            load(url: URL(string: product.imageUrl)!)
+            cell.productImage.image = image
+            cell.layer.shouldRasterize = true
+            cell.layer.rasterizationScale = UIScreen.main.scale
         }
+        
         
         return cell
     }

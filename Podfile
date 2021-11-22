@@ -12,6 +12,7 @@ target 'Boutiqaat' do
   pod 'KeychainSwift', '~> 19.0'
   pod 'SideMenu'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'AlamofireImage'
   pod 'DynamicCodable', '1.0'
 
 end

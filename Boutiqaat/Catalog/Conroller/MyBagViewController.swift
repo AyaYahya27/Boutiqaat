@@ -8,11 +8,13 @@
 import UIKit
 
 class MyBagViewController:  NavigationViewController{
+    let imageLoad = ImageLoad()
 //    let nav = NavigationViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         nav(color: .green, title: "sdfghjkl")
-        
+//        imageLoad.loadImage(imageUrl: URL( string: "https://gamacdn.boutiqaat.com/media/boutiqaat_celebrity/a/p/app-en_744.jpg")!)
+//        
         view.backgroundColor = .brown
     }
     init(){
