@@ -9,16 +9,20 @@ import UIKit
 
 class CelebritiesViewController:  NavigationViewController{
   
+    let celebrityViewModel = CelebrityViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       nav(color: .green, title: "sdjkl")
-        
+        nav(color: .white, title: "Celebrities")
+        celebrityViewModel.callApi {
+            self.collectionView.reloadData()
+        }
         view.backgroundColor = .brown
     }
     
     init(){
       
-        let layout = UICollectionViewLayout()
+        let layout = UICollectionViewFlowLayout()
         super.init(collectionViewLayout: layout)
         
     }

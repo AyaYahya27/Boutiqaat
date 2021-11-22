@@ -19,7 +19,9 @@ class BoutiqaatViewController: NavigationViewController{
     let numberOfSections = 3
     private var boutiqaatViewModel = BoutiqaatViewModel()
     private var selectedGender = CatalogConstants.women
+    static var showHeaders = false
     
+    let categoryHeaderId = "header"
     
     private let womenButton: UIButton = {
         let button = UIButton()
@@ -76,7 +78,10 @@ class BoutiqaatViewController: NavigationViewController{
         
         boutiqaatViewModel.callApi(sender : selectedGender){ payload in
             self.collectionView.reloadData()
-
+            BoutiqaatViewController.showHeaders = true
+            self.collectionView.reloadSections([1,2])
+            
+            
         }
         configureView()
         
@@ -110,6 +115,8 @@ class BoutiqaatViewController: NavigationViewController{
     
     func registerCollectionViewCells(){
         
+        collectionView.register(Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Header.headerId)
+        
         collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: CarouselCell.id)
         collectionView.register(CelebrityCarousalCell.self, forCellWithReuseIdentifier: CelebrityCarousalCell.id)
         collectionView.register(ProductCard.self, forCellWithReuseIdentifier: ProductCard.id)
@@ -124,8 +131,8 @@ class BoutiqaatViewController: NavigationViewController{
     @objc func handleGenderSelection(sender: UIButton){
         if (sender == womenButton){
             
-             selectedGender = CatalogConstants.women
-             buttonIndicator.snp.remakeConstraints { (make) in
+            selectedGender = CatalogConstants.women
+            buttonIndicator.snp.remakeConstraints { (make) in
                 make.top.equalTo(sender.snp.bottom)
                 make.height.equalTo(4.5)
                 make.width.equalTo(UIScreen.main.bounds.size.width/2)
@@ -134,7 +141,7 @@ class BoutiqaatViewController: NavigationViewController{
             
         }else {
             
-           selectedGender = CatalogConstants.men
+            selectedGender = CatalogConstants.men
             buttonIndicator.snp.remakeConstraints { (make) in
                 make.top.equalTo(sender.snp.bottom)
                 make.height.equalTo(4.5)
@@ -147,7 +154,7 @@ class BoutiqaatViewController: NavigationViewController{
         })
         
         boutiqaatViewModel.callApi(sender: selectedGender) {  payload in
-                self.collectionView.reloadData()
+            self.collectionView.reloadData()
             
         }
         
@@ -190,7 +197,7 @@ extension BoutiqaatViewController{
         let layout =  UICollectionViewCompositionalLayout { sectionNumber, env in
             switch sectionNumber {
             case 0 : return carousalSectionLayout()
-            case 1 :  return celebritiesSectionLayout()
+            case 1 : return celebritiesSectionLayout()
             case 2 : return productSectionLayout()
             default : return carousalSectionLayout()
             }
@@ -200,13 +207,23 @@ extension BoutiqaatViewController{
         
         return layout
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Header.headerId, for: indexPath) as! Header
+        
+        if indexPath.section == 1{
+            
+            header.titleLabel(title: "CELEBRIIES", width: 95)
+        }
+        else if indexPath.section == 2{
+            header.titleLabel(title: "BOUTIQAAT PICKS", width:  150)
+        }
+        
+        return header
+    }
 }
 
-//    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-//        header.backgroundColor = .darkGray
-//        return header
-//    }
+
 
 // MARK: - Carousal Layout configuration
 
@@ -261,7 +278,6 @@ extension BoutiqaatViewController{
         }
     }
     
-    
     func cellOfCelebrity(indexPath: IndexPath) -> UICollectionViewCell{
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCarousalCell.id, for: indexPath) as! CelebrityCarousalCell
         if  !self.boutiqaatViewModel.payload.isEmpty {
@@ -276,13 +292,19 @@ extension BoutiqaatViewController{
     static func celebritiesSectionLayout() -> NSCollectionLayoutSection{
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5)))
         
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension:  .absolute(350)), subitems: [item])
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension:  .absolute(UIScreen.main.bounds.width)), subitems: [item])
         
         let section =  NSCollectionLayoutSection(group: group)
-        section.contentInsets.bottom = 15
-        ////        section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: categoryHeaderId, alignment: .topLeading)]
+        
+        if showHeaders {
+            section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind:UICollectionView.elementKindSectionHeader, alignment: .topLeading)]
+            
+        }
+        
         return section
     }
+    
+    
 }
 
 
@@ -319,14 +341,20 @@ extension BoutiqaatViewController{
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension:  .absolute(360)), subitems: [item])
         
-        
-        
         group.contentInsets.leading = 8
         let section =  NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         
-        ////        section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: categoryHeaderId, alignment: .topLeading)]
+        
+        if showHeaders {
+            section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind:UICollectionView.elementKindSectionHeader, alignment: .topLeading)]
+        }
+        
+        
         return section
         
     }
+    
+    
+    
 }

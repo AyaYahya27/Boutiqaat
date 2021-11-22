@@ -11,16 +11,21 @@ import UIKit
 class CategoriesViewController:  NavigationViewController{
     
     let categoryViewModel = CategoryViewModel()
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        
         configureView()
         categoryViewModel.callApi {
             self.collectionView.reloadData()
         }
-            
-    }
         
+    }
+    
     
     
     init(){
@@ -28,17 +33,15 @@ class CategoriesViewController:  NavigationViewController{
         layout.minimumLineSpacing = 0.0
         layout.minimumInteritemSpacing = 0.0
         super.init(collectionViewLayout: layout)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
     }
     
     
     func configureView(){
         nav(color: .white, title: "Categories")
+        
         collectionView.backgroundColor = .white
         collectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.id)
-       
+        
         
     }
     
@@ -61,7 +64,6 @@ extension CategoriesViewController: UICollectionViewDelegateFlowLayout{
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if  categoryViewModel.payload.count != 0{
-            print(categoryViewModel.payload.count)
             return (categoryViewModel.payload.count)
         }else{
             return 0

@@ -26,6 +26,9 @@
 		076EAA6E274A369F0075775A /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EAA6D274A369F0075775A /* CategoryViewModel.swift */; };
 		076EAA71274A36DD0075775A /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EAA70274A36DD0075775A /* CategoriesModel.swift */; };
 		076EAA74274A395A0075775A /* CategoryConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EAA73274A395A0075775A /* CategoryConstants.swift */; };
+		076EAA76274A83BE0075775A /* CelebrityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EAA75274A83BE0075775A /* CelebrityConstants.swift */; };
+		076EAA78274A841D0075775A /* CelebrityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EAA77274A841D0075775A /* CelebrityViewModel.swift */; };
+		076EAA7A274A86E10075775A /* CelebritiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EAA79274A86E10075775A /* CelebritiesModel.swift */; };
 		07812F2D2737D74200B84D93 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07812F2C2737D74200B84D93 /* ProductCard.swift */; };
 		078825E0273A89B5001F6DD0 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078825DF273A89B5001F6DD0 /* Spinner.swift */; };
 		078825E2273A8B8B001F6DD0 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078825E1273A8B8B001F6DD0 /* PopUp.swift */; };
@@ -86,6 +89,9 @@
 		076EAA6D274A369F0075775A /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		076EAA70274A36DD0075775A /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
 		076EAA73274A395A0075775A /* CategoryConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryConstants.swift; sourceTree = "<group>"; };
+		076EAA75274A83BE0075775A /* CelebrityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityConstants.swift; sourceTree = "<group>"; };
+		076EAA77274A841D0075775A /* CelebrityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityViewModel.swift; sourceTree = "<group>"; };
+		076EAA79274A86E10075775A /* CelebritiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebritiesModel.swift; sourceTree = "<group>"; };
 		07812F2C2737D74200B84D93 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		078825DF273A89B5001F6DD0 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		078825E1273A8B8B001F6DD0 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
@@ -209,6 +215,7 @@
 			children = (
 				076EAA69274A2BA20075775A /* CatalogConstants.swift */,
 				076EAA73274A395A0075775A /* CategoryConstants.swift */,
+				076EAA75274A83BE0075775A /* CelebrityConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -367,6 +374,7 @@
 			children = (
 				076EAA6F274A36B20075775A /* CategoryModels */,
 				07C2BE142743C9EE003E4CB2 /* BoutiqaatModels */,
+				076EAA79274A86E10075775A /* CelebritiesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,6 +392,7 @@
 			children = (
 				07C2BE182743DACF003E4CB2 /* BoutiqaatViewModel.swift */,
 				076EAA6D274A369F0075775A /* CategoryViewModel.swift */,
+				076EAA77274A841D0075775A /* CelebrityViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -545,12 +554,14 @@
 				079FDA4927369B910030CAF2 /* FormValidationController.swift in Sources */,
 				07490648272D69380049C305 /* RegisterUser.swift in Sources */,
 				07F0F79A27312694009A6700 /* MainTabController.swift in Sources */,
+				076EAA78274A841D0075775A /* CelebrityViewModel.swift in Sources */,
 				07490644272D28B40049C305 /* GenderButton.swift in Sources */,
 				07C6323B27412AFD00895144 /* CelebrityCarousalCell.swift in Sources */,
 				078825E2273A8B8B001F6DD0 /* PopUp.swift in Sources */,
 				07C4270727423CFB0073B7CB /* SectionHeader.swift in Sources */,
 				07C2BE192743DACF003E4CB2 /* BoutiqaatViewModel.swift in Sources */,
 				F777A44527366CE000C5DE5E /* LoginService.swift in Sources */,
+				076EAA7A274A86E10075775A /* CelebritiesModel.swift in Sources */,
 				0789B1E5272AC508003C6230 /* PasswordTextField.swift in Sources */,
 				F7AC338B274289D700496AA4 /* CarouselCell.swift in Sources */,
 				0789B1DC272A9938003C6230 /* NavigationViewController.swift in Sources */,
@@ -569,6 +580,7 @@
 				07812F2D2737D74200B84D93 /* ProductCard.swift in Sources */,
 				F777A44327366CA100C5DE5E /* LoginViewModel.swift in Sources */,
 				076EAA6A274A2BA20075775A /* CatalogConstants.swift in Sources */,
+				076EAA76274A83BE0075775A /* CelebrityConstants.swift in Sources */,
 				F777A45B27367E5100C5DE5E /* CustomTextField.swift in Sources */,
 				07F0F7A427312B0D009A6700 /* CategoriesViewController.swift in Sources */,
 				07F0F79E27312AAD009A6700 /* BoutiqaatViewController.swift in Sources */,

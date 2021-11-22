@@ -13,7 +13,7 @@ class NavigationViewController : UICollectionViewController{
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = color
         let navigationFont = UIFont(descriptor: UIFontDescriptor(name: RegisterConstants.navTitleFont, size: 22), size: 22 )
-        appearance.titleTextAttributes = [ .foregroundColor: UIColor.black, .font: navigationFont]
+        appearance.titleTextAttributes = [ .foregroundColor: UIColor.black, .font: navigationFont ]
         self.navigationController?.navigationBar.tintColor = .black
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
