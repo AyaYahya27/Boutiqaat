@@ -7,9 +7,12 @@
 
 import UIKit
 import AlamofireImage
+import SDWebImage
+
 
 class BrandsViewController:  NavigationViewController{
     
+    let spinner =  LoadSpinner()
     let brandsViewModel = BrandsViewModel()
     var sortedBrands = [BrandModel]()
     var imageView = UIImageView()
@@ -37,6 +40,7 @@ class BrandsViewController:  NavigationViewController{
         
         brandsViewModel.callApi { response in
             self.collectionView.reloadData()
+            self.spinner.hideSpinner(collectionView: self.collectionView)
             self.sortedBrands = self.brandsViewModel.brandsPayload.sorted { first, second in
                 return first.name.compare(second.name) == ComparisonResult.orderedAscending
             }
@@ -64,8 +68,7 @@ class BrandsViewController:  NavigationViewController{
                 array.append(BrandModel)
                 self.data[firstCharacter] = array
             } else {
-                var array = [BrandModel]
-                array.append(BrandModel)
+                let array = [BrandModel]
                 self.data[firstCharacter] = array
                 self.sections.append(firstCharacter)
 //                print(firstCharacter)
@@ -99,7 +102,7 @@ class BrandsViewController:  NavigationViewController{
     
     func configUI(){
         nav(color: .white, title: "Brands")
-//        collectionView.backgroundColor = .red
+        spinner.showSpinner(collectionView: collectionView)
     }
     
     required init?(coder: NSCoder) {
@@ -117,7 +120,6 @@ extension BrandsViewController: UICollectionViewDelegateFlowLayout{
         if !brandsViewModel.brandsPayload.isEmpty{
 //            return brandsViewModel.brandsPayload.count
             if !data.isEmpty{
-
             return data[sections[section]]!.count
                
             }
@@ -135,9 +137,9 @@ extension BrandsViewController: UICollectionViewDelegateFlowLayout{
         let arr = data[char]
         if !brandsViewModel.brandsPayload.isEmpty{
             cell.brandName.text = arr![indexPath.row].name
-    
-            loadiMAGE(url: URL(string: self.brandsViewModel.brandsPayload[0].thumbnail)!, placeholderImage: UIImage(named: "heart")) { image in
-            cell.brandImage.image = image
+            if let url = URL(string: arr![indexPath.row].thumbnail){
+                cell.brandImage.sd_setImage(with: url, placeholderImage: UIImage())
+           
         }
         }
         return cell

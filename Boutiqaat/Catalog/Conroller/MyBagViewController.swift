@@ -8,7 +8,7 @@
 import UIKit
 
 class MyBagViewController:  NavigationViewController{
-    let imageLoad = ImageLoad()
+ 
 //    let nav = NavigationViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
