@@ -15,12 +15,11 @@ class CelebrityCard: UICollectionViewCell {
 
     var celebrityImage : UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         let image = UIImage(systemName: "heart")
         imageView.image = image
         imageView.backgroundColor = .white
-        imageView.setDimensions(height: UIScreen.main.bounds.width / 3.33 ,width: UIScreen.main.bounds.width / 3.33 )
         return imageView
     }()
 
@@ -29,9 +28,9 @@ class CelebrityCard: UICollectionViewCell {
            let label = UILabel()
            label.font = UIFont(name:RegisterConstants.navTitleFont, size: 14)
            label.contentMode = .scaleAspectFill
-           label.clipsToBounds = true
-        label.text = "Noor Elghandoor Boutiqee"
-        label.setDimensions(height: 20, width: 115)
+          label.clipsToBounds = true
+          label.text = "Noor Elghandoor Boutiqee"
+          label.setDimensions(height: 20, width: 115)
            return label
        }()
 
@@ -52,6 +51,17 @@ class CelebrityCard: UICollectionViewCell {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func showBorder (){
+        layer.masksToBounds = false
+        layer.cornerRadius = 0
+        self.backgroundColor = .white
+        layer.borderWidth = 0.3
+        layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        celebrityName.textAlignment = .center
+     
+        
     }
 
 }

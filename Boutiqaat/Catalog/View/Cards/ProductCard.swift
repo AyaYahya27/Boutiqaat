@@ -136,18 +136,6 @@ class ProductCard :UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
     
-//    func load(url: URL) {
-//        
-//        if let data = try? Data(contentsOf: url) {
-//            if let image = UIImage(data: data) {
-//                
-//                self.productImage.image = image
-//                
-//            }
-//            
-//        }
-//    }
-    
-    
+
 }
 

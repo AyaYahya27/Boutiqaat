@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct CelebritiesResponseModel : Codable {
-    
+struct CelebrityModel : Codable {
+    let name : String
+    let thumbnail : String
 }

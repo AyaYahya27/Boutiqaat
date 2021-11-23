@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 
 
@@ -42,15 +43,7 @@ class CelebrityCarousalCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func load(url: URL) {
-        
-        if let data = try? Data(contentsOf: url)
-        {
-            let image: UIImage = UIImage(data: data)!
-            self.image = image
-        }
-    }
-    
+   
     
 }
 
@@ -73,10 +66,12 @@ extension CelebrityCarousalCell: UICollectionViewDelegateFlowLayout, UICollectio
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CelebrityCard.id, for: indexPath) as! CelebrityCard
         
         if  celebrityPayload != nil {
-            
-            load(url: URL(string: (self.celebrityPayload?.banners[indexPath.row + startIndex].imageUrl)!)!)
-            cell.celebrityImage.image = image
-            cell.celebrityName.text = celebrityPayload?.banners[indexPath.row + startIndex].label
+            let celebrity = celebrityPayload?.banners[indexPath.row + startIndex]
+            if let url = URL(string: celebrity!.imageUrl){
+                cell.celebrityImage.sd_setImage(with: url, placeholderImage: UIImage())
+            }
+            cell.celebrityImage.setDimensions(height: UIScreen.main.bounds.width / 3 ,width: UIScreen.main.bounds.width / 3.33333)
+            cell.celebrityName.text = celebrity?.label
             
         }
         cell.layer.shouldRasterize = true
