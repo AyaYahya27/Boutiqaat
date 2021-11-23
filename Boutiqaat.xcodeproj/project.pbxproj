@@ -55,6 +55,10 @@
 		07F0F7A827313477009A6700 /* TabBraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A727313477009A6700 /* TabBraViewController.swift */; };
 		07F0F7AA27316199009A6700 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0F7A927316199009A6700 /* PopUpView.swift */; };
 		D487037016B3BAC97D27BB89 /* Pods_Boutiqaat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF63745884A7D452C0B42D4 /* Pods_Boutiqaat.framework */; };
+		F7672F60274BB45200ECAC2D /* BrandsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672F5F274BB45200ECAC2D /* BrandsDataModel.swift */; };
+		F7672F62274BB48A00ECAC2D /* BrandsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672F61274BB48A00ECAC2D /* BrandsViewModel.swift */; };
+		F7672F64274BB5CE00ECAC2D /* BrandsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672F63274BB5CE00ECAC2D /* BrandsConstants.swift */; };
+		F7672F66274BBCB800ECAC2D /* BrandsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7672F65274BBCB800ECAC2D /* BrandsCell.swift */; };
 		F777A44127366ACD00C5DE5E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44027366ACD00C5DE5E /* LoginController.swift */; };
 		F777A44327366CA100C5DE5E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44227366CA100C5DE5E /* LoginViewModel.swift */; };
 		F777A44527366CE000C5DE5E /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777A44427366CE000C5DE5E /* LoginService.swift */; };
@@ -121,6 +125,10 @@
 		082C33ABB0B91C7915840AEB /* Pods-Boutiqaat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boutiqaat.release.xcconfig"; path = "Target Support Files/Pods-Boutiqaat/Pods-Boutiqaat.release.xcconfig"; sourceTree = "<group>"; };
 		54C1720A1EF58A218D79F950 /* Pods-Boutiqaat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boutiqaat.debug.xcconfig"; path = "Target Support Files/Pods-Boutiqaat/Pods-Boutiqaat.debug.xcconfig"; sourceTree = "<group>"; };
 		DDF63745884A7D452C0B42D4 /* Pods_Boutiqaat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boutiqaat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7672F5F274BB45200ECAC2D /* BrandsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsDataModel.swift; sourceTree = "<group>"; };
+		F7672F61274BB48A00ECAC2D /* BrandsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewModel.swift; sourceTree = "<group>"; };
+		F7672F63274BB5CE00ECAC2D /* BrandsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsConstants.swift; sourceTree = "<group>"; };
+		F7672F65274BBCB800ECAC2D /* BrandsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsCell.swift; sourceTree = "<group>"; };
 		F777A44027366ACD00C5DE5E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F777A44227366CA100C5DE5E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F777A44427366CE000C5DE5E /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -218,6 +226,7 @@
 				076EAA69274A2BA20075775A /* CatalogConstants.swift */,
 				076EAA73274A395A0075775A /* CategoryConstants.swift */,
 				076EAA75274A83BE0075775A /* CelebrityConstants.swift */,
+				F7672F63274BB5CE00ECAC2D /* BrandsConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -249,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				F7AC338A274289D700496AA4 /* CarouselCell.swift */,
+				F7672F65274BBCB800ECAC2D /* BrandsCell.swift */,
 				07C6323A27412AFD00895144 /* CelebrityCarousalCell.swift */,
 				07C4270627423CFB0073B7CB /* SectionHeader.swift */,
 				076EAA6B274A35C90075775A /* CategoryCell.swift */,
@@ -374,6 +384,7 @@
 		07C2BE132743C9E6003E4CB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F7672F5E274BB42E00ECAC2D /* BrandsModel */,
 				076EAA6F274A36B20075775A /* CategoryModels */,
 				07C2BE142743C9EE003E4CB2 /* BoutiqaatModels */,
 				076EAA79274A86E10075775A /* CelebritiesModel.swift */,
@@ -395,6 +406,7 @@
 				07C2BE182743DACF003E4CB2 /* BoutiqaatViewModel.swift */,
 				076EAA6D274A369F0075775A /* CategoryViewModel.swift */,
 				076EAA77274A841D0075775A /* CelebrityViewModel.swift */,
+				F7672F61274BB48A00ECAC2D /* BrandsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -414,6 +426,14 @@
 				082C33ABB0B91C7915840AEB /* Pods-Boutiqaat.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F7672F5E274BB42E00ECAC2D /* BrandsModel */ = {
+			isa = PBXGroup;
+			children = (
+				F7672F5F274BB45200ECAC2D /* BrandsDataModel.swift */,
+			);
+			path = BrandsModel;
 			sourceTree = "<group>";
 		};
 		F77D01022744D63F003719DE /* Utils */ = {
@@ -569,6 +589,9 @@
 				0789B1E5272AC508003C6230 /* PasswordTextField.swift in Sources */,
 				F7AC338B274289D700496AA4 /* CarouselCell.swift in Sources */,
 				0789B1DC272A9938003C6230 /* NavigationViewController.swift in Sources */,
+				F7672F62274BB48A00ECAC2D /* BrandsViewModel.swift in Sources */,
+				F7672F60274BB45200ECAC2D /* BrandsDataModel.swift in Sources */,
+				F7672F64274BB5CE00ECAC2D /* BrandsConstants.swift in Sources */,
 				076EAA71274A36DD0075775A /* CategoriesModel.swift in Sources */,
 				0789B1EA272ACE33003C6230 /* SelectGenderField.swift in Sources */,
 				07C42705274238750073B7CB /* CelebrityCard.swift in Sources */,
@@ -579,6 +602,7 @@
 				07F0F7A027312AC7009A6700 /* BrandsViewController.swift in Sources */,
 				076BC6F02729560100914A85 /* ViewController.swift in Sources */,
 				07C2BE162743CD58003E4CB2 /* BoutiqaatPicksDataModel.swift in Sources */,
+				F7672F66274BBCB800ECAC2D /* BrandsCell.swift in Sources */,
 				F777A44727366D2600C5DE5E /* CustomButton.swift in Sources */,
 				076EAA6E274A369F0075775A /* CategoryViewModel.swift in Sources */,
 				07812F2D2737D74200B84D93 /* ProductCard.swift in Sources */,

@@ -22,9 +22,6 @@ class BoutiqaatViewController: NavigationViewController{
     private var selectedGender = CatalogConstants.women
     static var showHeaders = false
     
-    
-    let categoryHeaderId = "header"
-    
     private let womenButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemPink

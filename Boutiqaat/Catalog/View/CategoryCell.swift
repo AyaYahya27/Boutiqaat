@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class CategoryCell: UICollectionViewCell {
     static let id = "CategoryCell"
     
