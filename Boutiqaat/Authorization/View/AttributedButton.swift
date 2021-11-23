@@ -15,7 +15,6 @@ class AttributedButton: UIButton{
         let atts: [NSAttributedString.Key:Any]
         
         if bold{
-            
             atts = [.foregroundColor: UIColor(white: 0, alpha: 1), .font: UIFont(name: "HelveticaNeue-Bold", size: 18)]
         } else{
             

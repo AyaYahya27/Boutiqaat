@@ -12,7 +12,6 @@ import SDWebImage
 class CategoriesViewController:  NavigationViewController{
     
     let categoryViewModel = CategoryViewModel()
-    let imageLoad = ImageLoad()
     let spinner =  LoadSpinner()
     var image = UIImage()
     

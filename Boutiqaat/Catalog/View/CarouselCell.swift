@@ -10,7 +10,7 @@ import UIKit
 class CarouselCell: UICollectionViewCell{
     
     
-    let imageLoad = ImageLoad()
+ 
     static let id = "CarouselCell"
     var carousalPayload : BoutiqaatSection? = nil
     private  var image = UIImage()

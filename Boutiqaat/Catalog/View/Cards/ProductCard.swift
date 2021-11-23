@@ -9,7 +9,6 @@ import UIKit
 
 class ProductCard :UICollectionViewCell{
     
-    let imageLoad = ImageLoad()
     static let id = "CollectionTableViewCell"
     
     let width = (UIScreen.main.bounds.width/2)-20

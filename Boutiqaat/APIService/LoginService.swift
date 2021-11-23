@@ -57,10 +57,10 @@ struct TokenBody: Codable{
 }
 
 struct LoginBody: Codable{
-    let device_token: String = "ttt"
-    let device_type = "A"
+//    let device_token: String = "ttt"
+//    let device_type = "A"
     var email: String
-    let lang = "en"
+//    let lang = "en"
     var password: String
     
     //MARK: -perform Login using API

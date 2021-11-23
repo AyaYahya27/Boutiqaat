@@ -64,8 +64,7 @@ class BrandsViewController:  NavigationViewController{
                 array.append(BrandModel)
                 self.data[firstCharacter] = array
             } else {
-                var array = [BrandModel]
-                array.append(BrandModel)
+                let array = [BrandModel]
                 self.data[firstCharacter] = array
                 self.sections.append(firstCharacter)
 //                print(firstCharacter)
@@ -117,7 +116,6 @@ extension BrandsViewController: UICollectionViewDelegateFlowLayout{
         if !brandsViewModel.brandsPayload.isEmpty{
 //            return brandsViewModel.brandsPayload.count
             if !data.isEmpty{
-
             return data[sections[section]]!.count
                
             }
