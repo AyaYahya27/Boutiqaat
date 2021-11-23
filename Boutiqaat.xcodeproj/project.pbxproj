@@ -38,6 +38,7 @@
 		0789B1E5272AC508003C6230 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E4272AC508003C6230 /* PasswordTextField.swift */; };
 		0789B1E8272ACB83003C6230 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E7272ACB83003C6230 /* PhoneTextField.swift */; };
 		0789B1EA272ACE33003C6230 /* SelectGenderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789B1E9272ACE33003C6230 /* SelectGenderField.swift */; };
+		078FC1FA274CC752004A2AF5 /* LoadSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078FC1F9274CC752004A2AF5 /* LoadSpinner.swift */; };
 		07938EEA274B759800489DC9 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07938EE9274B759800489DC9 /* Image.swift */; };
 		079FDA4927369B910030CAF2 /* FormValidationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FDA4827369B910030CAF2 /* FormValidationController.swift */; };
 		07C2BE162743CD58003E4CB2 /* BoutiqaatPicksDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C2BE152743CD58003E4CB2 /* BoutiqaatPicksDataModel.swift */; };
@@ -106,6 +107,7 @@
 		0789B1E4272AC508003C6230 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		0789B1E7272ACB83003C6230 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		0789B1E9272ACE33003C6230 /* SelectGenderField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderField.swift; sourceTree = "<group>"; };
+		078FC1F9274CC752004A2AF5 /* LoadSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadSpinner.swift; path = Boutiqaat/Catalog/Model/LoadSpinner.swift; sourceTree = SOURCE_ROOT; };
 		07938EE9274B759800489DC9 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Boutiqaat/Catalog/Model/Image.swift; sourceTree = SOURCE_ROOT; };
 		079FDA4827369B910030CAF2 /* FormValidationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationController.swift; sourceTree = "<group>"; };
 		07C2BE152743CD58003E4CB2 /* BoutiqaatPicksDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutiqaatPicksDataModel.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				07938EE9274B759800489DC9 /* Image.swift */,
+				078FC1F9274CC752004A2AF5 /* LoadSpinner.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				076EAA74274A395A0075775A /* CategoryConstants.swift in Sources */,
 				F777A44B27366D9900C5DE5E /* ForgotPasswordController.swift in Sources */,
 				0789B1DE272AA5F3003C6230 /* NormalTextField.swift in Sources */,
+				078FC1FA274CC752004A2AF5 /* LoadSpinner.swift in Sources */,
 				07F0F7A827313477009A6700 /* TabBraViewController.swift in Sources */,
 				F777A44927366D6200C5DE5E /* AttributedButton.swift in Sources */,
 				F777A45D27367E8F00C5DE5E /* TokenData.swift in Sources */,

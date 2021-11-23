@@ -32,15 +32,13 @@ class Header : UICollectionReusableView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        label.text = "Label"
-    
+
         addSubview(categoryName)
         categoryName.anchor(left: self.leftAnchor, paddingLeft: 5)
         
         addSubview(viewAllLabel)
         viewAllLabel.anchor(right: self.rightAnchor, paddingRight: 7)
-//        backgroundColor = .systemPink
-        
+
         addSubview(horizontalLine)
         horizontalLine.anchor(bottom: self.bottomAnchor, right: self.rightAnchor, paddingBottom: 7.5,paddingRight: 7)
     }

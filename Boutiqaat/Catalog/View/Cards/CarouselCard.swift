@@ -23,7 +23,7 @@ class CarouselCard: UICollectionViewCell{
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(imageView)
-       
+        contentView.backgroundColor = .white
         imageView.anchor(top: self.topAnchor)
     }
     

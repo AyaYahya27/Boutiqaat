@@ -75,14 +75,6 @@ class CarouselCell: UICollectionViewCell{
     }
     
     
-    func load(url: URL) {
-        if let data = try? Data(contentsOf: url)
-        {
-            let image: UIImage = UIImage(data: data)!
-            self.image = image
-        }
-    }
-    
 }
 
 extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
@@ -106,8 +98,10 @@ extension CarouselCell: UICollectionViewDelegateFlowLayout, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCard.id, for: indexPath) as! CarouselCard
         
         if  carousalPayload != nil {
-            load(url: URL(string: (self.carousalPayload?.banners[indexPath.row].imageUrl)!)!)
-            cell.imageView.image = image
+            if let url = URL(string: (carousalPayload?.banners[indexPath.row].imageUrl)!){
+                cell.imageView.sd_setImage(with: url, placeholderImage: UIImage())
+            }
+            
             cell.layer.shouldRasterize = true
             cell.layer.rasterizationScale = UIScreen.main.scale
             

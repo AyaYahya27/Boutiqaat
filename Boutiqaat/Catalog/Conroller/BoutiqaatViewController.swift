@@ -17,6 +17,7 @@ class BoutiqaatViewController: NavigationViewController{
     
     //MARK: -Properties
     private  var image = UIImage()
+    let spinner =  LoadSpinner()
     let numberOfSections = 3
     private var boutiqaatViewModel = BoutiqaatViewModel()
     private var selectedGender = CatalogConstants.women
@@ -79,6 +80,7 @@ class BoutiqaatViewController: NavigationViewController{
                 self.collectionView.reloadData()
                 BoutiqaatViewController.showHeaders = true
                 self.collectionView.reloadSections([1,2])
+                self.spinner.hideSpinner(collectionView: self.collectionView)
                 
                 
             }
@@ -94,6 +96,7 @@ class BoutiqaatViewController: NavigationViewController{
         nav(color: .white, title: "Boutiqaat")
         collectionView.backgroundColor = .white
         collectionView.contentInset.top = 22
+        spinner.showSpinner(collectionView: collectionView)
         view.addSubview(womenButton)
         womenButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         womenButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -162,16 +165,7 @@ class BoutiqaatViewController: NavigationViewController{
     }
     
     
-    func load(url: URL) {
-        
-        if let data = try? Data(contentsOf: url)
-        {
-            let image: UIImage = UIImage(data: data)!
-            self.image = image
-        }
-    }
-    
-    
+  
 }
 // MARK: - UICollection View Layout configuration
 extension BoutiqaatViewController{
@@ -303,7 +297,7 @@ extension BoutiqaatViewController{
     static func celebritiesSectionLayout() -> NSCollectionLayoutSection{
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5)))
         
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension:  .absolute(UIScreen.main.bounds.width)), subitems: [item])
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension:  .absolute(UIScreen.main.bounds.width )), subitems: [item])
         
         let section =  NSCollectionLayoutSection(group: group)
         
@@ -334,16 +328,17 @@ extension BoutiqaatViewController{
     func cellOfProuduct(indexPath: IndexPath) -> UICollectionViewCell{
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCard.id, for: indexPath) as! ProductCard
         
-        
+        cell.productImage.image = UIImage()
         if  !self.boutiqaatViewModel.payload.isEmpty {
             let product = self.boutiqaatViewModel.payload[2].banners[indexPath.row]
            
+            if let url = URL(string: product.imageUrl){
+                cell.productImage.sd_setImage(with: url, placeholderImage: UIImage())
+            }
           
             cell.nameLabel.text = product.brandName!
             cell.descriptionLabel.text = product.label
             cell.priceLabel.text = product.mrp! + " " + product.currencyCode!
-            load(url: URL(string: product.imageUrl)!)
-            cell.productImage.image = image
             cell.layer.shouldRasterize = true
             cell.layer.rasterizationScale = UIScreen.main.scale
         }
