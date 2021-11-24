@@ -26,7 +26,7 @@ class BrandsViewController:  NavigationViewController{
         let layout = UICollectionViewFlowLayout()
         layout.sectionHeadersPinToVisibleBounds = true
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 50, right: 0)
+        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 20)
         super.init(collectionViewLayout: layout)
         
     }
@@ -36,7 +36,7 @@ class BrandsViewController:  NavigationViewController{
         configUI()
         collectionView.delegate = self
         collectionView.dataSource = self
-//        collectionView.contentInset.top = 22
+
         
         brandsViewModel.callApi { response in
             self.collectionView.reloadData()
@@ -46,9 +46,7 @@ class BrandsViewController:  NavigationViewController{
             }
             self.splitBrands()
             self.arr = [self.data]
-//            print("////////////////////////////")
-//            print(self.data["B"])
-//            print("////////////////////////////")
+
         }
         
     registerCells()
@@ -57,7 +55,7 @@ class BrandsViewController:  NavigationViewController{
     
     func registerCells(){
         collectionView.register(BrandsCell.self, forCellWithReuseIdentifier: BrandsConstants.cellId)
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        collectionView.register(Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
     }
     
     
@@ -76,24 +74,7 @@ class BrandsViewController:  NavigationViewController{
         }
     }
     
-    
-    func loadiMAGE(url: URL, placeholderImage: UIImage? = nil, completion: @escaping(UIImage) -> Void){
-           
-        imageView.af.setImage(
-                withURL: url,
-                placeholderImage: placeholderImage) {(imageResult) in
-                    switch imageResult.result{
-                        case .success(_ ):
-    //                    print(imageResult)
-                        
-                        completion(self.imageView.image!)
-                        
-                    case .failure(_ ):
-                        print(imageResult.error?.localizedDescription)
-//                        print(imageResult)
-                }
-        }
-    }
+
 
     
     
@@ -118,11 +99,9 @@ extension BrandsViewController: UICollectionViewDelegateFlowLayout{
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if !brandsViewModel.brandsPayload.isEmpty{
-//            return brandsViewModel.brandsPayload.count
-            if !data.isEmpty{
+
             return data[sections[section]]!.count
                
-            }
         }
         
             return 0
@@ -146,11 +125,14 @@ extension BrandsViewController: UICollectionViewDelegateFlowLayout{
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! Header
         
-        headerView.backgroundColor = UIColor.blue
-        headerView.frame.size.height = 50
-        headerView.frame.size.width = 20
+        if !data.isEmpty {
+            headerView.backgroundColor = UIColor.gray
+            headerView.categoryName.text = String(sections[indexPath.section])
+            headerView.viewAllLabel.text = ""
+        
+        }
         return headerView
 
     }
